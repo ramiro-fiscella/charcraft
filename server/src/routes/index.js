@@ -5,5 +5,6 @@ const attributesRoutes = require("./attributes.routes");
 const router = Router();
 
 router.use("/characters", characterRoutes);
-router.use("/attributes/:id", attributesRoutes);
+router.use("/attributes", attributesRoutes);
+router.use("/characters/:id/attributes", attributesRoutes);
 module.exports = router;

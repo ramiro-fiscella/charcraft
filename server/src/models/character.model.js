@@ -1,13 +1,94 @@
 const { query } = require("../db");
 
 const getCharacters = async () => {
-  const result = await query("SELECT * FROM characters");
-  return result.rows;
+  const result = await query(`
+    SELECT 
+      c.id,
+      c.char_name,
+      c.race,
+      c.char_class,
+      c.level,
+      c.created_at,
+      c.updated_at,
+      a.strength,
+      a.dexterity,
+      a.constitution,
+      a.intelligence,
+      a.wisdom,
+      a.charisma
+    FROM 
+      characters AS c
+    LEFT JOIN 
+      attributes AS a ON c.id = a.character_id
+  `);
+
+  const formattedCharacters = result.rows.map((character) => ({
+    id: character.id,
+    char_name: character.char_name,
+    race: character.race,
+    char_class: character.char_class,
+    level: character.level,
+    created_at: character.created_at,
+    updated_at: character.updated_at,
+    attributes: {
+      strength: character.strength,
+      dexterity: character.dexterity,
+      constitution: character.constitution,
+      intelligence: character.intelligence,
+      wisdom: character.wisdom,
+      charisma: character.charisma,
+    },
+  }));
+
+  return formattedCharacters;
 };
 
 const getCharacterById = async (id) => {
-  const result = await query("SELECT * FROM characters WHERE id = $1", [id]);
-  return result.rows;
+  const queryString = `
+    SELECT 
+      c.id,
+      c.char_name,
+      c.race,
+      c.char_class,
+      c.level,
+      c.created_at,
+      c.updated_at,
+      a.strength,
+      a.dexterity,
+      a.constitution,
+      a.intelligence,
+      a.wisdom,
+      a.charisma
+    FROM 
+      characters AS c
+    LEFT JOIN 
+      attributes AS a ON c.id = a.character_id
+    WHERE 
+      c.id = $1;
+  `;
+
+  const result = await query(queryString, [id]);
+  const character = result.rows[0];
+
+  const formattedCharacter = {
+    id: character.id,
+    char_name: character.char_name,
+    race: character.race,
+    char_class: character.char_class,
+    level: character.level,
+    created_at: character.created_at,
+    updated_at: character.updated_at,
+    attributes: {
+      strength: character.strength,
+      dexterity: character.dexterity,
+      constitution: character.constitution,
+      intelligence: character.intelligence,
+      wisdom: character.wisdom,
+      charisma: character.charisma,
+    },
+  };
+
+  return formattedCharacter;
 };
 
 const createCharacter = async ({ char_name, race, char_class, level }) => {
