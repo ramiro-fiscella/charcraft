@@ -6,5 +6,5 @@ const router = Router();
 
 router.use("/characters", characterRoutes);
 router.use("/attributes", attributesRoutes);
-router.use("/characters/:id/attributes", attributesRoutes);
+
 module.exports = router;
