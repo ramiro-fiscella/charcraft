@@ -10,3 +10,13 @@ CREATE TABLE characters (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE attributes (
+    character_id INT PRIMARY KEY,
+    strength INT,
+    dexterity INT,
+    constitution INT,
+    intelligence INT,
+    wisdom INT,
+    charisma INT,
+    FOREIGN KEY (character_id) REFERENCES characters(character_id)
+);
