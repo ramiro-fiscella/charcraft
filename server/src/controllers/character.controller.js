@@ -11,9 +11,9 @@ const getCharacters = async (req, res) => {
 };
 
 const getCharacter = async (req, res) => {
-  const { character_id } = req.params;
+  const { id } = req.params;
   try {
-    const character = await CharacterModel.getCharacterById(character_id);
+    const character = await CharacterModel.getCharacterById(id);
     res.status(201).json(character);
   } catch (err) {
     console.error(err);
@@ -34,11 +34,11 @@ const createCharacter = async (req, res) => {
 };
 
 const updateCharacter = async (req, res) => {
-  const { character_id } = req.params;
+  const { id } = req.params;
   const characterData = req.body;
   try {
     const updatedCharacter = await CharacterModel.updateCharacter(
-      character_id,
+      id,
       characterData
     );
     res.status(201).json(updatedCharacter);
@@ -49,9 +49,9 @@ const updateCharacter = async (req, res) => {
 };
 
 const deleteCharacter = async (req, res) => {
-  const { character_id } = req.params;
+  const { id } = req.params;
   try {
-    const deletedCharacter = await CharacterModel.deleteCharacter(character_id);
+    const deletedCharacter = await CharacterModel.deleteCharacter(id);
     res.status(200).json(deletedCharacter);
   } catch (err) {
     console.error(err);

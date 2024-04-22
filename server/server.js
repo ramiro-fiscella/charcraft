@@ -9,11 +9,12 @@ const app = express();
 // middlewares
 app.use(cors());
 app.use(helmet());
+
 app.use(express.json());
 app.use(morgan("dev"));
 
 // routes
-app.use(router);
+app.use("/", router);
 
 // start server
 const PORT = process.env.PORT || 5000;

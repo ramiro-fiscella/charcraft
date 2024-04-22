@@ -10,9 +10,9 @@ const {
 const router = Router();
 
 router.get("/", getCharacters);
-router.get("/:character_id", getCharacter);
+router.get("/:id", getCharacter);
 router.post("/", createCharacter);
-router.put("/:character_id", updateCharacter);
-router.delete("/:character_id", deleteCharacter);
+router.put("/:id", updateCharacter);
+router.delete("/:id", deleteCharacter);
 
 module.exports = router;
