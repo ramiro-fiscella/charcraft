@@ -74,3 +74,13 @@ CREATE TABLE combat_stats (
     death_save_success INT CHECK (death_save_success >= 0 AND death_save_success <= 3),
     death_save_failure INT CHECK (death_save_failure >= 0 AND death_save_failure <= 3)
 );
+
+CREATE TABLE attack_stats (
+    id SERIAL PRIMARY KEY,
+    character_id INT UNIQUE REFERENCES characters(id) ON DELETE CASCADE,
+    weapon VARCHAR(128),
+    atk_bonus INT,
+    damage VARCHAR(50),
+    damage_type VARCHAR(50),
+    atk_range VARCHAR(50)
+);

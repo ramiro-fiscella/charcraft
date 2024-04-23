@@ -1,18 +1,18 @@
-require("dotenv").config();
+// require("dotenv").config();
 const { Pool } = require("pg");
 
-const PGDATABASE = process.env.PGDATABASE;
-const PGHOST = process.env.PGHOST;
-const PGPASSWORD = process.env.PGPASSWORD;
-const PGPORT = process.env.PGPORT;
-const PGUSER = process.env.PGUSER;
+// const PGDATABASE = process.env.PGDATABASE;
+// const PGHOST = process.env.PGHOST;
+// const PGPASSWORD = process.env.PGPASSWORD;
+// const PGPORT = process.env.PGPORT;
+// const PGUSER = process.env.PGUSER;
 
 const pool = new Pool({
-  user: PGUSER,
-  host: PGHOST,
-  database: PGDATABASE,
-  password: PGPASSWORD,
-  port: PGPORT,
+  user: "postgres",
+  host: "localhost",
+  database: "charcraft_db",
+  password: "postgres",
+  port: 5433,
 });
 
 const query = async (queryString, params) => {
