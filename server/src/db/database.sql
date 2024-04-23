@@ -21,3 +21,26 @@ CREATE TABLE attributes (
     wisdom INT,
     charisma INT
 );
+
+CREATE TABLE skills (
+    id SERIAL PRIMARY KEY,
+    character_id INT UNIQUE REFERENCES characters(id) ON DELETE CASCADE,
+    acrobatics INT,
+    animal_handling INT,
+    arcana INT,
+    athletics INT,
+    deception INT,
+    history INT,
+    insight INT,
+    intimidation INT,
+    investigation INT,
+    medicine INT,
+    nature INT,
+    perception INT,
+    performance INT,
+    persuasion INT,
+    religion INT,
+    sleight_of_hand INT,
+    stealth INT,
+    survival INT
+);

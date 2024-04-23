@@ -15,8 +15,8 @@ const setCharacterAttributes = async (req, res) => {
       charisma,
     });
     res.status(201).json(attributes);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     res
       .status(500)
       .json({ message: "Error al crear o actualizar los atributos" });

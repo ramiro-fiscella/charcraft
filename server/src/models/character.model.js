@@ -15,11 +15,31 @@ const getCharacters = async () => {
       a.constitution,
       a.intelligence,
       a.wisdom,
-      a.charisma
+      a.charisma,
+      s.acrobatics,
+      s.animal_handling,
+      s.arcana,
+      s.athletics,
+      s.deception,
+      s.history,
+      s.insight,
+      s.intimidation,
+      s.investigation,
+      s.medicine,
+      s.nature,
+      s.perception,
+      s.performance,
+      s.persuasion,
+      s.religion,
+      s.sleight_of_hand,
+      s.stealth,
+      s.survival
     FROM 
       characters AS c
     LEFT JOIN 
       attributes AS a ON c.id = a.character_id
+    LEFT JOIN
+      skills AS s ON c.id = s.character_id
   `);
 
   const formattedCharacters = result.rows.map((character) => ({
@@ -37,6 +57,26 @@ const getCharacters = async () => {
       intelligence: character.intelligence,
       wisdom: character.wisdom,
       charisma: character.charisma,
+    },
+    skills: {
+      acrobatics: character.acrobatics,
+      animal_handling: character.animal_handling,
+      arcana: character.arcana,
+      athletics: character.athletics,
+      deception: character.deception,
+      history: character.history,
+      insight: character.insight,
+      intimidation: character.intimidation,
+      investigation: character.investigation,
+      medicine: character.medicine,
+      nature: character.nature,
+      perception: character.perception,
+      performance: character.performance,
+      persuasion: character.persuasion,
+      religion: character.religion,
+      sleight_of_hand: character.sleight_of_hand,
+      stealth: character.stealth,
+      survival: character.survival,
     },
   }));
 
