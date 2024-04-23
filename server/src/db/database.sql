@@ -44,3 +44,17 @@ CREATE TABLE skills (
     stealth INT,
     survival INT
 );
+
+CREATE TABLE personality (
+    id SERIAL PRIMARY KEY,
+    character_id INT UNIQUE REFERENCES characters(id) ON DELETE CASCADE,
+    alignment VARCHAR(50),
+    personality_traits VARCHAR(255),
+    ideals VARCHAR(255),
+    bonds VARCHAR(255),
+    flaws VARCHAR(255),
+    quote VARCHAR(140),
+    features_and_traits TEXT[],
+    languages TEXT[],
+    other_proficiencies TEXT[]
+);

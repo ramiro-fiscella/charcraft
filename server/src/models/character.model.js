@@ -2,85 +2,14 @@ const { query } = require("../db");
 
 const getCharacters = async () => {
   const result = await query(`
-    SELECT 
-      c.id,
-      c.char_name,
-      c.race,
-      c.char_class,
-      c.level,
-      c.created_at,
-      c.updated_at,
-      a.strength,
-      a.dexterity,
-      a.constitution,
-      a.intelligence,
-      a.wisdom,
-      a.charisma,
-      s.acrobatics,
-      s.animal_handling,
-      s.arcana,
-      s.athletics,
-      s.deception,
-      s.history,
-      s.insight,
-      s.intimidation,
-      s.investigation,
-      s.medicine,
-      s.nature,
-      s.perception,
-      s.performance,
-      s.persuasion,
-      s.religion,
-      s.sleight_of_hand,
-      s.stealth,
-      s.survival
-    FROM 
-      characters AS c
-    LEFT JOIN 
-      attributes AS a ON c.id = a.character_id
-    LEFT JOIN
-      skills AS s ON c.id = s.character_id
+  SELECT *
+  FROM characters AS c
+  LEFT JOIN attributes AS a ON c.id = a.character_id
+  LEFT JOIN skills AS s ON c.id = s.character_id
+  LEFT JOIN personality AS p ON c.id = p.character_id;  
   `);
 
-  const formattedCharacters = result.rows.map((character) => ({
-    id: character.id,
-    char_name: character.char_name,
-    race: character.race,
-    char_class: character.char_class,
-    level: character.level,
-    created_at: character.created_at,
-    updated_at: character.updated_at,
-    attributes: {
-      strength: character.strength,
-      dexterity: character.dexterity,
-      constitution: character.constitution,
-      intelligence: character.intelligence,
-      wisdom: character.wisdom,
-      charisma: character.charisma,
-    },
-    skills: {
-      acrobatics: character.acrobatics,
-      animal_handling: character.animal_handling,
-      arcana: character.arcana,
-      athletics: character.athletics,
-      deception: character.deception,
-      history: character.history,
-      insight: character.insight,
-      intimidation: character.intimidation,
-      investigation: character.investigation,
-      medicine: character.medicine,
-      nature: character.nature,
-      perception: character.perception,
-      performance: character.performance,
-      persuasion: character.persuasion,
-      religion: character.religion,
-      sleight_of_hand: character.sleight_of_hand,
-      stealth: character.stealth,
-      survival: character.survival,
-    },
-  }));
-
-  return formattedCharacters;
+  return result.rows;
 };
 
 const getCharacterById = async (id) => {
