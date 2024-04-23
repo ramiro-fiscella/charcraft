@@ -38,7 +38,7 @@ const setAttributes = async (
 
     return result.rows[0];
   } catch (err) {
-    console.error("Error al crear o actualizar los atributos:", error);
+    console.error("Error al crear o actualizar los atributos:", err);
     throw err;
   }
 };

@@ -58,3 +58,19 @@ CREATE TABLE personality (
     languages TEXT[],
     other_proficiencies TEXT[]
 );
+
+
+CREATE TABLE combat_stats (
+    id SERIAL PRIMARY KEY,
+    character_id INT UNIQUE REFERENCES characters(id) ON DELETE CASCADE,
+    max_hp INT,
+    current_hp INT,
+    temp_hp INT,
+    armor_class INT,
+    initiative INT,
+    speed INT,
+    hit_dice VARCHAR(20),
+    total_hit_dice INT,
+    death_save_success INT CHECK (death_save_success >= 0 AND death_save_success <= 3),
+    death_save_failure INT CHECK (death_save_failure >= 0 AND death_save_failure <= 3)
+);

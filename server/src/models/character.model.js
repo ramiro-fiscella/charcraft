@@ -6,7 +6,8 @@ const getCharacters = async () => {
   FROM characters AS c
   LEFT JOIN attributes AS a ON c.id = a.character_id
   LEFT JOIN skills AS s ON c.id = s.character_id
-  LEFT JOIN personality AS p ON c.id = p.character_id;  
+  LEFT JOIN personality AS p ON c.id = p.character_id
+  LEFT JOIN combat_stats AS cs ON c.id = cs.character_id;
   `);
 
   return result.rows;
