@@ -1,5 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Almendra+SC&family=Jacquard+24&family=Rosarivo:ital@0;1&display=swap");
+
+/*
+font-family: "Jacquard 24", system-ui;
+font-family: "Almendra SC", serif;
+font-family: "Rosarivo", cursive;
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-primario: #df180a;
+  --color-secundario: #ccc;
+  --color-terciario: #aaa;
+  --color-fondo: #423c39;
+
+  font-family: "Rosarivo", cursive;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,15 +36,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -30,9 +44,13 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 button {
@@ -52,6 +70,43 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p {
+  color: var(--color-terciario);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--color-primario);
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 @media (prefers-color-scheme: light) {
