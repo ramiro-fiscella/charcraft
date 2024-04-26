@@ -1,4 +1,17 @@
-const { setCombatStats } = require("../models/combat.model");
+const { getCombatStats, setCombatStats } = require("../models/combat.model");
+
+const getCharacterCombatStats = async (req, res) => {
+  const character_id = req.params.id;
+  try {
+    const combatStats = await getCombatStats(character_id);
+    res.status(201).json(combatStats);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ message: "Error al obtener estadísticas de combate" });
+  }
+};
 
 const setCharacterCombatStats = async (req, res) => {
   const character_id = req.params.id;
@@ -14,5 +27,6 @@ const setCharacterCombatStats = async (req, res) => {
 };
 
 module.exports = {
+  getCharacterCombatStats,
   setCharacterCombatStats,
 };

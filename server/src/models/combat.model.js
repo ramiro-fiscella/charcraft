@@ -1,5 +1,13 @@
 const { query } = require("../db");
 
+const getCombatStats = async (character_id) => {
+  const queryString = `
+    SELECT * FROM combat_stats WHERE character_id = $1
+  `;
+  const result = await query(queryString, [character_id]);
+  return result.rows[0];
+};
+
 const setCombatStats = async (
   character_id,
   {
@@ -51,5 +59,6 @@ const setCombatStats = async (
 };
 
 module.exports = {
+  getCombatStats,
   setCombatStats,
 };

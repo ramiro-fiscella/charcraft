@@ -1,5 +1,13 @@
 const { query } = require("../db");
 
+const getSkills = async (character_id) => {
+  const queryString = `
+    SELECT * FROM skills WHERE character_id = $1
+  `;
+  const result = await query(queryString, [character_id]);
+  return result.rows[0];
+};
+
 const setSkills = async (
   character_id,
   {
@@ -99,5 +107,6 @@ survival)
 };
 
 module.exports = {
+  getSkills,
   setSkills,
 };

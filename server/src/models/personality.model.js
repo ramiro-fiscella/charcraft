@@ -1,5 +1,17 @@
 const { query } = require("../db");
 
+const getPersonality = async (character_id) => {
+  const queryString = `
+    SELECT * FROM personality WHERE character_id = $1
+  `;
+  try {
+    const result = await query(queryString, [character_id]);
+    return result.rows[0];
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const setPersonality = async (
   character_id,
   {
@@ -53,18 +65,6 @@ const setPersonality = async (
       languages,
       other_proficiencies,
     ]);
-    return result.rows[0];
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const getPersonality = async (character_id) => {
-  const queryString = `
-    SELECT * FROM personality WHERE character_id = $1
-  `;
-  try {
-    const result = await query(queryString, [character_id]);
     return result.rows[0];
   } catch (err) {
     console.error(err);

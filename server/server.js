@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // routes
-app.use(router);
+app.use("/characters", router);
 
 // start server
 const PORT = process.env.PORT || 5000;

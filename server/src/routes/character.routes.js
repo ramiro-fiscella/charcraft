@@ -9,7 +9,7 @@ const {
 
 const router = Router();
 
-router.get("/", getCharacters);
+router.get("/all", getCharacters);
 router.get("/:id", getCharacter);
 router.post("/", createCharacter);
 router.put("/:id", updateCharacter);

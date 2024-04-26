@@ -1,8 +1,12 @@
 const { Router } = require("express");
-const { setCharacterSkills } = require("../controllers/skills.controller");
+const {
+  getCharacterSkills,
+  setCharacterSkills,
+} = require("../controllers/skills.controller");
 
 const router = Router();
 
+router.get("/:id", getCharacterSkills);
 router.post("/:id", setCharacterSkills);
 
 module.exports = router;

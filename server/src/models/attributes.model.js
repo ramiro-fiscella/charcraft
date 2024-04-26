@@ -1,5 +1,14 @@
 const { query } = require("../db");
 
+const getAttributes = async (character_id) => {
+  const queryString = `
+    SELECT * FROM attributes WHERE character_id = $1
+  `;
+  const result = await query(queryString, [character_id]);
+
+  return result.rows[0];
+};
+
 const setAttributes = async (
   character_id,
   { strength, dexterity, constitution, intelligence, wisdom, charisma }
@@ -45,4 +54,5 @@ const setAttributes = async (
 
 module.exports = {
   setAttributes,
+  getAttributes,
 };
