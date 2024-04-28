@@ -6,6 +6,7 @@ CREATE TABLE characters (
     race VARCHAR(50) NOT NULL,
     char_class VARCHAR(50) NOT NULL,
     level INT NOT NULL,
+    avatar_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE (id)
@@ -84,3 +85,4 @@ CREATE TABLE attack_stats (
     damage_type VARCHAR(50),
     atk_range VARCHAR(50)
 );
+
