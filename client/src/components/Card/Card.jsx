@@ -4,7 +4,7 @@ const Card = () => {
   return (
     // CARD CONTAINER
     <div
-      className="w-[224px] h-[308px] border-2 border-neutral-950 rounded-lg bg-gradient-to-tl from-zinc-950 to-neutral-950 shadow-md shadow-stone-900"
+      className="w-[224px] h-[308px] m-auto border-2 border-neutral-950 rounded-lg bg-gradient-to-tl from-zinc-950 to-neutral-950 shadow-md shadow-stone-900"
       id="card"
     >
       <div className="m-2 h-[90%] pt-2 px-1 flex-row rounded rounded-b-2xl bg-gradient-to-b from-neutral-300 to-stone-200">
