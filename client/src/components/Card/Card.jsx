@@ -34,7 +34,7 @@ const Card = ({ character }) => {
           <h4 className="text-xs">
             {character.race} - {character.char_class}
           </h4>
-          <p className="text-xs">🏹</p>
+          <p className="text-xs">🏀</p>
         </div>
 
         {/* INFO */}
