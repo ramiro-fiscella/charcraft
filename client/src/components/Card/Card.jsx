@@ -1,11 +1,12 @@
 import React from "react";
 
-const Card = ({ character }) => {
+const Card = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
     <div
-      className="w-[224px] h-[308px] m-auto border-2 border-neutral-950 rounded-lg bg-gradient-to-tl from-zinc-950 to-neutral-950 shadow-md shadow-stone-900"
+      className=" cursor-pointer w-[224px] h-[308px] m-auto border-2 border-neutral-950 rounded-lg bg-gradient-to-tl from-zinc-950 to-neutral-950 shadow-md shadow-stone-900"
       id="card"
+      onClick={onClick}
     >
       <div className="m-2 h-[90%] pt-2 px-1 flex-row rounded rounded-b-2xl bg-gradient-to-b from-neutral-300 to-stone-200">
         {/* NOMBRE Y NIVEL */}
@@ -46,7 +47,7 @@ const Card = ({ character }) => {
             <p className="pb-1">{character.personality_traits}</p>
 
             <p className="pt-1 border-t-[1px] border-neutral-400">
-              {character.flaws}
+              {character.created_at}
             </p>
           </div>
         </div>

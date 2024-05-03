@@ -17,7 +17,7 @@
 }
 
 :root {
-  --color-primario: #df180a;
+  --color-primario: #eab308;
   --color-secundario: #ccc;
   --color-terciario: #aaa;
   --color-fondo: #423c39;
@@ -84,6 +84,15 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  background-color: var(--color-primario);
+  padding: 6px 10px;
 }
 
 /* MIS ESTILOS */
