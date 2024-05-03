@@ -2,8 +2,8 @@ import React from "react";
 
 const CharacterModal = ({ character, onClose }) => {
   return (
-    <div className="w-full h-full absolute top-2 left-2 p-2 bg-neutral-950 bg-opacity-95">
-      <div className="flex justify-between">
+    <div className="w-full h-full fixed top-2 left-2 p-2 bg-neutral-950 bg-opacity-95">
+      <div className="flex flex-wrap items-start gap-4">
         <div className="characters">
           <h1 className="text-3xl">{character.char_name}</h1>
           <img

@@ -42,8 +42,12 @@ const CharacterForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="w-full h-full fixed top-2 left-2 p-2 bg-neutral-950 bg-opacity-30">
+      <form
+        className=" w-[400px] h-full m-auto p-14 flex flex-col items-center justify-center gap-4 bg-neutral-950 bg-opacity-90"
+        onSubmit={handleSubmit}
+      >
+        <h2 className="text-2xl">Create Character</h2>
         <label>
           Name:
           <input
@@ -81,9 +85,14 @@ const CharacterForm = () => {
             onChange={handleChange}
           />
         </label>
+        <div className="w-full">
+          <label>Upload Character Image</label>
+          <UploadWidget onImageUpload={handleImageUpload} />
+        </div>
 
-        <UploadWidget onImageUpload={handleImageUpload} />
-        <button type="submit">Create Character</button>
+        <div className="flex flex-col gap-2 w-full mt-16">
+          <button type="submit">Create Character</button>
+        </div>
       </form>
     </div>
   );

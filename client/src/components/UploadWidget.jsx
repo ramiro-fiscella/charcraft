@@ -27,7 +27,11 @@ const UploadWidget = ({ onImageUpload }) => {
   }, []);
 
   return (
-    <button type="button" onClick={() => widgetRef.current.open()}>
+    <button
+      className="w-full"
+      type="button"
+      onClick={() => widgetRef.current.open()}
+    >
       Upload
     </button>
   );

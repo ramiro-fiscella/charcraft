@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../components/Card/Card";
 import CharacterModal from "../../components/CharacterModal/CharacterModal";
-import getCharacterById from "../../services/getCharacterById";
+import getCharacterById from "../../routes/getCharacterById";
 import axios from "axios";
 
 const CharactersView = () => {
@@ -34,16 +34,16 @@ const CharactersView = () => {
 
   return (
     <div>
-      {/* Render all characters as cards */}
-      {characters.map((character) => (
-        <Card
-          key={character.id}
-          character={character}
-          onClick={() => handleCardClick(character)}
-        />
-      ))}
+      <div className="flex flex-wrap items-start justify-center m-auto">
+        {characters.map((character) => (
+          <Card
+            key={character.id}
+            character={character}
+            onClick={() => handleCardClick(character)}
+          />
+        ))}
+      </div>
 
-      {/* Render modal if a character is selected */}
       {selectedCharacter && (
         <CharacterModal
           character={selectedCharacter}
