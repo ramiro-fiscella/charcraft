@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ character }) => {
+const Card = () => {
   return (
     // CARD CONTAINER
     <div
@@ -13,15 +13,15 @@ const Card = ({ character }) => {
           className="w-[100%] h-6 p-[2px] flex justify-between items-center border-[1px] border-neutral-600 rounded-t-md text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-800"
           aria-label="Name and level of the character"
         >
-          <h1 className="text-sm">{character.char_name}</h1>
-          <h3 className="text-xs">Lv. {character.level}</h3>{" "}
+          <h1 className="text-sm">Lorem D. Ipsum</h1>
+          <h3 className="text-xs">Lv. 12</h3>
         </div>
 
         {/* IMAGE */}
         <div className="mx-1 h-36">
           <img
             className="w-full h-full object-cover object-top outline-double outline-neutral-600 shadow-md shadow-stone-800"
-            src={character.avatar_url || "assets/card-placeholder.jpg"}
+            src="assets/card-placeholder.jpg"
             alt=" Character's image"
           />
         </div>
@@ -31,9 +31,7 @@ const Card = ({ character }) => {
           className="w-[100%] h-6 p-[2px] px-1 flex justify-between items-end border-[1px] border-neutral-600 rounded-b-md text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-500"
           aria-label="Race and class of the character"
         >
-          <h4 className="text-xs">
-            {character.race} - {character.char_class}
-          </h4>
+          <h4 className="text-xs">Race - class</h4>
           <p className="text-xs">🏹</p>
         </div>
 
@@ -43,10 +41,15 @@ const Card = ({ character }) => {
             className="w-full h-[80px] min-h-[80px] p-2 outline outline-1 outline-neutral-500 rounded-b bg-gradient-to-b from-neutral-200 to-stone-100  text-[9px] text-pretty leading-tight text-neutral-900 overflow-wrap shadow-md shadow-stone-950 "
             aria-label="Character's quote"
           >
-            <p className="pb-1">{character.personality_traits}</p>
+            <p className="pb-1">
+              Lorem ipsum dolor sit amet, consectetur{" "}
+              <span className="font-bold">adipisicing elit</span>.
+            </p>
 
             <p className="pt-1 border-t-[1px] border-neutral-400">
-              {character.flaws}
+              Sed mollitia nostrum voluptatum,{" "}
+              <span className="font-bold">omnis delectus amet</span>, nihil aut
+              et hic aliquam animi ipsum necessitatibus.
             </p>
           </div>
         </div>
