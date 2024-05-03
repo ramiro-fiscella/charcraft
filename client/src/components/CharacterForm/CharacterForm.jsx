@@ -1,5 +1,7 @@
+// CharacterForm.js
 import React, { useState } from "react";
 import axios from "axios";
+import UploadWidget from "../UploadWidget";
 
 const CharacterForm = () => {
   const [character, setCharacter] = useState({
@@ -7,7 +9,7 @@ const CharacterForm = () => {
     race: "",
     char_class: "",
     level: "",
-    avatar_url: null,
+    avatar_url: "",
   });
 
   const handleChange = (event) => {
@@ -18,7 +20,15 @@ const CharacterForm = () => {
     }));
   };
 
+  const handleImageUpload = (url) => {
+    setCharacter((prevState) => ({
+      ...prevState,
+      avatar_url: url,
+    }));
+  };
+
   const handleSubmit = async (event) => {
+    console.log(character);
     event.preventDefault();
     try {
       const response = await axios.post(
@@ -71,15 +81,8 @@ const CharacterForm = () => {
             onChange={handleChange}
           />
         </label>
-        {/* <label>
-          Avatar URL:
-          <input
-            type="text"
-            name="avatar_url"
-            value={character.avatar_url}
-            onChange={handleChange}
-          />
-        </label> */}
+
+        <UploadWidget onImageUpload={handleImageUpload} />
         <button type="submit">Create Character</button>
       </form>
     </div>

@@ -28,10 +28,16 @@ const getCharacterById = async (id) => {
   return character;
 };
 
-const createCharacter = async ({ char_name, race, char_class, level }) => {
+const createCharacter = async ({
+  char_name,
+  race,
+  char_class,
+  level,
+  avatar_url,
+}) => {
   const result = await query(
-    "INSERT INTO characters (char_name, race, char_class, level) VALUES ($1, $2, $3, $4) RETURNING *",
-    [char_name, race, char_class, level]
+    "INSERT INTO characters (char_name, race, char_class, level, avatar_url) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+    [char_name, race, char_class, level, avatar_url]
   );
   return result.rows[0];
 };
