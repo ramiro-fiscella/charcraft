@@ -28,9 +28,13 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="flex gap-4">
           <button onClick={handleShowForm}>Create Character</button>
           {showForm && <CharacterForm closeForm={() => setShowForm(false)} />}
+
+          <button className="bg-transparent border border-white text-white hover:bg-yellow-500  hover:text-black">
+            Register
+          </button>
         </div>
       </div>
     </nav>

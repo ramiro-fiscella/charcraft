@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Mate+SC&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Brawler:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /*
 
@@ -24,8 +24,8 @@
 
   height: 100vh;
 
-  /* font-family: "IM Fell DW Pica", serif; */
-  font-family: "Brawler", serif;
+  font-family: "Work Sans", sans-serif;
+  /* font-family: "Brawler", serif; */
   line-height: 1.2;
   font-weight: 400;
 
@@ -115,12 +115,14 @@ button {
   cursor: pointer;
   outline: none;
   border-radius: 0.3rem;
-  font-weight: 800;
+  font-weight: 500;
   background-color: var(--color-primario);
-  color: var(--color-fondo);
+  color: black;
   padding: 6px 10px;
 }
-
+button:hover {
+  background-color: white;
+}
 /* MIS ESTILOS */
 
 #card h1,
