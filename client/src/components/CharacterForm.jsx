@@ -85,7 +85,7 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <div className="w-full">
+        <div className="w-full flex items-center justify-between">
           <label>Upload Character Image</label>
           <UploadWidget onImageUpload={handleImageUpload} />
         </div>

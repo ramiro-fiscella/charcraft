@@ -28,7 +28,7 @@ const UploadWidget = ({ onImageUpload }) => {
 
   return (
     <button
-      className="w-full"
+      className="bg-transparent font-medium border border-white text-white hover:bg-yellow-500  hover:text-black"
       type="button"
       onClick={() => widgetRef.current.open()}
     >
