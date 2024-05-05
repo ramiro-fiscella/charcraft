@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../components/Card/Card";
-import CharacterModal from "../../components/CharacterModal/CharacterModal";
-import getCharacterById from "../../routes/getCharacterById";
-import axios from "axios";
+import Card from "../components/Card";
+import CharacterModal from "../components/CharacterModal";
+import { fetchCharacters, getCharacterById } from "../services";
 
 const CharactersView = () => {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   useEffect(() => {
-    async function fetchCharacters() {
+    async function fetchData() {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/characters/all"
-        );
-        setCharacters(response.data);
+        const charactersData = await fetchCharacters();
+        setCharacters(charactersData);
       } catch (error) {
         console.error("Error fetching characters:", error);
       }
     }
 
-    fetchCharacters();
+    fetchData();
   }, []);
 
   const handleCardClick = async (character) => {
@@ -33,8 +30,8 @@ const CharactersView = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-wrap items-start justify-center m-auto">
+    <>
+      <div className="flex flex-wrap  m-auto">
         {characters.map((character) => (
           <Card
             key={character.id}
@@ -50,7 +47,7 @@ const CharactersView = () => {
           onClose={() => setSelectedCharacter(null)}
         />
       )}
-    </div>
+    </>
   );
 };
 

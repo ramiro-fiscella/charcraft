@@ -1,12 +1,17 @@
-import CharactersView from "./views/CharactersView/CharactersView";
-import CharacterForm from "./components/CharacterForm/CharacterForm";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import { Home } from "./views";
+import { CharacterForm, NavBar } from "./components";
+
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
-      <CharactersView />
-      {/* <CharacterForm /> */}
+      <NavBar />
+      <Home />
     </>
   );
 }
