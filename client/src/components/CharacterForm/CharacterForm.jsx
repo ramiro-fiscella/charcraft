@@ -42,7 +42,7 @@ const CharacterForm = () => {
   };
 
   return (
-    <div className="w-full h-full fixed top-2 left-2 p-2 bg-neutral-950 bg-opacity-30">
+    <div className="w-full h-full fixed top-2 left-2 p-2 bg-neutral-950 bg-opacity-60">
       <form
         className=" w-[400px] h-full m-auto p-14 flex flex-col items-center justify-center gap-4 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
