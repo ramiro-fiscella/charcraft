@@ -25,11 +25,11 @@ const CharacterDetails = () => {
   }, [id]); // Ejecutar efecto cada vez que cambie el ID del personaje
 
   if (!character) {
-    return <div>Cargando...</div>; // Mostrar "Cargando..." mientras se obtienen los detalles del personaje
+    return <div>Cargando...</div>;
   }
 
   return (
-    <div className="fixed overflow-scroll top-2 inset-2 flex items-center justify-center p-2 rounded-xl bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md z-50">
+    <div className="mt-14 grid grid-flow-row gap-4 p-5 bg-emerald-950">
       <div className="">
         <div id="character" className="data-container">
           <h1 className="text-3xl">{character.char_name}</h1>
