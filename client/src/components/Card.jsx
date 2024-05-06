@@ -35,7 +35,7 @@ const Card = ({ character, onClick }) => {
           <h4 className="text-xs">
             {character.race} - {character.char_class}
           </h4>
-          <p className="text-xs">🏀</p>
+          <p className="text-xs">🔱</p>
         </div>
 
         {/* INFO */}

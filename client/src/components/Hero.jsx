@@ -19,7 +19,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[100vh] overflow-hidden">
+    <div className="relative h-[90vh] overflow-hidden">
       <img
         src="https://cdnb.artstation.com/p/assets/images/images/006/036/033/original/andrii-shafetov-ancient-ruins-fx.gif?1497372245"
         // src="https://cdna.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919"
@@ -34,11 +34,27 @@ const Hero = () => {
         </h1>
         <p className="text-xl text-left leading-6 font-medium mb-6">
           There can't be a good adventure if there are no good characters.
-          Unleash your creativity with our customizable character sheets!
+          Unleash your creativity with our{" "}
+          <span className="text-yellow-400">
+            customizable character sheets!
+          </span>
         </p>
         <button className="font-bold uppercase py-3 px-4 rounded">
           Start your adventure
         </button>
+      </div>
+
+      <div className="absolute bottom-0 w-full h-44 bg-gradient-to-t from-zinc-950">
+        <div className="absolute right-8 bottom-4 text-right">
+          <p>Art by Andrii Shafetov</p>
+          <a
+            target="_blank"
+            href="https://andriishafetov.artstation.com/"
+            className=" text-emerald-400 underline-offset-2 underline"
+          >
+            Link to his website
+          </a>
+        </div>
       </div>
     </div>
   );
