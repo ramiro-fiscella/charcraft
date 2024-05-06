@@ -4,7 +4,7 @@ const Card = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
     <div
-      className=" cursor-pointer w-[220px] h-[330px] rounded-lg  bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border border-yellow-400  border-opacity-50 hover:border-opacity-90 transition-all duration-200 shadow-lg shadow-gray-900"
+      className=" cursor-pointer w-[220px] h-[330px] rounded-lg  bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border border-yellow-400  border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all duration-200 shadow-lg shadow-gray-900"
       id="card"
       onClick={onClick}
     >

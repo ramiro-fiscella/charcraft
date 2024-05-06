@@ -39,9 +39,7 @@ const Hero = () => {
             customizable character sheets!
           </span>
         </p>
-        <button className="font-bold uppercase py-3 px-4 rounded">
-          Start your adventure
-        </button>
+        <button className="">Start your adventure</button>
       </div>
 
       <div className="absolute bottom-0 w-full h-44 bg-gradient-to-t from-zinc-950">

@@ -9,10 +9,12 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="w-full fixed top-0 left-0 mx-auto p-4 bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border-b z-40">
+    <nav className="w-full fixed top-0 left-0 mx-auto p-3 bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border-b z-40">
       <div className="max-w-[1200px] m-auto flex justify-between items-center">
-        <div className="flex gap-8">
-          <h1 className="text-2xl leading-4 m-0">🔱</h1>
+        <div className="flex gap-4">
+          <h1 className="text-2xl leading-4 m-0">
+            <a href="#">🔱</a>
+          </h1>
           <ul className="flex gap-4">
             <li>
               <a href="">Home</a>
