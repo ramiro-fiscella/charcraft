@@ -15,9 +15,11 @@ const Card = ({ character, onClick }) => {
           aria-label="Name and level of the character"
         >
           <h1 className=" text-base font-bold">{character.char_name}</h1>
-          <h3 className="bg-gradient-to-tl from-slate-900 to-slate-700 text-white text-xl w-10 h-10 flex justify-center items-center rounded-3xl absolute top-[-1.6rem] right-[-1.6rem] border border-amber-400 shadow-sm shadow-gray-800">
-            {character.level}
-          </h3>
+          <div className="w-10 h-10 flex justify-center items-center  absolute top-[-1.6rem] right-[-1.6rem] bg-gradient-to-tl from-slate-900 to-slate-700 rotate-45 border border-amber-400 shadow-sm shadow-gray-800 rounded-xl">
+            <h3 className=" text-white text-xl m-auto rotate-[-45deg]">
+              {character.level}
+            </h3>
+          </div>
         </div>
 
         {/* IMAGE */}

@@ -31,7 +31,7 @@ const CharactersView = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] w-full m-auto my-12 flex justify-left flex-wrap gap-4">
+      <div className="max-w-[1200px] w-full m-auto my-12 flex justify-center flex-wrap gap-8">
         {characters.map((character) => (
           <Card
             key={character.id}
