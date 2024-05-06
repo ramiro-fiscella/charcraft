@@ -19,9 +19,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[89vh] overflow-hidden">
+    <div className="relative h-[100vh] overflow-hidden">
       <img
-        src="https://cdna.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919"
+        src="https://cdnb.artstation.com/p/assets/images/images/006/036/033/original/andrii-shafetov-ancient-ruins-fx.gif?1497372245"
+        // src="https://cdna.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919"
         alt="Hero Background"
         className="absolute inset-0 bg-top object-cover w-full h-full left-0 parallax"
         data-speed="0.5" // Adjust parallax effect
