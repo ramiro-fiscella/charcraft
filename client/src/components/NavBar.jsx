@@ -35,14 +35,6 @@ const NavBar = () => {
                 href=""
                 className="text-white hover:text-yellow-400 selection:underline"
               >
-                Create
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className="text-white hover:text-yellow-400 selection:underline"
-              >
                 About
               </a>
             </li>

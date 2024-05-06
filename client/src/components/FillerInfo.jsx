@@ -3,10 +3,10 @@ import React from "react";
 const HomeSection = () => {
   return (
     <section className="container mx-auto my-20 py-12 px-4">
-      <div className="flex justify-center gap-24 items-start">
-        <div className="w-1/3">
+      <div className="flex justify-center gap-24 items-start" id="filler">
+        <div className="flex flex-col w-1/2">
           <h3 className="text-3xl font-bold mb-4">Filler Info</h3>
-          <p className="text-lg mb-6">
+          <p className="text-lg mb-6 text-pretty">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam cum
             consectetur ut eius repellendus, est sit quisquam excepturi
             laboriosam. Minus esse eos itaque animi porro expedita unde pariatur
