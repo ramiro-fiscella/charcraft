@@ -17,12 +17,10 @@
 }
 
 :root {
-  --color-primario: #eab308;
+  --color-primario: #facc15;
   --color-secundario: #ccc;
   --color-terciario: #aaa;
   --color-fondo: #423c39;
-
-  height: 100vh;
 
   font-family: "Work Sans", sans-serif;
   /* font-family: "Brawler", serif; */
@@ -31,7 +29,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  background: linear-gradient(180deg, #3a635a 0%, #1b2825 40%, #121210 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -105,16 +104,17 @@ h6 {
   overflow-wrap: break-word;
 }
 
-h1 {
+h1,
+h2 {
   font-size: 2.5rem;
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 button {
   cursor: pointer;
   outline: none;
-  border-radius: 0.3rem;
+  border-radius: 1px;
   font-weight: 500;
   background-color: var(--color-primario);
   color: black;

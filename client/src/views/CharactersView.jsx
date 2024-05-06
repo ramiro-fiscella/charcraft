@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
-import CharacterModal from "../components/CharacterModal";
+import { CharacterModal } from "../components";
 import { fetchCharacters, getCharacterById } from "../services";
 
 const CharactersView = () => {
@@ -31,7 +31,7 @@ const CharactersView = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] flex flex-wrap m-auto gap-y-6 ">
+      <div className="max-w-[1200px] w-full m-auto my-12 flex justify-left flex-wrap gap-4">
         {characters.map((character) => (
           <Card
             key={character.id}

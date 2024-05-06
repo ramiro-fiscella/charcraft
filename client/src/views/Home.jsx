@@ -4,10 +4,13 @@ import { CharactersView } from "../views";
 
 const Home = () => {
   return (
-    <div className="w-full h-full m-auto pt-10">
+    <div className="w-full h-full m-auto">
       <Hero />
-      <h1>Charcraft</h1>
-      <CharactersView />
+
+      <div className="w-full p-12">
+        <h2 className="text-center">Your Characters</h2>
+        <CharactersView />
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ const Card = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
     <div
-      className=" cursor-pointer w-[220px] h-[308px] m-auto border-2 border-neutral-950 rounded-lg bg-gradient-to-tl from-zinc-950 to-neutral-950 shadow-md shadow-stone-900"
+      className=" cursor-pointer w-[220px] h-[308px] border border-slate-600 rounded-lg bg-gradient-to-tl from-stone-950 to-slate-800 shadow-lg shadow-neutral-950"
       id="card"
       onClick={onClick}
     >
@@ -44,7 +44,7 @@ const Card = ({ character, onClick }) => {
             className="w-full h-[80px] min-h-[80px] p-2 outline outline-1 outline-neutral-500 rounded-b bg-gradient-to-b from-neutral-200 to-stone-100  text-[9px] text-pretty leading-tight text-neutral-900 overflow-wrap shadow-md shadow-stone-950 "
             aria-label="Character's quote"
           >
-            <p className="pb-1">{character.personality_traits}</p>
+            <p className="pb-1">{character.quote}</p>
 
             <p className="pt-1 border-t-[1px] border-neutral-400">
               {character.created_at}
