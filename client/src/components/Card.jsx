@@ -4,7 +4,7 @@ const Card = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
     <div
-      className=" cursor-pointer w-[220px] h-[320px] rounded-lg bg-gradient-to-tl from-stone-700 to-stone-800 shadow-lg shadow-neutral-950"
+      className=" cursor-pointer w-[220px] h-[320px] rounded-lg  bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border border-yellow-400   border-opacity-50 hover:border-opacity-90 transition-all duration-200 shadow-xl shadow-gray-800"
       id="card"
       onClick={onClick}
     >
@@ -15,7 +15,7 @@ const Card = ({ character, onClick }) => {
           aria-label="Name and level of the character"
         >
           <h1 className=" text-base font-bold">{character.char_name}</h1>
-          <div className="w-10 h-10 flex justify-center items-center  absolute top-[-1.6rem] right-[-1.6rem] bg-gradient-to-tl from-slate-900 to-slate-700 rotate-45 border border-amber-400 shadow-sm shadow-gray-800 rounded-xl">
+          <div className="w-8 h-8 flex justify-center items-center  absolute top-[-2.07rem] right-[-1.85rem] bg-gradient-to-tl from-slate-900 to-slate-700 rotate-45 border border-amber-400 shadow-sm shadow-gray-800 rounded-sm">
             <h3 className=" text-white text-xl m-auto rotate-[-45deg]">
               {character.level}
             </h3>
