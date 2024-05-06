@@ -143,6 +143,19 @@ button:hover {
   font-weight: 500;
 }
 
+li a {
+  color: white;
+}
+li a:hover {
+  color: var(--color-primario);
+  background: linear-gradient(
+    90deg,
+    #facc1500 0%,
+    #ffffff2a 50%,
+    #facc1500 100%
+  );
+}
+
 @media (max-width: 768px) {
   #filler {
     width: 100%;

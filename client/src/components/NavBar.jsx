@@ -15,28 +15,13 @@ const NavBar = () => {
           <h1 className="text-2xl leading-4 m-0">🔱</h1>
           <ul className="flex gap-4">
             <li>
-              <a
-                href=""
-                className="text-white hover:text-yellow-400 selection:underline"
-              >
-                Home
-              </a>
+              <a href="">Home</a>
             </li>
             <li>
-              <a
-                href=""
-                className="text-white hover:text-yellow-400 selection:underline"
-              >
-                Characters
-              </a>
+              <a href="">Characters</a>
             </li>
             <li>
-              <a
-                href=""
-                className="text-white hover:text-yellow-400 selection:underline"
-              >
-                About
-              </a>
+              <a href="">About</a>
             </li>
           </ul>
         </div>
