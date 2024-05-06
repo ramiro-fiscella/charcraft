@@ -5,14 +5,14 @@ const HomeSection = () => {
     <section className="container mx-auto my-20 py-12 px-4">
       <div className="flex justify-center gap-24 items-start" id="filler">
         <div className="flex flex-col justify-between h-[420px] w-96">
-          <h3 className="text-3xl mb-4">Filler Info</h3>
+          <h3 className="text-3xl mb-4">What is Charcraft?</h3>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam cum
-            consectetur ut eius repellendus, est sit quisquam excepturi
-            laboriosam. Minus esse eos itaque animi porro expedita unde pariatur
-            tempore ipsum velit ab consequuntur, doloremque fugiat iure? At
-            repellat amet, cum nemo pariatur vel ex labore? Minima ad aut non
-            velit!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            eveniet, dolorem error, tempora temporibus dignissimos id nobis
+            veniam eaque adipisci provident corporis reprehenderit? Odit,
+            placeat reiciendis dolores dolor quasi id qui nulla cupiditate
+            voluptate voluptates sint eaque totam nostrum fugit, perspiciatis
+            ratione rem. Necessitatibus iure autem itaque enim ex adipisci.
           </p>
           <button>View More</button>
         </div>

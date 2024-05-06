@@ -15,3 +15,9 @@ nav button {
 li a:hover {
   @apply text-yellow-500 border-y border-double border-y-yellow-500 transition-all duration-500 cursor-pointer;
 }
+
+/* App.css */
+
+.data-container {
+  @apply border;
+}

@@ -2,9 +2,9 @@ import React from "react";
 
 const CharacterModal = ({ character, onClose }) => {
   return (
-    <div className="w-full h-full fixed top-2 left-2 p-2 rounded-xl bg-neutral-950 bg-opacity-95 z-50">
-      <div className="flex flex-wrap items-start gap-4">
-        <div className="characters">
+    <div className="fixed overflow-scroll top-2 inset-2 flex items-center justify-center p-2 rounded-xl bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md z-50">
+      <div className="">
+        <div id="character" className="data-container">
           <h1 className="text-3xl">{character.char_name}</h1>
           <img
             className="w-[200px] h-[200px] object-cover object-center rounded-md"
@@ -12,14 +12,14 @@ const CharacterModal = ({ character, onClose }) => {
             alt={`${character.char_name} avatar`}
           />
 
-          <div className="flex gap-4">
+          <div id="class" className="">
             <p>{character.race}</p>
             <p> {character.char_class}</p>
           </div>
           <p>Level: {character.level}</p>
         </div>
 
-        <div className="attributes">
+        <div id="attributes" className="data-container">
           <h2 className="text-2xl">Attributes</h2>
           <p>STR: {character.strength}</p>
           <p>DEX: {character.dexterity}</p>
@@ -29,7 +29,7 @@ const CharacterModal = ({ character, onClose }) => {
           <p>CHA: {character.charisma}</p>
         </div>
 
-        <div className="skills">
+        <div id="skills" className="data-container">
           <h2 className="text-2xl">Skills</h2>
           <p>Acrobatics: {character.acrobatics}</p>
           <p>Animal Handling: {character.animal_handling}</p>
@@ -51,7 +51,7 @@ const CharacterModal = ({ character, onClose }) => {
           <p>Survival: {character.survival}</p>
         </div>
 
-        <div className="personality">
+        <div id="personality" className="data-container">
           <h2 className="text-2xl">Personality</h2>
           <p>Aligment: {character.aligment}</p>
           <p>Personality: {character.personality_traits}</p>
@@ -65,7 +65,7 @@ const CharacterModal = ({ character, onClose }) => {
         </div>
       </div>
 
-      <div className="combat_stats">
+      <div id="combat_stats" className="data-container">
         <h2 className="text-2xl">Combat Stats</h2>
         <p>Max HP: {character.max_hp}</p>
         <p>Current HP: {character.current_hp}</p>
@@ -79,7 +79,7 @@ const CharacterModal = ({ character, onClose }) => {
         <p>Death Save Failure: {character.death_save_failure}</p>
       </div>
 
-      <div className="attack_stats">
+      <div id="attack_stats" className="data-container">
         <h2 className="text-2xl">Attack Stats</h2>
         <p>Weapon: {character.weapon}</p>
         <p>Attack Bonus: {character.atk_bonus}</p>
