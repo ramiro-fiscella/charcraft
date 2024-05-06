@@ -30,7 +30,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 
-  background: linear-gradient(180deg, #09090b 30%, #182925 100%);
+  background: linear-gradient(180deg, #09090b 35%, #182925 70%, #182925 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
