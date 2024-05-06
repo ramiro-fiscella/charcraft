@@ -13,11 +13,11 @@ const NavBar = () => {
       <div className="max-w-[1200px] m-auto flex justify-between items-center">
         <div className="flex gap-4">
           <h1 className="text-2xl leading-4 m-0">
-            <a href="#">🔱</a>
+            <a href="/">🔱</a>
           </h1>
           <ul className="flex gap-4">
             <li>
-              <a href="">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="">Characters</a>

@@ -1,7 +1,7 @@
 // CharacterForm.js
 import React, { useState } from "react";
 import axios from "axios";
-import UploadWidget from "./UploadWidget";
+import UploadWidget from "../services/UploadWidget";
 
 const CharacterForm = ({ closeForm }) => {
   const [character, setCharacter] = useState({

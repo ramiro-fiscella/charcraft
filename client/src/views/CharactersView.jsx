@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card";
-import { CharacterModal } from "../components";
-import { fetchCharacters, getCharacterById } from "../services";
+import { CharacterDetails } from "../views";
+import { Card } from "../components";
+import { fetchCharacters } from "../services";
 
 const CharactersView = () => {
   const [characters, setCharacters] = useState([]);
@@ -42,7 +42,7 @@ const CharactersView = () => {
       </div>
 
       {selectedCharacter && (
-        <CharacterModal
+        <CharacterDetails
           character={selectedCharacter}
           onClose={() => setSelectedCharacter(null)}
         />
