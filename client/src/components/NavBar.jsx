@@ -12,7 +12,7 @@ const NavBar = () => {
     <nav className="w-full fixed top-0 left-0 mx-auto p-4 backdrop-blur-md border-b z-40">
       <div className="max-w-[1200px] m-auto flex justify-between items-center">
         <div className="flex gap-8">
-          <h1 className="text-xl leading-none m-0">🧙CC</h1>
+          <h1 className="text-xl leading-none m-0">🔱CC</h1>
           <ul className="flex gap-4 ">
             <li>
               <a
