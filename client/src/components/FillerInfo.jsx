@@ -4,7 +4,7 @@ const HomeSection = () => {
   return (
     <section className="container mx-auto my-20 py-12 px-4">
       <div className="flex justify-center gap-24 items-start" id="filler">
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-96">
           <h3 className="text-3xl font-bold mb-4">Filler Info</h3>
           <p className="text-lg mb-6 text-pretty">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam cum

@@ -31,11 +31,16 @@
   color: rgba(255, 255, 255, 0.87);
 
   background: linear-gradient(180deg, #09090b 35%, #182925 70%, #182925 100%);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 body {
@@ -135,7 +140,7 @@ button:hover {
 
 #card h3 {
   font-family: "work sans", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
