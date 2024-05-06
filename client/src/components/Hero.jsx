@@ -28,7 +28,7 @@ const Hero = () => {
         data-speed="0.5" // Adjust parallax effect
       />
 
-      <div className="absolute w-[30rem] ml-6 inset-0 flex flex-col items-start justify-center text-center text-white">
+      <div className="absolute w-[30rem] max-w-[1200px] ml-6 inset-8 flex flex-col items-start justify-center text-center text-white">
         <h1 className="text-6xl text-left font-semibold mb-4">
           Forge Your Own Legends
         </h1>
@@ -45,7 +45,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-0 w-full h-44 bg-gradient-to-t from-zinc-950">
-        <div className="absolute right-8 bottom-4 text-right">
+        <div className="absolute  right-12 bottom-8 text-right">
           <p>Art by Andrii Shafetov</p>
           <a
             target="_blank"
