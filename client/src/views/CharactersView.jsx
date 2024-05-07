@@ -31,7 +31,11 @@ const CharactersView = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] w-full m-auto my-12 flex justify-center flex-wrap gap-8">
+      <h2 className="text-center mt-28">Your Characters</h2>
+      <p className="text-center">
+        Click on a character card to see more details and edit.
+      </p>
+      <div className="max-w-[1200px] w-full m-auto my-24 flex justify-center flex-wrap gap-8">
         {characters.map((character) => (
           <Card
             key={character.id}

@@ -48,7 +48,7 @@ const Hero = () => {
           <a
             target="_blank"
             href="https://andriishafetov.artstation.com/"
-            className=" text-emerald-400 underline-offset-2 underline"
+            className=" text-emerald-500 underline-offset-2 underline"
           >
             Link to his website
           </a>
