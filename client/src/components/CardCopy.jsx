@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Proficiency } from "../components";
 
 const CardCopy = ({ character, onClick }) => {
   return (
@@ -62,7 +63,12 @@ const CardCopy = ({ character, onClick }) => {
               </p>
             </div>
 
-            <div></div>
+            <div
+              id="bookmark"
+              className="absolute right-3 bottom-[.9rem] flex justify-center items-center rounded-sm w-10 h-6 border border-neutral-500 border-opacity-70 shadow-sm shadow-gray-950 bg-stone-300"
+            >
+              <Proficiency level={character.level} />
+            </div>
           </div>
         </div>
 

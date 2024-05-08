@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import FillerInfo from "./FillerInfo";
+import Proficiency from "./Proficiency";
 
 import CardCopy from "./CardCopy";
 
@@ -17,4 +18,5 @@ export {
   Footer,
   FillerInfo,
   CardCopy,
+  Proficiency,
 };
