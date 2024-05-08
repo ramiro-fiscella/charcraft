@@ -1,11 +1,11 @@
 import React from "react";
 
-import { FaFacebook, FaInstagram, FaTwitter, FaTwitch } from "react-icons/fa";
+import { FaTree, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-zinc-300 py-8 px-16">
-      <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-stone-600 py-8">
+    <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-stone-200 py-8 px-16">
+      <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b border-stone-600 py-8">
         <div>
           <h6>Games</h6>
           <ul>
@@ -27,13 +27,13 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6>Company</h6>
+          <h6>Contact</h6>
           <ul>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Jobs</li>
-            <li>Press</li>
-            <li>Partners</li>
+            <li>Email</li>
+            <li>Portfolio</li>
+            <li>GitHub</li>
+            <li>LinkedIn</li>
+            <li>+54 2281-349346</li>
           </ul>
         </div>
         <div>
@@ -47,10 +47,8 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-span-2 p-0">
-          <h5 className="text-2xl font-semibold">
-            Subscribe to our newsletter!
-          </h5>
-          <p className="py-4">
+          <h5 className="text-2xl font-medium">Subscribe to our newsletter!</h5>
+          <p className="py-4 font-light">
             The lastest news, articles and resources, sent to your inbox weekly.
           </p>
           <form className="flex flex-col">
@@ -61,15 +59,25 @@ const Footer = () => {
       </div>
 
       <div className="md:flex flex-col max-w-[1240px] px-2 py-4 m-auto items-center justify-between sm:flex-row text-center">
-        <p>
+        <p className="font-light text-white">
           {new Date().getFullYear()} RKF. This website is for study purposes
           only.
         </p>
-        <div className="flex justify-between sm:w-[200px] pt-6 px-12 md:p-0 text-2xl ">
-          <FaFacebook className="hover:text-yellow-500 cursor-pointer" />
-          <FaTwitter className="hover:text-yellow-500 cursor-pointer" />
-          <FaInstagram className="hover:text-yellow-500 cursor-pointer" />
-          <FaTwitch className="hover:text-yellow-500 cursor-pointer" />
+        <div className="flex justify-end gap-6 sm:w-[200px] pt-6 md:p-0 text-2xl ">
+          <a href="https://rfiscella.vercel.app/" target="_blank">
+            <FaTree className="hover:text-yellow-500 text-white" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ramiro-fiscella/"
+            target="_blank"
+          >
+            <FaLinkedin className="hover:text-yellow-500  text-white" />
+          </a>
+
+          <a href="https://github.com/ramiro-fiscella" target="_blank">
+            <FaGithubSquare className="hover:text-yellow-500  text-white" />
+          </a>
         </div>
       </div>
     </footer>
