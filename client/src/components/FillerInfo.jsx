@@ -5,7 +5,7 @@ const HomeSection = () => {
     <section className="mt-32">
       <div className="flex justify-center gap-24 items-start" id="filler">
         <div className="flex flex-col justify-between h-[420px] w-96 z-30">
-          <h3 className="text-3xl mb-4">What is Charcraft?</h3>
+          <h2 className="text-3xl mb-4">What is Charcraft?</h2>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
             eveniet, dolorem error, tempora temporibus dignissimos id nobis

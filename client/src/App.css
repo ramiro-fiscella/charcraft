@@ -9,11 +9,29 @@ button:hover {
   @apply bg-yellow-500 text-emerald-950 border-emerald-950 border font-bold;
 }
 
+#email {
+  @apply py-3 px-6 bg-zinc-950 text-stone-200 tracking-wider border-x-4 border-y border-double border-stone-400 rounded-none;
+}
+
 nav button {
   @apply py-2 px-3 text-[12.8px];
 }
+
 li a:hover {
   @apply text-yellow-500 border-y border-double border-y-yellow-500 transition-all duration-500 cursor-pointer;
+}
+
+footer ul {
+  @apply flex flex-col gap-3 text-sm;
+}
+footer li {
+  @apply text-stone-400;
+}
+footer li:hover {
+  @apply text-yellow-500 border-y-yellow-500 cursor-pointer;
+}
+h6 {
+  @apply font-medium text-xl mb-4;
 }
 
 /* App.css */

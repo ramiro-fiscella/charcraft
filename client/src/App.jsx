@@ -16,6 +16,7 @@ function App() {
 
         <Route path="/about" element={<About />} />
       </Routes>
+      <div className="w-full h-32 pointer-events-none bg-gradient-to-t from-zinc-950"></div>
       <Footer />
     </>
   );

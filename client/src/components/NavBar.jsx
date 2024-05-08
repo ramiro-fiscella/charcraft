@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CharacterForm } from "../components";
+import { GiEmerald } from "react-icons/gi";
 
 const NavBar = () => {
   const [showForm, setShowForm] = useState(false);
@@ -13,7 +14,10 @@ const NavBar = () => {
       <div className="max-w-[1200px] m-auto flex justify-between items-center">
         <div className="flex gap-4">
           <h1 className="text-2xl leading-4 m-0">
-            <a href="/">🔱</a>
+            <a href="/">
+              {/* 🔱 */}
+              <GiEmerald />
+            </a>
           </h1>
           <ul className="flex gap-4">
             <li>
