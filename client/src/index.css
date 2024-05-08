@@ -3,6 +3,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap");
+
 /*
 
 */
@@ -136,14 +138,23 @@ button:hover {
 } */
 /* MIS ESTILOS */
 
+#card {
+  font-family: "Alegreya SC", serif;
+}
+
 #card h1,
 #card h2,
-#card h4 {
+#card h4,
+p {
   text-transform: none;
   font-weight: 600;
-  font-family: "Alegreya SC", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+#card div p {
+  font-family: "Charm", cursive;
+  font-size: 0.9rem;
 }
 
 #card h3 {
