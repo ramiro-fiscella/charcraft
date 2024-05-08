@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CharacterForm } from "../components";
-import { GiEmerald } from "react-icons/gi";
+import { GiEmerald, GiSecretBook } from "react-icons/gi";
 
 const NavBar = () => {
   const [showForm, setShowForm] = useState(false);
@@ -16,7 +16,8 @@ const NavBar = () => {
           <h1 className="text-2xl leading-4 m-0">
             <a href="/">
               {/* 🔱 */}
-              <GiEmerald />
+              {/* <GiEmerald /> */}
+              <GiSecretBook />
             </a>
           </h1>
           <ul className="flex gap-4">

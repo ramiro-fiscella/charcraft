@@ -62,7 +62,7 @@ const Footer = () => {
 
       <div className="md:flex flex-col max-w-[1240px] px-2 py-4 m-auto items-center justify-between sm:flex-row text-center">
         <p>
-          © {new Date().getFullYear()} RKF. This website is for study purposes
+          {new Date().getFullYear()} RKF. This website is for study purposes
           only.
         </p>
         <div className="flex justify-between sm:w-[200px] pt-6 px-12 md:p-0 text-2xl ">

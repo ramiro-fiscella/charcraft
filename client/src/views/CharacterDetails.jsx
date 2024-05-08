@@ -29,7 +29,7 @@ const CharacterDetails = () => {
   }
 
   return (
-    <div className="h-full w-full flex m-auto mt-14 p-5 bg-emerald-950">
+    <div className="h-full w-full flex m-auto mt-14 p-5">
       <div className="max-w-[1200px] m-auto flex flex-col gap-4">
         <div id="character" className="data-container">
           <h1 className="text-3xl">{character.char_name}</h1>
