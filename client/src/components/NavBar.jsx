@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { CharacterForm } from "../components";
 import { GiEmerald, GiSecretBook } from "react-icons/gi";
 
@@ -9,26 +10,37 @@ const NavBar = () => {
     setShowForm(!showForm);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <nav className="w-full fixed top-0 left-0 mx-auto p-3 bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border-b z-40">
       <div className="max-w-[1200px] m-auto flex justify-between items-center">
-        <div className="flex gap-4">
-          <h1 className="text-2xl leading-4 m-0">
-            <a href="/">
-              {/* 🔱 */}
-              {/* <GiEmerald /> */}
+        <div className="flex flex-row justify-between gap-4">
+          <Link to="/" onClick={scrollToTop}>
+            <h1 className="text-2xl leading-4 m-0">
               <GiSecretBook />
-            </a>
-          </h1>
-          <ul className="flex gap-4">
+            </h1>
+          </Link>
+          <ul className="flex items-center gap-4">
             <li>
-              <a href="/">Home</a>
+              <Link to="/" onClick={scrollToTop}>
+                Home
+              </Link>
             </li>
             <li>
-              <a href="/characters">Characters</a>
+              <Link to="/characters" onClick={scrollToTop}>
+                Characters
+              </Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about" onClick={scrollToTop}>
+                About
+              </Link>
             </li>
           </ul>
         </div>
