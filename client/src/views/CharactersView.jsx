@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CharacterDetails } from "../views";
-import { Card } from "../components";
+import { Card, CardCopy } from "../components";
 import { fetchCharacters } from "../services";
 
 const CharactersView = () => {
@@ -37,7 +37,8 @@ const CharactersView = () => {
       </p>
       <div className="max-w-[1200px] w-full m-auto my-24 flex justify-center flex-wrap gap-8">
         {characters.map((character) => (
-          <Card
+          // <CardCopy
+          <CardCopy
             key={character.id}
             character={character}
             onClick={() => handleCardClick(character)}

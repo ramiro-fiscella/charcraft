@@ -6,6 +6,8 @@ import Hero from "./Hero";
 import Footer from "./Footer";
 import FillerInfo from "./FillerInfo";
 
+import CardCopy from "./CardCopy";
+
 export {
   Card,
   CharacterModal,
@@ -14,4 +16,5 @@ export {
   Hero,
   Footer,
   FillerInfo,
+  CardCopy,
 };
