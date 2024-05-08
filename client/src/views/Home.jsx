@@ -7,7 +7,7 @@ const Home = () => {
     <div className="w-full h-full m-auto">
       <Hero />
 
-      <div className="w-full absolute h-80 pointer-events-none bg-gradient-to-b from-zinc-950"></div>
+      <div className="w-full absolute h-48 pointer-events-none bg-gradient-to-b from-zinc-950"></div>
       <FillerInfo />
 
       <CharactersView />

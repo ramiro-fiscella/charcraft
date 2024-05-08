@@ -6,7 +6,7 @@ const Card = ({ character }) => {
     <Link to={`/character/${character.id}`}>
       <div className="card">
         <div
-          className="cursor-pointer w-[220px] h-[330px] rounded-lg  bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border border-yellow-400  border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all duration-200 shadow-lg shadow-zinc-950"
+          className="cursor-pointer w-[220px] h-[330px] rounded-lg  bg-emerald-950 bg-opacity-60 bg-blend-screen backdrop-blur-md border border-yellow-400  border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all duration-200 shadow-lg shadow-zinc-950"
           id="card"
         >
           <div className="m-2 h-[90%] pt-2 px-1 flex-row rounded-md text-white">
