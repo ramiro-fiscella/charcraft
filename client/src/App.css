@@ -54,14 +54,14 @@ h6 {
 /* SKILLS */
 
 #skills ul li {
-  @apply w-full flex flex-row items-center gap-2;
+  @apply w-full flex flex-row items-center justify-start gap-2;
 }
 #skills ul li input {
-  @apply w-5 m-0;
+  @apply m-0 w-4;
 }
 #skills ul li p {
-  @apply ml-4 font-normal text-sm text-left;
+  @apply font-normal text-sm text-left;
 }
 #skills ul li span {
-  @apply w-4 underline underline-offset-2;
+  @apply w-8 underline underline-offset-2;
 }
