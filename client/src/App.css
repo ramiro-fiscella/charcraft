@@ -20,7 +20,6 @@ nav button {
 li a:hover {
   @apply text-yellow-500 border-y border-double border-y-yellow-500 transition-all duration-500 cursor-pointer;
 }
-
 footer ul {
   @apply flex flex-col gap-3 text-sm;
 }
@@ -34,8 +33,20 @@ h6 {
   @apply font-medium text-xl mb-4;
 }
 
-/* App.css */
+/* ATTRIBUTES */
+#attributes ul {
+  @apply w-[5.5rem] flex flex-col justify-start items-start gap-8;
+}
+#attributes ul li {
+  @apply w-full h-full relative py-6 pt-1 flex flex-col justify-start items-center gap-2 border rounded-md;
+}
 
-.data-container {
-  @apply border;
+#attributes ul li p {
+  @apply text-[2.5rem];
+}
+#attributes ul li h5 {
+  @apply text-xs tracking-wide;
+}
+#attributes ul li h6 {
+  @apply absolute top-[80%] px-3 text-black border rounded-2xl bg-neutral-300;
 }

@@ -169,6 +169,10 @@ li a {
   letter-spacing: 1px;
 }
 
+#attributes ul li h6 {
+  font-family: "Work Sans", sans-serif;
+}
+
 @media (max-width: 768px) {
   #filler {
     width: 100%;
