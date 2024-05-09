@@ -35,10 +35,10 @@ h6 {
 
 /* ATTRIBUTES */
 #attributes ul {
-  @apply w-[5.5rem] flex flex-col justify-start items-start gap-8;
+  @apply w-[7.5rem] flex flex-col gap-8 p-4 rounded-lg bg-neutral-500 text-black shadow-2xl shadow-black;
 }
 #attributes ul li {
-  @apply w-full h-full relative py-6 pt-1 flex flex-col justify-start items-center gap-2 border rounded-md;
+  @apply w-full h-full relative py-6 pt-1 flex flex-col justify-start items-center gap-2 border-2 border-black rounded-md bg-neutral-300 shadow-md shadow-neutral-700;
 }
 
 #attributes ul li p {
@@ -48,5 +48,5 @@ h6 {
   @apply text-xs tracking-wide;
 }
 #attributes ul li h6 {
-  @apply absolute top-[80%] px-3 text-black border rounded-2xl bg-neutral-300;
+  @apply absolute top-[85%] px-3  border-2 border-black rounded-2xl bg-neutral-300;
 }
