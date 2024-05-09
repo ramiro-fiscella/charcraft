@@ -31,7 +31,7 @@ const CharacterDetails = () => {
   return (
     <div className="h-full w-full flex m-auto mt-14 p-5">
       <div className="max-w-[1200px] flex flex-wrap justify-evenly gap-4">
-        <div className="w-full flex flex-row items-start gap-4">
+        <div className="w-full flex flex-row items-start gap-4 bg-neutral-500 p-4 rounded-xl">
           <img
             className="w-[200px] h-[200px] object-cover object-center rounded-md"
             src={character.avatar_url}
@@ -47,49 +47,48 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div className="w-[40%] flex flex-col gap-4">
-          <div className="w-full flex flex-row gap-4 ">
-            <div id="attributes" className="w-1/3">
-              <ul>
-                <li>
-                  <h5>Strenght</h5>
-                  <p>{character.strength}</p>
-                  <h6>+2</h6>
-                </li>
+        <div className="w-full flex flex-row flex-wrap justify-center gap-4 ">
+          <div id="attributes">
+            <ul>
+              <li>
+                <h5>Strenght</h5>
+                <p>{character.strength}</p>
+                <h6>+2</h6>
+              </li>
 
-                <li>
-                  <h5>Dexterity</h5>
-                  <p> {character.dexterity}</p>
-                  <h6>+2</h6>
-                </li>
+              <li>
+                <h5>Dexterity</h5>
+                <p> {character.dexterity}</p>
+                <h6>+2</h6>
+              </li>
 
-                <li>
-                  <h5>Constitution</h5>
-                  <p>{character.constitution}</p>
-                  <h6>+2</h6>
-                </li>
+              <li>
+                <h5>Constitution</h5>
+                <p>{character.constitution}</p>
+                <h6>+2</h6>
+              </li>
 
-                <li>
-                  <h5>Intelligence</h5>
-                  <p>{character.intelligence}</p>
-                  <h6>+2</h6>
-                </li>
+              <li>
+                <h5>Intelligence</h5>
+                <p>{character.intelligence}</p>
+                <h6>+2</h6>
+              </li>
 
-                <li>
-                  <h5>Wisdom</h5>
-                  <p>{character.wisdom}</p>
-                  <h6>+2</h6>
-                </li>
+              <li>
+                <h5>Wisdom</h5>
+                <p>{character.wisdom}</p>
+                <h6>+2</h6>
+              </li>
 
-                <li>
-                  <h5>Charisma</h5>
-                  <p>{character.charisma}</p>
-                  <h6>+2</h6>
-                </li>
-              </ul>
-            </div>
-
-            <div id="skills" className="w-2/3 border-2 p-4 rounded-lg">
+              <li>
+                <h5>Charisma</h5>
+                <p>{character.charisma}</p>
+                <h6>+2</h6>
+              </li>
+            </ul>
+          </div>
+          <div className=" flex flex-col gap-4">
+            <div id="skills" className="p-4 rounded-lg">
               <ul className="flex flex-col items-start gap-2">
                 <li>
                   <input type="radio" />
@@ -184,43 +183,43 @@ const CharacterDetails = () => {
               </ul>
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-4">
-          <div id="combat_stats" className="border-2 p-4 rounded-lg">
-            <h2 className="text-2xl">Combat Stats</h2>
-            <p>Max HP: {character.max_hp}</p>
-            <p>Current HP: {character.current_hp}</p>
-            <p>Temp HP: {character.temp_hp}</p>
-            <p>Armor Class: {character.armor_class}</p>
-            <p>Initiative: {character.initiative}</p>
-            <p>Speed: {character.speed}</p>
-            <p>Hit Dice: {character.hit_dice}</p>
-            <p>Total Hit Dice: {character.total_hit_dice}</p>
-            <p>Death Save Success: {character.death_save_success}</p>
-            <p>Death Save Failure: {character.death_save_failure}</p>
+          <div className="flex flex-col gap-4">
+            <div id="combat_stats" className="border-2 p-4 rounded-lg">
+              <h2 className="text-2xl">Combat Stats</h2>
+              <p>Max HP: {character.max_hp}</p>
+              <p>Current HP: {character.current_hp}</p>
+              <p>Temp HP: {character.temp_hp}</p>
+              <p>Armor Class: {character.armor_class}</p>
+              <p>Initiative: {character.initiative}</p>
+              <p>Speed: {character.speed}</p>
+              <p>Hit Dice: {character.hit_dice}</p>
+              <p>Total Hit Dice: {character.total_hit_dice}</p>
+              <p>Death Save Success: {character.death_save_success}</p>
+              <p>Death Save Failure: {character.death_save_failure}</p>
+            </div>
+            <div id="attack_stats" className="border-2 p-4 rounded-lg">
+              <h2 className="text-2xl">Attack Stats</h2>
+              <p>Weapon: {character.weapon}</p>
+              <p>Attack Bonus: {character.atk_bonus}</p>
+              <p>Damage: {character.damage}</p>
+              <p>Damage Type: {character.damage_type}</p>
+              <p>Attack Range: {character.atk_range}</p>
+            </div>
           </div>
-          <div id="attack_stats" className="border-2 p-4 rounded-lg">
-            <h2 className="text-2xl">Attack Stats</h2>
-            <p>Weapon: {character.weapon}</p>
-            <p>Attack Bonus: {character.atk_bonus}</p>
-            <p>Damage: {character.damage}</p>
-            <p>Damage Type: {character.damage_type}</p>
-            <p>Attack Range: {character.atk_range}</p>
-          </div>
-        </div>
 
-        <div id="personality" className="w-[30%] border-2 rounded-lg p-4">
-          <h2 className="text-2xl">Personality</h2>
-          <p>Aligment: {character.aligment}</p>
-          <p>Personality: {character.personality_traits}</p>
-          <p>Ideals: {character.ideals}</p>
-          <p>Bonds: {character.bonds}</p>
-          <p>Flaws: {character.flaws}</p>
-          <p>Quote: {character.quote}</p>
-          <p>Features_adn_traits: {character.features_adn_traits}</p>
-          <p>Languajes: {character.languajes}</p>
-          <p>Other_proficiencies: {character.other_proficiencies}</p>
+          <div id="personality" className="w-[30%] border-2 rounded-lg p-4">
+            <h2 className="text-2xl">Personality</h2>
+            <p>Aligment: {character.aligment}</p>
+            <p>Personality: {character.personality_traits}</p>
+            <p>Ideals: {character.ideals}</p>
+            <p>Bonds: {character.bonds}</p>
+            <p>Flaws: {character.flaws}</p>
+            <p>Quote: {character.quote}</p>
+            <p>Features_adn_traits: {character.features_adn_traits}</p>
+            <p>Languajes: {character.languajes}</p>
+            <p>Other_proficiencies: {character.other_proficiencies}</p>
+          </div>
         </div>
       </div>
     </div>
