@@ -30,7 +30,7 @@ const CharacterDetails = () => {
 
   return (
     <div className="h-full w-full flex m-auto mt-14 p-5">
-      <div className="max-w-[1200px] flex flex-wrap gap-4">
+      <div className="max-w-[1200px] flex flex-wrap justify-evenly gap-4">
         <div className="w-full flex flex-row items-start gap-4">
           <img
             className="w-[200px] h-[200px] object-cover object-center rounded-md"
@@ -47,8 +47,8 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div className="w-1/3 flex flex-col gap-4">
-          <div className="w-full flex flex-row gap-2 ">
+        <div className="w-[40%] flex flex-col gap-4">
+          <div className="w-full flex flex-row gap-4 ">
             <div id="attributes" className="w-1/3">
               <ul>
                 <li>
@@ -186,7 +186,7 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div className="w- 1/3 flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <div id="combat_stats" className="border-2 p-4 rounded-lg">
             <h2 className="text-2xl">Combat Stats</h2>
             <p>Max HP: {character.max_hp}</p>
@@ -210,7 +210,7 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div id="personality" className="w-[30%] border ">
+        <div id="personality" className="w-[30%] border-2 rounded-lg p-4">
           <h2 className="text-2xl">Personality</h2>
           <p>Aligment: {character.aligment}</p>
           <p>Personality: {character.personality_traits}</p>
