@@ -31,7 +31,7 @@ const CharacterDetails = () => {
   return (
     <div className="h-full w-full flex m-auto mt-14 p-5">
       <div className="max-w-[1200px] flex flex-wrap gap-4">
-        <div className="w-[1200px] flex flex-row items-start gap-4">
+        <div className="w-full flex flex-row items-start gap-4">
           <img
             className="w-[200px] h-[200px] object-cover object-center rounded-md"
             src={character.avatar_url}
@@ -187,7 +187,7 @@ const CharacterDetails = () => {
         </div>
 
         <div className="w- 1/3 flex flex-col gap-4">
-          <div id="combat_stats" className="data-container">
+          <div id="combat_stats" className="border-2 p-4 rounded-lg">
             <h2 className="text-2xl">Combat Stats</h2>
             <p>Max HP: {character.max_hp}</p>
             <p>Current HP: {character.current_hp}</p>
@@ -200,7 +200,7 @@ const CharacterDetails = () => {
             <p>Death Save Success: {character.death_save_success}</p>
             <p>Death Save Failure: {character.death_save_failure}</p>
           </div>
-          <div id="attack_stats" className="data-container">
+          <div id="attack_stats" className="border-2 p-4 rounded-lg">
             <h2 className="text-2xl">Attack Stats</h2>
             <p>Weapon: {character.weapon}</p>
             <p>Attack Bonus: {character.atk_bonus}</p>
@@ -210,7 +210,7 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div id="personality" className="h-1/3 border ">
+        <div id="personality" className="w-[30%] border ">
           <h2 className="text-2xl">Personality</h2>
           <p>Aligment: {character.aligment}</p>
           <p>Personality: {character.personality_traits}</p>
