@@ -38,7 +38,7 @@ h6 {
   @apply w-[7.5rem] flex flex-col gap-8 p-4 rounded-lg bg-neutral-500 text-black shadow-2xl shadow-black;
 }
 #attributes ul li {
-  @apply w-full h-full relative py-6 pt-1 flex flex-col justify-start items-center gap-2 border-2 border-black rounded-md bg-neutral-300 shadow-md shadow-neutral-700;
+  @apply w-full h-full relative pb-5 pt-1 flex flex-col justify-start items-center gap-2 border-2 border-black rounded-md bg-neutral-300 shadow-md shadow-neutral-700;
 }
 
 #attributes ul li p {
@@ -49,4 +49,19 @@ h6 {
 }
 #attributes ul li h6 {
   @apply absolute top-[85%] px-3  border-2 border-black rounded-2xl bg-neutral-300;
+}
+
+/* SKILLS */
+
+#skills ul li {
+  @apply w-full flex flex-row items-center gap-2;
+}
+#skills ul li input {
+  @apply w-5 m-0;
+}
+#skills ul li p {
+  @apply ml-4 font-normal text-sm text-left;
+}
+#skills ul li span {
+  @apply w-4 underline underline-offset-2;
 }
