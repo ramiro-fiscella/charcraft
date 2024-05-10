@@ -36,7 +36,7 @@ footer h6 {
 /* ATTRIBUTES */
 
 #attributes ul li {
-  @apply flex flex-col gap-1 pt-1 uppercase font-medium text-xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+  @apply flex flex-col gap-1 pt-1 uppercase font-medium text-2xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
 }
 #attributes ul li h5,
 #combat_stats ul li h5 {
@@ -45,12 +45,19 @@ footer h6 {
 
 #attributes ul li p,
 #combat_stats ul li p {
-  @apply text-3xl font-medium;
+  @apply text-3xl font-normal;
 }
 #attributes ul li h6 {
   @apply w-full text-center font-serif font-semibold text-xl pb-1 bg-neutral-800 bg-opacity-50 rounded-b-xl;
 }
 
 #combat_stats ul li {
-  @apply flex flex-col py-2 px-1 uppercase font-medium text-xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+  @apply flex flex-col py-2 px-1 uppercase font-medium text-2xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+}
+
+#skills ul li {
+  @apply w-full flex flex-row justify-between py-2 border-b border-neutral-800;
+}
+#skills ul li p {
+  @apply text-sm font-light tracking-wide;
 }

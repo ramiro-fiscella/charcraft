@@ -29,11 +29,11 @@ const CharacterDetails = () => {
   return (
     <div
       id="character_details"
-      className="h-full w-full flex m-auto mt-[74px] text-neutral-200 "
+      className="h-full w-full flex m-auto pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
     >
       <div className="max-w-[1200px] gap-4 items-start">
-        <div className="flex flex-row justify-between items-start gap-4 bg-neutral-900 p-2">
-          <div className="flex flex-row gap-4">
+        <div className="flex flex-row justify-between items-start gap-4 bg-neutral-900 border-b border-neutral-800 p-2 ">
+          <div className="flex flex-row gap-2">
             <img
               className="w-20 h-20 object-cover object-center rounded-md"
               src={character.avatar_url}
@@ -41,13 +41,14 @@ const CharacterDetails = () => {
             />
 
             <div id="class" className="flex flex-col">
-              <h1 className="text-2xl capitalize tracking-normal ">
+              <h1 className="text-xl capitalize tracking-normal leading-4">
                 {character.char_name}
               </h1>
-              <p className="font-condensed text-sm font-light tracking-wide">
+
+              <p className="font-condensed text-xs font-light tracking-wide text-neutral-400">
                 {character.race} - {character.char_class}
               </p>
-              <p className="font-condensed text-sm font-light tracking-wide">
+              <p className="font-condensed text-xs font-light tracking-wide ">
                 LVL {character.level}
               </p>
             </div>
@@ -64,7 +65,7 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div className=" bg-neutral-900 p-2">
+        <div className=" p-2">
           <div id="combat_stats">
             <ul className="m-2 grid grid-cols-3 gap-4 text-center tracking-tight">
               <li>
@@ -83,151 +84,135 @@ const CharacterDetails = () => {
           </div>
         </div>
 
-        <div className=" bg-neutral-900 p-2">
-          <div className="mx-2 grid grid-cols-2 gap-2 text-left text-sm *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:px-1 *:rounded">
+        <div className=" p-2">
+          <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
             <p>Hit Dice: {character.hit_dice}</p>
             <p>Total Hit Dice: {character.total_hit_dice}</p>
           </div>
         </div>
 
-        <div id="attributes" className=" bg-neutral-900 p-2 ">
+        <div id="attributes" className=" p-2">
           <ul className="m-2 grid grid-rows-2 grid-cols-3 gap-4 text-center tracking-tight">
             <li>
               <h5>Strenght</h5>
-              <p>{character.strength}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.strength}</h6>
             </li>
 
             <li>
               <h5>Dexterity</h5>
-              <p> {character.dexterity}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.dexterity}</h6>
             </li>
 
             <li>
               <h5>Constitution</h5>
-              <p>{character.constitution}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.constitution}</h6>
             </li>
 
             <li>
               <h5>Intelligence</h5>
-              <p>{character.intelligence}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.intelligence}</h6>
             </li>
 
             <li>
               <h5>Wisdom</h5>
-              <p>{character.wisdom}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.wisdom}</h6>
             </li>
 
             <li>
               <h5>Charisma</h5>
-              <p>{character.charisma}</p>
-              <h6>+2</h6>
+              <p>+2</p>
+              <h6>{character.charisma}</h6>
             </li>
           </ul>
         </div>
 
-        <div id="skills" className="p-4 rounded-lg col-span-2">
-          <ul className="flex flex-col items-start gap-2">
-            <h2 className="text-2xl">Skills</h2>
+        <div id="skills" className="p-2">
+          <ul className="m-2 mt-0 p-3 shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Acrobatics {character.acrobatics}</p>
+              <p>Acrobatics</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Animal Handling {character.animal_handling}</p>
+              <p>Animal Handling</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Arcana {character.arcana}</p>
+              <p>Arcana</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Athletics {character.athletics}</p>
+              <p>Athletics</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Deception {character.deception}</p>
+              <p>Deception</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>History {character.history}</p>
+              <p>History</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Insight {character.insight}</p>
+              <p>Insight</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Intimidation {character.intimidation}</p>
+              <p>Intimidation</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Investigation {character.investigation}</p>
+              <p>Investigation</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Medicine {character.medicine}</p>
+              <p>Medicine</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Nature {character.nature}</p>
+              <p>Nature</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Perception {character.perception}</p>
+              <p>Perception</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Performance {character.performance}</p>
+              <p>Performance</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Persuasion {character.persuasion}</p>
+              <p>Persuasion</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Religion {character.religion}</p>
+              <p>Religion</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Sleight of Hand {character.sleight_of_hand}</p>
+              <p>Sleight of Hand</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Stealth {character.stealth}</p>
+              <p>Stealth</p>
+              <span>{character.strength}</span>
             </li>
             <li>
-              <input type="radio" />
-              <span>+2</span>
-              <p>Survival {character.survival}</p>
+              <p>Survival</p>
+              <span>{character.strength}</span>
             </li>
           </ul>
         </div>
 
-        <div className="flex flex-col gap-4 col-span-3 p-4  bg-neutral-500 rounded-xl shadow-2xl shadow-black">
-          <div id="attack_stats" className="border-2 rounded-lg p-4">
+        <div className="p-2">
+          <div
+            id="attack_stats"
+            className="m-2 mt-0 p-3 shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
+          >
             <h2 className="text-2xl">Attack Stats</h2>
             <p>Weapon: {character.weapon}</p>
             <p>Attack Bonus: {character.atk_bonus}</p>
@@ -235,8 +220,13 @@ const CharacterDetails = () => {
             <p>Damage Type: {character.damage_type}</p>
             <p>Attack Range: {character.atk_range}</p>
           </div>
+        </div>
 
-          <div id="personality" className="flex flex-col">
+        <div className="p-2">
+          <div
+            id="personality"
+            className="m-2 mt-0 p-3 shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
+          >
             <h2 className="text-2xl">Personality</h2>
             <p>Aligment: {character.aligment}</p>
             <p>Personality: {character.personality_traits}</p>
