@@ -84,6 +84,21 @@ const CharacterDetails = () => {
           </div>
         </div>
 
+        <div className="p-2">
+          <div
+            id="attack_stats"
+            className="m-2 mt-0 p-3 flex justify-between  shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
+          >
+            <p>{character.weapon}</p>
+            <p>+{character.atk_bonus}</p>
+            <div>
+              <p>{character.damage}</p>
+              <p>{character.damage_type}</p>
+            </div>
+            <p>{character.atk_range} ft.</p>
+          </div>
+        </div>
+
         <div className=" p-2">
           <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
             <p>Hit Dice: {character.hit_dice}</p>
@@ -206,20 +221,6 @@ const CharacterDetails = () => {
               <span>{character.strength}</span>
             </li>
           </ul>
-        </div>
-
-        <div className="p-2">
-          <div
-            id="attack_stats"
-            className="m-2 mt-0 p-3 shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
-          >
-            <h2 className="text-2xl">Attack Stats</h2>
-            <p>Weapon: {character.weapon}</p>
-            <p>Attack Bonus: {character.atk_bonus}</p>
-            <p>Damage: {character.damage}</p>
-            <p>Damage Type: {character.damage_type}</p>
-            <p>Attack Range: {character.atk_range}</p>
-          </div>
         </div>
 
         <div className="p-2">
