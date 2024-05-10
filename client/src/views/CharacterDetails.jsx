@@ -31,10 +31,10 @@ const CharacterDetails = () => {
   return (
     <div className="h-full w-full flex m-auto mt-14 p-5">
       <div className="w-full flex flex-row flex-wrap justify-center gap-4 ">
-        <div className="max-w-[1200px] grid grid-cols-6 gap-4 items-start">
-          <div className="h-full flex flex-row col-span-3 items-start gap-4 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
+        <div className="max-w-[1200px] grid grid-cols-6 grid-flow-rows-6 grid-flow-dense gap-4 items-start">
+          <div className="flex flex-row col-span-3 row-span-1 items-start gap-4 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
             <img
-              className="w-[200px] h-[200px] object-cover object-center rounded-md"
+              className="w-32 h-32 object-cover object-center rounded-md"
               src={character.avatar_url}
               alt={`${character.char_name} avatar`}
             />
@@ -48,12 +48,11 @@ const CharacterDetails = () => {
             </div>
           </div>
 
-          <div className="h-full col-span-3 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
+          <div className="h-full col-span-3 row-span-1 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
             <div
               id="combat_stats"
-              className="h-full flex flex-row flex-wrap items-start justify-between gap-4"
+              className="h-full flex flex-row items-start justify-between gap-4"
             >
-              <h2 className="text-2xl">Combat Stats</h2>
               <div>
                 <p>Max HP: {character.max_hp}</p>
                 <p>Current HP: {character.current_hp}</p>
