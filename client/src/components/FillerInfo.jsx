@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeSection = () => {
   return (
-    <section className="mt-32 mx-8   bg-black bg-opacity-30 p-4 rounded-xl md:mx-16 md:bg-transparent">
+    <section className="mt-32 mx-8">
       <div
         className="flex justify-center gap-12 lg:gap-24 items-start "
         id="filler"

@@ -28,8 +28,8 @@ const Hero = () => {
         data-speed="0.5" // Adjust parallax effect
       />
 
-      <div className="absolute w-[30rem] max-w-[1200px] ml-6 inset-8 flex flex-col items-start justify-center text-center text-white">
-        <h1 className="text-6xl text-left font-semibold mb-4">
+      <div className="absolute md:w-[30rem] max-w-[1200px] md:ml-6 inset-8 flex flex-col items-start justify-center text-center text-white">
+        <h1 className="text-4xl sm:text-6xl text-left font-semibold mb-4">
           Forge Your Own Legends
         </h1>
         <p className="text-xl text-left leading-6 font-medium mb-6">
