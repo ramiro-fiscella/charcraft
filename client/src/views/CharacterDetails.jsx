@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import { getCharacterById } from "../services";
-
 const CharacterDetails = () => {
   const { id } = useParams(); // Obtiene el ID del parámetro de la URL
   const [character, setCharacter] = useState(null);
@@ -29,213 +27,226 @@ const CharacterDetails = () => {
   }
 
   return (
-    <div className="h-full w-full flex m-auto mt-14 p-5">
-      <div className="w-full flex flex-row flex-wrap justify-center gap-4 ">
-        <div className="max-w-[1200px] grid grid-cols-6 grid-flow-rows-6 grid-flow-dense gap-4 items-start">
-          <div className="flex flex-row col-span-3 row-span-1 items-start gap-4 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
+    <div
+      id="character_details"
+      className="h-full w-full flex m-auto mt-[74px] text-neutral-200 "
+    >
+      <div className="max-w-[1200px] gap-4 items-start">
+        <div className="flex flex-row justify-between items-start gap-4 bg-neutral-900 p-2">
+          <div className="flex flex-row gap-4">
             <img
-              className="w-32 h-32 object-cover object-center rounded-md"
+              className="w-20 h-20 object-cover object-center rounded-md"
               src={character.avatar_url}
               alt={`${character.char_name} avatar`}
             />
 
             <div id="class" className="flex flex-col">
-              <h1 className="text-3xl mb-2">{character.char_name}</h1>
-              <p>
+              <h1 className="text-2xl capitalize tracking-normal ">
+                {character.char_name}
+              </h1>
+              <p className="font-condensed text-sm font-light tracking-wide">
                 {character.race} - {character.char_class}
               </p>
-              <p>Level {character.level}</p>
+              <p className="font-condensed text-sm font-light tracking-wide">
+                LVL {character.level}
+              </p>
             </div>
           </div>
 
-          <div className="h-full col-span-3 row-span-1 bg-neutral-500 p-4 rounded-xl shadow-2xl shadow-black">
-            <div
-              id="combat_stats"
-              className="h-full flex flex-row items-start justify-between gap-4"
-            >
-              <div>
-                <p>Max HP: {character.max_hp}</p>
-                <p>Current HP: {character.current_hp}</p>
-                <p>Temp HP: {character.temp_hp}</p>
-              </div>
-
-              <div>
-                <p>Armor Class: {character.armor_class}</p>
-                <p>Initiative: {character.initiative}</p>
-                <p>Speed: {character.speed}</p>
-              </div>
-
-              <div>
-                <div>
-                  <p>Hit Dice: {character.hit_dice}</p>
-                  <p>Total Hit Dice: {character.total_hit_dice}</p>
-                </div>
-                <div>
-                  <p>Death Save Success: {character.death_save_success}</p>
-                  <p>Death Save Failure: {character.death_save_failure}</p>
-                </div>
-              </div>
-            </div>
+          <div
+            id="health"
+            className="flex flex-col justify-center items-center font-condensed"
+          >
+            <p className="text-xs uppercase">Hit Points</p>
+            <p className="text-xl">
+              {character.current_hp}/{character.max_hp}
+            </p>
           </div>
+        </div>
 
-          <div id="attributes" className="col-span-1">
-            <ul>
+        <div className=" bg-neutral-900 p-2">
+          <div id="combat_stats">
+            <ul className="m-2 grid grid-cols-3 gap-4 text-center tracking-tight">
               <li>
-                <h5>Strenght</h5>
-                <p>{character.strength}</p>
-                <h6>+2</h6>
+                <h5>Armor Class</h5>
+                <p>{character.armor_class}</p>
               </li>
-
               <li>
-                <h5>Dexterity</h5>
-                <p> {character.dexterity}</p>
-                <h6>+2</h6>
+                <h5>Initiative</h5>
+                <p>{character.initiative}</p>
               </li>
-
               <li>
-                <h5>Constitution</h5>
-                <p>{character.constitution}</p>
-                <h6>+2</h6>
-              </li>
-
-              <li>
-                <h5>Intelligence</h5>
-                <p>{character.intelligence}</p>
-                <h6>+2</h6>
-              </li>
-
-              <li>
-                <h5>Wisdom</h5>
-                <p>{character.wisdom}</p>
-                <h6>+2</h6>
-              </li>
-
-              <li>
-                <h5>Charisma</h5>
-                <p>{character.charisma}</p>
-                <h6>+2</h6>
+                <h5>Speed</h5>
+                <p>{character.speed}</p>
               </li>
             </ul>
           </div>
+        </div>
 
-          <div id="skills" className="p-4 rounded-lg col-span-2">
-            <ul className="flex flex-col items-start gap-2">
-              <h2 className="text-2xl">Skills</h2>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Acrobatics {character.acrobatics}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Animal Handling {character.animal_handling}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Arcana {character.arcana}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Athletics {character.athletics}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Deception {character.deception}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>History {character.history}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Insight {character.insight}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Intimidation {character.intimidation}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Investigation {character.investigation}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Medicine {character.medicine}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Nature {character.nature}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Perception {character.perception}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Performance {character.performance}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Persuasion {character.persuasion}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Religion {character.religion}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Sleight of Hand {character.sleight_of_hand}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Stealth {character.stealth}</p>
-              </li>
-              <li>
-                <input type="radio" />
-                <span>+2</span>
-                <p>Survival {character.survival}</p>
-              </li>
-            </ul>
+        <div className=" bg-neutral-900 p-2">
+          <div className="mx-2 grid grid-cols-2 gap-2 text-left text-sm *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:px-1 *:rounded">
+            <p>Hit Dice: {character.hit_dice}</p>
+            <p>Total Hit Dice: {character.total_hit_dice}</p>
+          </div>
+        </div>
+
+        <div id="attributes" className=" bg-neutral-900 p-2 ">
+          <ul className="m-2 grid grid-rows-2 grid-cols-3 gap-4 text-center tracking-tight">
+            <li>
+              <h5>Strenght</h5>
+              <p>{character.strength}</p>
+              <h6>+2</h6>
+            </li>
+
+            <li>
+              <h5>Dexterity</h5>
+              <p> {character.dexterity}</p>
+              <h6>+2</h6>
+            </li>
+
+            <li>
+              <h5>Constitution</h5>
+              <p>{character.constitution}</p>
+              <h6>+2</h6>
+            </li>
+
+            <li>
+              <h5>Intelligence</h5>
+              <p>{character.intelligence}</p>
+              <h6>+2</h6>
+            </li>
+
+            <li>
+              <h5>Wisdom</h5>
+              <p>{character.wisdom}</p>
+              <h6>+2</h6>
+            </li>
+
+            <li>
+              <h5>Charisma</h5>
+              <p>{character.charisma}</p>
+              <h6>+2</h6>
+            </li>
+          </ul>
+        </div>
+
+        <div id="skills" className="p-4 rounded-lg col-span-2">
+          <ul className="flex flex-col items-start gap-2">
+            <h2 className="text-2xl">Skills</h2>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Acrobatics {character.acrobatics}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Animal Handling {character.animal_handling}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Arcana {character.arcana}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Athletics {character.athletics}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Deception {character.deception}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>History {character.history}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Insight {character.insight}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Intimidation {character.intimidation}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Investigation {character.investigation}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Medicine {character.medicine}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Nature {character.nature}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Perception {character.perception}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Performance {character.performance}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Persuasion {character.persuasion}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Religion {character.religion}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Sleight of Hand {character.sleight_of_hand}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Stealth {character.stealth}</p>
+            </li>
+            <li>
+              <input type="radio" />
+              <span>+2</span>
+              <p>Survival {character.survival}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col gap-4 col-span-3 p-4  bg-neutral-500 rounded-xl shadow-2xl shadow-black">
+          <div id="attack_stats" className="border-2 rounded-lg p-4">
+            <h2 className="text-2xl">Attack Stats</h2>
+            <p>Weapon: {character.weapon}</p>
+            <p>Attack Bonus: {character.atk_bonus}</p>
+            <p>Damage: {character.damage}</p>
+            <p>Damage Type: {character.damage_type}</p>
+            <p>Attack Range: {character.atk_range}</p>
           </div>
 
-          <div className="flex flex-col gap-4 col-span-3 p-4  bg-neutral-500 rounded-xl shadow-2xl shadow-black">
-            <div id="attack_stats" className="border-2 rounded-lg p-4">
-              <h2 className="text-2xl">Attack Stats</h2>
-              <p>Weapon: {character.weapon}</p>
-              <p>Attack Bonus: {character.atk_bonus}</p>
-              <p>Damage: {character.damage}</p>
-              <p>Damage Type: {character.damage_type}</p>
-              <p>Attack Range: {character.atk_range}</p>
-            </div>
-
-            <div id="personality" className="flex flex-col">
-              <h2 className="text-2xl">Personality</h2>
-              <p>Aligment: {character.aligment}</p>
-              <p>Personality: {character.personality_traits}</p>
-              <p>Ideals: {character.ideals}</p>
-              <p>Bonds: {character.bonds}</p>
-              <p>Flaws: {character.flaws}</p>
-              <p>Quote: {character.quote}</p>
-              <p>Features_adn_traits: {character.features_adn_traits}</p>
-              <p>Languajes: {character.languajes}</p>
-              <p>Other_proficiencies: {character.other_proficiencies}</p>
-            </div>
+          <div id="personality" className="flex flex-col">
+            <h2 className="text-2xl">Personality</h2>
+            <p>Aligment: {character.aligment}</p>
+            <p>Personality: {character.personality_traits}</p>
+            <p>Ideals: {character.ideals}</p>
+            <p>Bonds: {character.bonds}</p>
+            <p>Flaws: {character.flaws}</p>
+            <p>Quote: {character.quote}</p>
+            <p>Features_adn_traits: {character.features_adn_traits}</p>
+            <p>Languajes: {character.languajes}</p>
+            <p>Other_proficiencies: {character.other_proficiencies}</p>
           </div>
         </div>
       </div>

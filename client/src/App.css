@@ -29,69 +29,28 @@ footer li {
 footer li:hover {
   @apply text-yellow-500 border-y-yellow-500 cursor-pointer;
 }
-h6 {
+footer h6 {
   @apply font-medium text-xl mb-4;
 }
 
 /* ATTRIBUTES */
-#attributes ul {
-  @apply flex flex-col  gap-6 p-4 pb-8 rounded-lg bg-neutral-500 text-black shadow-2xl shadow-black;
-}
+
 #attributes ul li {
-  @apply h-full m-2 mx-3 relative pb-5 pt-1 flex flex-col justify-start items-center gap-2 rounded-md bg-neutral-300 shadow-lg shadow-neutral-700;
+  @apply flex flex-col gap-1 pt-1 uppercase font-medium text-xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+}
+#attributes ul li h5,
+#combat_stats ul li h5 {
+  @apply font-condensed text-neutral-400;
 }
 
-#attributes ul li p {
-  @apply text-[2.5rem];
-}
-#attributes ul li h5 {
-  @apply text-xs tracking-wide;
+#attributes ul li p,
+#combat_stats ul li p {
+  @apply text-3xl font-medium;
 }
 #attributes ul li h6 {
-  @apply absolute top-[85%] px-3  rounded-2xl bg-neutral-300 shadow-lg shadow-neutral-700;
+  @apply w-full text-center font-serif font-semibold text-xl pb-1 bg-neutral-800 bg-opacity-50 rounded-b-xl;
 }
 
-/* SKILLS */
-
-#skills {
-  @apply h-min pb-6 rounded-lg bg-neutral-500 shadow-2xl shadow-black;
-}
-#skills ul {
-  @apply p-4 pb-6 rounded-lg bg-neutral-300 text-black shadow-lg  shadow-neutral-700;
-}
-
-#skills ul li {
-  @apply w-full flex flex-row items-center justify-start gap-2;
-}
-
-#skills ul li input {
-  @apply m-0 w-4;
-}
-#skills ul li p {
-  @apply font-normal text-sm text-left;
-}
-#skills ul li span {
-  @apply w-8 underline underline-offset-2 text-center;
-}
-
-#combat_stats {
-  @apply p-4 pb-6 rounded-lg bg-neutral-300 text-black shadow-lg  shadow-neutral-700;
-}
-#combat_stats p {
-  @apply font-normal tracking-tight;
-}
-
-#attack_stats {
-  @apply p-4 pb-6 rounded-lg bg-neutral-300 text-black shadow-lg  shadow-neutral-700;
-}
-#attack_stats p {
-  @apply font-normal tracking-tight;
-}
-
-#personality {
-  @apply p-4 pb-6 rounded-lg bg-neutral-300 text-black shadow-lg  shadow-neutral-700;
-}
-
-#personality p {
-  @apply font-normal tracking-tight;
+#combat_stats ul li {
+  @apply flex flex-col py-2 px-1 uppercase font-medium text-xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
 }
