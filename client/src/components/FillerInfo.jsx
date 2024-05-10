@@ -2,8 +2,11 @@ import React from "react";
 
 const HomeSection = () => {
   return (
-    <section className="mt-32 mx-8 ">
-      <div className="flex justify-center gap-24 items-start " id="filler">
+    <section className="mt-32 mx-8   bg-black bg-opacity-30 p-4 rounded-xl md:mx-16 md:bg-transparent">
+      <div
+        className="flex justify-center gap-12 lg:gap-24 items-start "
+        id="filler"
+      >
         <div className="flex flex-col justify-evenly h-[420px] w-96 text-left z-30  rounded-xl">
           <h2 className="text-3xl mb-4">What is Charcraft?</h2>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
