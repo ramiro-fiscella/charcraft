@@ -29,7 +29,7 @@ const Proficiency = ({ level }) => {
       case 20:
         return 6;
       default:
-        return 0; // En caso de que el nivel sea inválido
+        return 2; // En caso de que el nivel sea inválido
     }
   };
 

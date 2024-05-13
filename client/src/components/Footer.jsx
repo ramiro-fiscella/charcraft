@@ -1,22 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { FaTree, FaLinkedin, FaGithubSquare } from "react-icons/fa";
+import { FaTree, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-stone-200 py-8 px-16">
-      <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b border-stone-600 py-8">
-        <div>
-          <h6>Games</h6>
-          <ul>
-            <li>Marketing</li>
-            <li>Analytics</li>
-            <li>Commerce</li>
-            <li>Data</li>
-            <li>Shipping</li>
-          </ul>
-        </div>
-
+    <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-stone-200 py-8 px-4  lg:px-16">
+      <div className="max-w-[1240px] mx-auto grid grid-cols-2 gap-y-12 md:grid-cols-5 border-b border-stone-600 py-8">
         <div>
           <h6>Support</h6>
           <ul>

@@ -36,11 +36,11 @@ footer h6 {
 /* ATTRIBUTES */
 
 #attributes ul li {
-  @apply flex flex-col gap-1 pt-1 uppercase font-medium text-2xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+  @apply flex flex-col gap-1 pt-1 uppercase font-medium text-2xs tracking-wide shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
 }
 #attributes ul li h5,
 #combat_stats ul li h5 {
-  @apply font-condensed text-neutral-400;
+  @apply font-condensed text-neutral-400 text-xs;
 }
 
 #attributes ul li p,
@@ -52,12 +52,26 @@ footer h6 {
 }
 
 #combat_stats ul li {
-  @apply flex flex-col py-2 px-1 uppercase font-medium text-2xs tracking-wide shadow-xl shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
+  @apply flex flex-col py-2 px-1 uppercase font-medium tracking-wide shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800;
 }
 
 #skills ul li {
-  @apply w-full flex flex-row justify-between py-2 border-b border-neutral-800;
+  @apply w-full flex flex-row justify-between items-center py-2 border-b border-neutral-800;
 }
 #skills ul li p {
-  @apply text-sm font-light tracking-wide;
+  @apply text-sm font-light w-full  tracking-wide;
+}
+#skills ul li input {
+  @apply w-4 m-0;
+}
+
+.stat_mod {
+  @apply text-neutral-400 mx-4 w-1/4 uppercase font-condensed text-sm;
+}
+
+#personality ul li {
+  @apply w-full flex flex-col justify-between items-start py-2 border-b border-neutral-800;
+}
+#personality ul li p {
+  @apply text-sm font-light w-full  tracking-wide;
 }
