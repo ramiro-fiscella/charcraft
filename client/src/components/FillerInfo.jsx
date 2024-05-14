@@ -1,23 +1,29 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeSection = () => {
   return (
-    <section className="mt-32 mx-8">
+    <section className="my-32 mx-8">
       <div
         className="flex justify-center gap-12 lg:gap-24 items-start "
         id="filler"
       >
         <div className="flex flex-col justify-evenly h-[420px] w-96 text-left z-30  rounded-xl">
-          <h2 className="text-3xl mb-4">What is Charcraft?</h2>
+          <h2 className="text-3xl mb-4">Qué es Charcraft?</h2>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            eveniet, dolorem error, tempora temporibus dignissimos id nobis
-            veniam eaque adipisci provident corporis reprehenderit? Odit,
-            placeat reiciendis dolores dolor quasi id qui nulla cupiditate
-            voluptate voluptates sint eaque totam nostrum fugit, perspiciatis
-            ratione rem. Necessitatibus iure autem itaque enim ex adipisci.
+            Charcraft es un proyecto open source que (por el momento) permite
+            crear hojas de personajes para el juego de rol Dungeons & Dragons 5ª
+            edición de manera sencilla.
+            <br />
+            <br />
+            El proyecto se encuentra en sus primeras etapas y aun queda mucho
+            trabajo por hacer.
           </p>
-          <button className="shadow-md shadow-zinc-950">View More</button>
+          <Link to="/about">
+            <button className="w-full shadow-md shadow-zinc-950">
+              Ver mas
+            </button>
+          </Link>
         </div>
 
         <div>

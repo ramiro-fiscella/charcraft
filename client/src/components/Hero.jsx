@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 const Hero = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const parallaxElements = document.querySelectorAll(".parallax");
+      const parallaxElements = document.querySelectorAll('.parallax');
       parallaxElements.forEach((element) => {
-        const speed = parseFloat(element.getAttribute("data-speed"));
+        const speed = parseFloat(element.getAttribute('data-speed'));
         element.style.transform = `translateY(${scrollTop * speed}px)`;
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -28,13 +28,13 @@ const Hero = () => {
         data-speed="0.5" // Adjust parallax effect
       />
 
-      <div className="absolute md:w-[30rem] max-w-[1200px] md:ml-6 inset-8 flex flex-col items-start justify-center text-center text-white">
+      <div className="absolute md:w-[30rem] max-w-[1200px] md:ml-6 inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white">
         <h1 className="text-4xl sm:text-6xl text-left font-semibold mb-4">
           Forge Your Own Legends
         </h1>
-        <p className="text-xl text-left leading-6 font-medium mb-6">
+        <p className="text-xl text-left leading-6 font-normal mb-6">
           There can't be a good adventure if there are no good characters.
-          Unleash your creativity with our{" "}
+          Unleash your creativity with our{' '}
           <span className="text-yellow-400">
             customizable character sheets!
           </span>
@@ -43,12 +43,12 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-0 w-full h-44 bg-gradient-to-t from-zinc-950">
-        <div className="absolute  right-12 bottom-8 text-right">
-          <p>Art by Andrii Shafetov</p>
+        <div className="absolute right-4 md:right-12 bottom-8 text-sm text-right">
+          <p className="font-normal">Art by Andrii Shafetov</p>
           <a
             target="_blank"
             href="https://andriishafetov.artstation.com/"
-            className=" text-emerald-500 underline-offset-2 underline"
+            className=" text-emerald-600 underline-offset-2 underline"
           >
             Link to his website
           </a>

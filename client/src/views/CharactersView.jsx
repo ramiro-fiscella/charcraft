@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { CharacterDetails } from "../views";
-import { Card, CardCopy } from "../components";
-import { fetchCharacters } from "../services";
+import React, { useState, useEffect } from 'react';
+import { CharacterDetails } from '../views';
+import { Card, CardCopy } from '../components';
+import { fetchCharacters } from '../services';
 
 const CharactersView = () => {
   const [characters, setCharacters] = useState([]);
@@ -13,7 +13,7 @@ const CharactersView = () => {
         const charactersData = await fetchCharacters();
         setCharacters(charactersData);
       } catch (error) {
-        console.error("Error fetching characters:", error);
+        console.error('Error fetching characters:', error);
       }
     }
 
@@ -25,17 +25,17 @@ const CharactersView = () => {
       const characterData = await getCharacterById(character.id);
       setSelectedCharacter(characterData);
     } catch (error) {
-      console.error("Error fetching character:", error);
+      console.error('Error fetching character:', error);
     }
   };
 
   return (
-    <>
-      <h2 className="text-center mt-28">Your Characters</h2>
-      <p className="text-center">
+    <div className="px-8">
+      <h2 className="text-3xl mb-4 text-center">Your Characters</h2>
+      <p className="text-center text-lg leading-6 font-light mb-6 text-pretty">
         Click on a character card to see more details and edit.
       </p>
-      <div className="max-w-[1200px] w-full m-auto my-24 flex justify-center flex-wrap gap-8">
+      <div className="max-w-[1200px] w-full m-auto my-12 mb-24 flex justify-center flex-wrap gap-8">
         {characters.map((character) => (
           // <CardCopy
           <CardCopy
@@ -52,7 +52,7 @@ const CharactersView = () => {
           onClose={() => setSelectedCharacter(null)}
         />
       )}
-    </>
+    </div>
   );
 };
 
