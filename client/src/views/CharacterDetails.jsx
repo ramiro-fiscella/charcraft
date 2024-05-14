@@ -28,6 +28,19 @@ const CharacterDetails = () => {
     return <div>Cargando...</div>;
   }
 
+  const handleSkillChange = (event) => {
+    // Manejador de cambio para actualizar el estado del personaje con las habilidades seleccionadas
+    const { name, checked } = event.target;
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      [name]: checked,
+    }));
+  };
+
+  if (!character) {
+    return <div>Cargando...</div>;
+  }
+
   return (
     <div
       id="character_details"
@@ -218,109 +231,217 @@ const CharacterDetails = () => {
           <div id="skills" className="w-80 p-2">
             <ul className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="acrobatics"
+                  id="acrobatics"
+                  checked={character.acrobatics}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Dex</span>
                 <p>Acrobatics</p>
                 <span>{calculateModifier(character.dexterity)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="animal_handling"
+                  id="animal_handling"
+                  checked={character.animal_handling}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Wis</span>
                 <p>Animal Handling</p>
                 <span>{calculateModifier(character.wisdom)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="arcana"
+                  id="arcana"
+                  checked={character.arcana}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Int</span>
                 <p>Arcana</p>
                 <span>{calculateModifier(character.intelligence)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="athletics"
+                  id="athletics"
+                  checked={character.athletics}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Str</span>
                 <p>Athletics</p>
                 <span>{calculateModifier(character.strength)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="deception"
+                  id="deception"
+                  checked={character.deception}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Cha</span>
                 <p>Deception</p>
                 <span>{calculateModifier(character.charisma)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="history"
+                  id="history"
+                  checked={character.history}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Int</span>
                 <p>History</p>
                 <span>{calculateModifier(character.intelligence)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="insight"
+                  id="insight"
+                  checked={character.insight}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Wis</span>
                 <p>Insight</p>
                 <span>{calculateModifier(character.wisdom)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="intimidation"
+                  id="intimidation"
+                  checked={character.intimidation}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Cha</span>
                 <p>Intimidation</p>
                 <span>{calculateModifier(character.charisma)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="investigation"
+                  id="investigation"
+                  checked={character.investigation}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Int</span>
                 <p>Investigation</p>
                 <span>{calculateModifier(character.intelligence)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="medicine"
+                  id="medicine"
+                  checked={character.medicine}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Wis</span>
                 <p>Medicine</p>
                 <span>{calculateModifier(character.wisdom)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="nature"
+                  id="nature"
+                  checked={character.nature}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Int</span>
                 <p>Nature</p>
                 <span>{calculateModifier(character.intelligence)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="perception"
+                  id="perception"
+                  checked={character.perception}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Wis</span>
                 <p>Perception</p>
                 <span>{calculateModifier(character.wisdom)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="performance"
+                  id="performance"
+                  checked={character.performance}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Cha</span>
                 <p>Performance</p>
                 <span>{calculateModifier(character.charisma)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="persuasion"
+                  id="persuasion"
+                  checked={character.persuasion}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Cha</span>
                 <p>Persuasion</p>
                 <span>{calculateModifier(character.charisma)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="religion"
+                  id="religion"
+                  checked={character.religion}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Int</span>
                 <p>Religion</p>
                 <span>{calculateModifier(character.intelligence)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="sleight_of_hand"
+                  id="sleight_of_hand"
+                  checked={character.sleight_of_hand}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Dex</span>
                 <p>Sleight of Hand</p>
                 <span>{calculateModifier(character.dexterity)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="stealth"
+                  id="stealth"
+                  checked={character.stealth}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Dex</span>
                 <p>Stealth</p>
                 <span>{calculateModifier(character.dexterity)}</span>
               </li>
               <li>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="survival"
+                  id="survival"
+                  checked={character.survival}
+                  onChange={handleSkillChange}
+                />
                 <span className="stat_mod">Wis</span>
                 <p>Survival</p>
                 <span>{calculateModifier(character.wisdom)}</span>
