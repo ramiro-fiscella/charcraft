@@ -31,346 +31,354 @@ const CharacterDetails = () => {
   return (
     <div
       id="character_details"
-      className="h-full w-full flex m-auto  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
+      className="h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
     >
-      <div className="max-w-[1200px] mx-auto gap-4 items-start">
-        <div className="flex flex-row justify-between items-start gap-4  border-b border-neutral-800 px-4 py-2  ">
-          <div className="flex flex-row gap-2">
-            <img
-              className="w-20 h-20 object-cover object-center rounded-md"
-              src={character.avatar_url}
-              alt={`${character.char_name} avatar`}
-            />
+      <div>
+        <div className="max-w-[2900px] mx-auto gap-4 items-start">
+          <div className="flex flex-row justify-between items-start gap-4  border-b border-neutral-800 px-4 py-2  ">
+            <div className="flex flex-row gap-2">
+              <img
+                className="w-20 h-20 object-cover object-center rounded-md"
+                src={character.avatar_url}
+                alt={`${character.char_name} avatar`}
+              />
 
-            <div id="class" className="flex flex-col">
-              <h1 className="mb-1 text-xl capitalize tracking-normal leading-4">
-                {character.char_name}
-              </h1>
+              <div id="class" className="flex flex-col">
+                <h1 className="mb-1 text-xl capitalize tracking-normal leading-4">
+                  {character.char_name}
+                </h1>
 
-              <p className="font-condensed text-xs font-light tracking-wide text-neutral-400">
-                {character.race} - {character.char_class}
-              </p>
-              <p className="font-condensed text-xs font-light tracking-wide ">
-                LVL {character.level}
-              </p>
+                <p className="font-condensed text-xs font-light tracking-wide text-neutral-400">
+                  {character.race} - {character.char_class}
+                </p>
+                <p className="font-condensed text-xs font-light tracking-wide ">
+                  LVL {character.level}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className=" p-2">
-          <div id="combat_stats">
-            <ul className="mx-2 grid grid-cols-2 gap-4 text-center tracking-tight">
-              <li>
-                <h5>Hit Points</h5>
-                <p>
-                  {character.current_hp}/{character.max_hp}
-                </p>
-              </li>
+          <div className=" p-2">
+            <div id="combat_stats">
+              <ul className="mx-2 grid grid-cols-2 gap-4 text-center tracking-tight">
+                <li>
+                  <h5>Hit Points</h5>
+                  <p>
+                    {character.current_hp}/{character.max_hp}
+                  </p>
+                </li>
 
-              <li>
-                <h5>Temporary Hit Points</h5>
-                <p>{character.temp_hp}</p>
-              </li>
-            </ul>
+                <li>
+                  <h5>Temporary Hit Points</h5>
+                  <p>{character.temp_hp}</p>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div className=" p-2">
-          <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
-            <p>Hit Dice: {character.hit_dice}</p>
-            <p>Total Hit Dice: {character.total_hit_dice}</p>
+          <div className=" p-2">
+            <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
+              <p>Hit Dice: {character.hit_dice}</p>
+              <p>Total Hit Dice: {character.total_hit_dice}</p>
+            </div>
           </div>
-        </div>
 
-        <div className=" p-2">
-          <div id="combat_stats">
-            <ul className="mx-2 grid grid-cols-3 gap-4 text-center tracking-tight">
-              <li>
-                <h5>Armor Class</h5>
-                <p>{character.armor_class}</p>
-              </li>
-              <li>
-                <h5>Initiative</h5>
-                <p>{character.initiative}</p>
-              </li>
-              <li>
-                <h5>Speed</h5>
-                <p>
-                  {character.speed}
-                  <span className="text-neutral-400 text-base">ft.</span>
-                </p>
-              </li>
-            </ul>
+          <div className=" p-2">
+            <div id="combat_stats">
+              <ul className="mx-2 grid grid-cols-3 gap-4 text-center tracking-tight">
+                <li>
+                  <h5>Armor Class</h5>
+                  <p>{character.armor_class}</p>
+                </li>
+                <li>
+                  <h5>Initiative</h5>
+                  <p>{character.initiative}</p>
+                </li>
+                <li>
+                  <h5>Speed</h5>
+                  <p>
+                    {character.speed}
+                    <span className="text-neutral-400 text-base">ft.</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="p-3 my-2 mx-4 text-base font-light font-condensed tracking-wide shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800 ">
-          <div
-            id="attack_stats"
-            className="w-full flex flex-row justify-between py-2  border-b border-neutral-800"
-          >
-            <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
-              Name
-            </p>
-            <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide">
-              Atk Bonus
-            </p>
-            <div>
+          <div className="p-3 my-2 mx-4 text-base font-light font-condensed tracking-wide shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800 ">
+            <div
+              id="attack_stats"
+              className="w-full flex flex-row justify-between py-2  border-b border-neutral-800"
+            >
+              <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
+                Name
+              </p>
               <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide">
-                Damage
-                <span className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
-                  /Type
-                </span>
+                Atk Bonus
               </p>
+              <div>
+                <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide">
+                  Damage
+                  <span className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
+                    /Type
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div
+              id="attack_stats"
+              className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
+            >
+              <p className="font-normal">{character.weapon}</p>
+              <p>+{character.atk_bonus}</p>
+              <div>
+                <p>
+                  {character.damage}{' '}
+                  <span className="text-neutral-400 text-base font-light">
+                    /{character.damage_type}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div
+              id="attack_stats"
+              className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
+            >
+              <p className="font-normal">{character.weapon}</p>
+              <p>+{character.atk_bonus}</p>
+              <div>
+                <p>
+                  {character.damage}{' '}
+                  <span className="text-neutral-400 text-base font-light">
+                    /{character.damage_type}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div
+              id="attack_stats"
+              className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
+            >
+              <p className="font-normal">{character.weapon}</p>
+              <p>+{character.atk_bonus}</p>
+              <div>
+                <p>
+                  {character.damage}{' '}
+                  <span className="text-neutral-400 text-base font-light">
+                    /{character.damage_type}
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-          <div
-            id="attack_stats"
-            className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
-          >
-            <p className="font-normal">{character.weapon}</p>
-            <p>+{character.atk_bonus}</p>
-            <div>
-              <p>
-                {character.damage}{' '}
-                <span className="text-neutral-400 text-base font-light">
-                  /{character.damage_type}
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            id="attack_stats"
-            className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
-          >
-            <p className="font-normal">{character.weapon}</p>
-            <p>+{character.atk_bonus}</p>
-            <div>
-              <p>
-                {character.damage}{' '}
-                <span className="text-neutral-400 text-base font-light">
-                  /{character.damage_type}
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            id="attack_stats"
-            className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
-          >
-            <p className="font-normal">{character.weapon}</p>
-            <p>+{character.atk_bonus}</p>
-            <div>
-              <p>
-                {character.damage}{' '}
-                <span className="text-neutral-400 text-base font-light">
-                  /{character.damage_type}
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
 
-        <div id="attributes" className=" p-2">
-          <ul className="mx-2 grid grid-rows-2 grid-cols-3 gap-4 text-center tracking-tight">
-            <li>
-              <h5>Strenght</h5>
-              <p>{calculateModifier(character.strength)}</p>
-              <h6>{character.strength}</h6>
-            </li>
-
-            <li>
-              <h5>Dexterity</h5>
-              <p>{calculateModifier(character.dexterity)}</p>
-              <h6>{character.dexterity}</h6>
-            </li>
-
-            <li>
-              <h5>Constitution</h5>
-              <p>{calculateModifier(character.constitution)}</p>
-              <h6>{character.constitution}</h6>
-            </li>
-
-            <li>
-              <h5>Intelligence</h5>
-              <p>{calculateModifier(character.intelligence)}</p>
-              <h6>{character.intelligence}</h6>
-            </li>
-
-            <li>
-              <h5>Wisdom</h5>
-              <p>{calculateModifier(character.wisdom)}</p>
-              <h6>{character.wisdom}</h6>
-            </li>
-
-            <li>
-              <h5>Charisma</h5>
-              <p>{calculateModifier(character.charisma)}</p>
-              <h6>{character.charisma}</h6>
-            </li>
-          </ul>
-        </div>
-
-        <div id="skills" className="p-2">
-          <ul className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Dex</span>
-              <p>Acrobatics</p>
-              <span>{calculateModifier(character.dexterity)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Wis</span>
-              <p>Animal Handling</p>
-              <span>{calculateModifier(character.wisdom)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Int</span>
-              <p>Arcana</p>
-              <span>{calculateModifier(character.intelligence)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Str</span>
-              <p>Athletics</p>
-              <span>{calculateModifier(character.strength)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Cha</span>
-              <p>Deception</p>
-              <span>{calculateModifier(character.charisma)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Int</span>
-              <p>History</p>
-              <span>{calculateModifier(character.intelligence)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Wis</span>
-              <p>Insight</p>
-              <span>{calculateModifier(character.wisdom)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Cha</span>
-              <p>Intimidation</p>
-              <span>{calculateModifier(character.charisma)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Int</span>
-              <p>Investigation</p>
-              <span>{calculateModifier(character.intelligence)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Wis</span>
-              <p>Medicine</p>
-              <span>{calculateModifier(character.wisdom)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Int</span>
-              <p>Nature</p>
-              <span>{calculateModifier(character.intelligence)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Wis</span>
-              <p>Perception</p>
-              <span>{calculateModifier(character.wisdom)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Cha</span>
-              <p>Performance</p>
-              <span>{calculateModifier(character.charisma)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Cha</span>
-              <p>Persuasion</p>
-              <span>{calculateModifier(character.charisma)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Int</span>
-              <p>Religion</p>
-              <span>{calculateModifier(character.intelligence)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Dex</span>
-              <p>Sleight of Hand</p>
-              <span>{calculateModifier(character.dexterity)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Dex</span>
-              <p>Stealth</p>
-              <span>{calculateModifier(character.dexterity)}</span>
-            </li>
-            <li>
-              <input type="radio" name="" id="" />
-              <span className="stat_mod">Wis</span>
-              <p>Survival</p>
-              <span>{calculateModifier(character.wisdom)}</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className="p-2">
-          <div
-            id="personality"
-            className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
-          >
-            <h3 className="text-lg mb-2">Description</h3>
-            <ul>
+          <div id="attributes" className=" p-2">
+            <ul className="mx-2 grid grid-rows-2 grid-cols-3 gap-4 text-center tracking-tight">
               <li>
-                <h5>Aligment</h5>
-                <p>{character.aligment}</p>
+                <h5>Strenght</h5>
+                <p>{calculateModifier(character.strength)}</p>
+                <h6>{character.strength}</h6>
               </li>
 
               <li>
-                <h5>Personality</h5>
-                <p>{character.personality_traits}</p>
+                <h5>Dexterity</h5>
+                <p>{calculateModifier(character.dexterity)}</p>
+                <h6>{character.dexterity}</h6>
               </li>
 
               <li>
-                <h5>Ideals</h5>
-                <p>{character.ideals}</p>
+                <h5>Constitution</h5>
+                <p>{calculateModifier(character.constitution)}</p>
+                <h6>{character.constitution}</h6>
               </li>
 
               <li>
-                <h5>Bonds</h5>
-                <p>{character.bonds}</p>
+                <h5>Intelligence</h5>
+                <p>{calculateModifier(character.intelligence)}</p>
+                <h6>{character.intelligence}</h6>
               </li>
+
               <li>
-                <h5>Flaws</h5>
-                <p>{character.flaws}</p>
+                <h5>Wisdom</h5>
+                <p>{calculateModifier(character.wisdom)}</p>
+                <h6>{character.wisdom}</h6>
               </li>
+
               <li>
-                <h5>Quote</h5>
-                <p>{character.quote}</p>
-              </li>
-              <li>
-                <h5>Features and Traits</h5>
-                <p>{character.features_adn_traits}</p>
-              </li>
-              <li>
-                <h5>Languajes </h5>
-                <p>{character.languajes}</p>
-              </li>
-              <li>
-                <h5>Other Proficiencies</h5>
-                <p>{character.other_proficiencies}</p>
+                <h5>Charisma</h5>
+                <p>{calculateModifier(character.charisma)}</p>
+                <h6>{character.charisma}</h6>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div id="skills" className="w-80 p-2">
+            <ul className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Dex</span>
+                <p>Acrobatics</p>
+                <span>{calculateModifier(character.dexterity)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Wis</span>
+                <p>Animal Handling</p>
+                <span>{calculateModifier(character.wisdom)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Int</span>
+                <p>Arcana</p>
+                <span>{calculateModifier(character.intelligence)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Str</span>
+                <p>Athletics</p>
+                <span>{calculateModifier(character.strength)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Cha</span>
+                <p>Deception</p>
+                <span>{calculateModifier(character.charisma)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Int</span>
+                <p>History</p>
+                <span>{calculateModifier(character.intelligence)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Wis</span>
+                <p>Insight</p>
+                <span>{calculateModifier(character.wisdom)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Cha</span>
+                <p>Intimidation</p>
+                <span>{calculateModifier(character.charisma)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Int</span>
+                <p>Investigation</p>
+                <span>{calculateModifier(character.intelligence)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Wis</span>
+                <p>Medicine</p>
+                <span>{calculateModifier(character.wisdom)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Int</span>
+                <p>Nature</p>
+                <span>{calculateModifier(character.intelligence)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Wis</span>
+                <p>Perception</p>
+                <span>{calculateModifier(character.wisdom)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Cha</span>
+                <p>Performance</p>
+                <span>{calculateModifier(character.charisma)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Cha</span>
+                <p>Persuasion</p>
+                <span>{calculateModifier(character.charisma)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Int</span>
+                <p>Religion</p>
+                <span>{calculateModifier(character.intelligence)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Dex</span>
+                <p>Sleight of Hand</p>
+                <span>{calculateModifier(character.dexterity)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Dex</span>
+                <p>Stealth</p>
+                <span>{calculateModifier(character.dexterity)}</span>
+              </li>
+              <li>
+                <input type="radio" name="" id="" />
+                <span className="stat_mod">Wis</span>
+                <p>Survival</p>
+                <span>{calculateModifier(character.wisdom)}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div className="p-2">
+            <div
+              id="personality"
+              className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"
+            >
+              <h3 className="text-lg mb-2">Description</h3>
+              <ul>
+                <li>
+                  <h5>Aligment</h5>
+                  <p>{character.aligment}</p>
+                </li>
+
+                <li>
+                  <h5>Personality</h5>
+                  <p>{character.personality_traits}</p>
+                </li>
+
+                <li>
+                  <h5>Ideals</h5>
+                  <p>{character.ideals}</p>
+                </li>
+
+                <li>
+                  <h5>Bonds</h5>
+                  <p>{character.bonds}</p>
+                </li>
+                <li>
+                  <h5>Flaws</h5>
+                  <p>{character.flaws}</p>
+                </li>
+                <li>
+                  <h5>Quote</h5>
+                  <p>{character.quote}</p>
+                </li>
+                <li>
+                  <h5>Features and Traits</h5>
+                  <p>{character.features_adn_traits}</p>
+                </li>
+                <li>
+                  <h5>Languajes </h5>
+                  <p>{character.languajes}</p>
+                </li>
+                <li>
+                  <h5>Other Proficiencies</h5>
+                  <p>{character.other_proficiencies}</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
