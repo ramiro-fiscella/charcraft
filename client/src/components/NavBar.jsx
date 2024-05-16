@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CharacterForm } from '../components';
-import { GiSecretBook } from 'react-icons/gi';
 import { MdOutlineDesignServices } from 'react-icons/md';
 import { FaBars } from 'react-icons/fa';
 
