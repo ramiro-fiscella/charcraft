@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Proficiency } from "../components";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Proficiency } from '../services';
 
 const CardCopy = ({ character, onClick }) => {
   return (
@@ -34,7 +34,7 @@ const CardCopy = ({ character, onClick }) => {
           <div className="mx-1 h-36">
             <img
               className="w-full h-full object-cover object-top border-double border-x-4 border-neutral-600 shadow-md shadow-stone-800"
-              src={character.avatar_url || "assets/card-placeholder.jpg"}
+              src={character.avatar_url || 'assets/card-placeholder.jpg'}
               alt=" Character's image"
             />
           </div>
@@ -59,7 +59,7 @@ const CardCopy = ({ character, onClick }) => {
               <p className="pb-1border-b-2 border-neutral-600">
                 {character.quote
                   ? character.quote
-                  : "Click the card to edit your character."}
+                  : 'Click the card to edit your character.'}
               </p>
             </div>
 
@@ -67,7 +67,10 @@ const CardCopy = ({ character, onClick }) => {
               id="bookmark"
               className="absolute right-3 bottom-[.9rem] flex justify-center items-center rounded-sm w-10 h-6 border border-neutral-500 border-opacity-70 shadow-sm shadow-gray-950 bg-stone-300"
             >
-              <Proficiency level={character.level} />
+              <h3 className="font-bold text-sm text-black">
+                +{Proficiency(character.level)}
+              </h3>
+              ;
             </div>
           </div>
         </div>

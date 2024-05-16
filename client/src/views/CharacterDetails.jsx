@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { Proficiency } from '../components';
-import { calculateModifier, calculateSkillProficiency } from '../services/';
+import {
+  Proficiency,
+  calculateModifier,
+  calculateSkillProficiency,
+} from '../services/';
 
 const CharacterDetails = () => {
   const { id } = useParams(); // Obtiene el ID del parámetro de la URL

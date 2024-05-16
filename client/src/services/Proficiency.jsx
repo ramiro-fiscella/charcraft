@@ -33,7 +33,6 @@ const Proficiency = (level) => {
 
   const proficiencyBonus = getProficiencyBonus(level);
 
-  // return <h3 className="font-bold text-sm text-black">+{proficiencyBonus}</h3>;
   return proficiencyBonus;
 };
 

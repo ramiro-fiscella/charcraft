@@ -1,13 +1,12 @@
-import Card from "./Card";
-import CharacterModal from "./CharacterModal";
-import CharacterForm from "./CharacterForm";
-import NavBar from "./NavBar";
-import Hero from "./Hero";
-import Footer from "./Footer";
-import FillerInfo from "./FillerInfo";
-import Proficiency from "./Proficiency";
+import Card from './Card';
+import CharacterModal from './CharacterModal';
+import CharacterForm from './CharacterForm';
+import NavBar from './NavBar';
+import Hero from './Hero';
+import Footer from './Footer';
+import FillerInfo from './FillerInfo';
 
-import CardCopy from "./CardCopy";
+import CardCopy from './CardCopy';
 
 export {
   Card,
@@ -18,5 +17,4 @@ export {
   Footer,
   FillerInfo,
   CardCopy,
-  Proficiency,
 };

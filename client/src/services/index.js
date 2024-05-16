@@ -3,6 +3,7 @@ import getCharacterById from './getCharacterById';
 import UploadWidget from './UploadWidget';
 import calculateModifier from './calculateModifier';
 import calculateSkillProficiency from './calculateSkillProficiency';
+import Proficiency from './Proficiency';
 
 export {
   fetchCharacters,
@@ -10,4 +11,5 @@ export {
   UploadWidget,
   calculateModifier,
   calculateSkillProficiency,
+  Proficiency,
 };
