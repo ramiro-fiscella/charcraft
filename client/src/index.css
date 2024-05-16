@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Mate+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Mate+SC&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
 /*
 
 */
@@ -24,7 +24,7 @@
   --color-terciario: #aaa;
   --color-fondo: #423c39;
 
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Work Sans', sans-serif;
   /* font-family: "Brawler", serif; */
   line-height: 1.2;
   font-weight: 400;
@@ -109,13 +109,13 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  font-family: "alegreya sc";
+  font-family: 'alegreya sc';
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Alegreya SC", serif;
+  font-family: 'Alegreya SC', serif;
   font-size: 2.2rem;
   text-transform: uppercase;
   line-height: 1.2;
@@ -123,7 +123,7 @@ h3 {
   letter-spacing: 2px;
 }
 button {
-  font-family: "alegreya sc", serif;
+  font-family: 'alegreya sc', serif;
 }
 /* button {
   cursor: pointer;
@@ -140,7 +140,7 @@ button:hover {
 /* MIS ESTILOS */
 
 #card {
-  font-family: "Alegreya SC", serif;
+  font-family: 'Alegreya SC', serif;
 }
 
 #card h1,
@@ -154,24 +154,24 @@ p {
 }
 
 #card div p {
-  font-family: "Charm", cursive;
+  font-family: 'Charm', cursive;
   font-size: 0.9rem;
 }
 
 #card h3 {
-  font-family: "work sans", sans-serif;
+  font-family: 'work sans', sans-serif;
 }
 
 li a {
   color: white;
-  font-family: "alegreya sc", serif;
+  font-family: 'alegreya sc', serif;
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 1px;
 }
 
 #attributes ul li h6 {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 @media (max-width: 768px) {

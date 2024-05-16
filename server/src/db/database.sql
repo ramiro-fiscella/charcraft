@@ -78,11 +78,21 @@ CREATE TABLE combat_stats (
 
 CREATE TABLE attack_stats (
     id SERIAL PRIMARY KEY,
-    character_id INT UNIQUE REFERENCES characters(id) ON DELETE CASCADE,
-    weapon VARCHAR(128),
-    atk_bonus INT,
-    damage VARCHAR(50),
-    damage_type VARCHAR(50),
-    atk_range VARCHAR(50)
+    character_id INT REFERENCES characters(id) ON DELETE CASCADE,
+    weapon_1 VARCHAR(128),
+    atk_bonus_1 INT,
+    damage_1 VARCHAR(50),
+    damage_type_1 VARCHAR(50),
+    atk_range_1 VARCHAR(50),
+    weapon_2 VARCHAR(128),
+    atk_bonus_2 INT,
+    damage_2 VARCHAR(50),
+    damage_type_2 VARCHAR(50),
+    atk_range_2 VARCHAR(50),
+    weapon_3 VARCHAR(128),
+    atk_bonus_3 INT,
+    damage_3 VARCHAR(50),
+    damage_type_3 VARCHAR(50),
+    atk_range_3 VARCHAR(50)
 );
 

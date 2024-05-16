@@ -1,6 +1,4 @@
-import React from "react";
-
-const Proficiency = ({ level }) => {
+const Proficiency = (level) => {
   const getProficiencyBonus = (level) => {
     switch (level) {
       case 1:
@@ -35,7 +33,8 @@ const Proficiency = ({ level }) => {
 
   const proficiencyBonus = getProficiencyBonus(level);
 
-  return <h3 className="font-bold text-sm text-black">+{proficiencyBonus}</h3>;
+  // return <h3 className="font-bold text-sm text-black">+{proficiencyBonus}</h3>;
+  return proficiencyBonus;
 };
 
 export default Proficiency;

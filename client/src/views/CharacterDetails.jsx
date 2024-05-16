@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { calculateModifier } from '../services/';
+import { Proficiency } from '../components';
+import { calculateModifier, calculateSkillProficiency } from '../services/';
 
 const CharacterDetails = () => {
   const { id } = useParams(); // Obtiene el ID del parámetro de la URL
@@ -31,9 +32,11 @@ const CharacterDetails = () => {
   const handleSkillChange = (event) => {
     // Manejador de cambio para actualizar el estado del personaje con las habilidades seleccionadas
     const { name, checked } = event.target;
+    disabled;
     setCharacter((prevCharacter) => ({
       ...prevCharacter,
       [name]: checked,
+      disabled,
     }));
   };
 
@@ -142,13 +145,13 @@ const CharacterDetails = () => {
               id="attack_stats"
               className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
             >
-              <p className="font-normal">{character.weapon}</p>
-              <p>+{character.atk_bonus}</p>
+              <p className="font-normal">{character.weapon_1}</p>
+              <p>+{character.atk_bonus_1}</p>
               <div>
                 <p>
-                  {character.damage}{' '}
+                  {character.damage_1}{' '}
                   <span className="text-neutral-400 text-base font-light">
-                    /{character.damage_type}
+                    /{character.damage_type_1}
                   </span>
                 </p>
               </div>
@@ -157,13 +160,13 @@ const CharacterDetails = () => {
               id="attack_stats"
               className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
             >
-              <p className="font-normal">{character.weapon}</p>
-              <p>+{character.atk_bonus}</p>
+              <p className="font-normal">{character.weapon_2}</p>
+              <p>+{character.atk_bonus_2}</p>
               <div>
                 <p>
-                  {character.damage}{' '}
+                  {character.damage_2}{' '}
                   <span className="text-neutral-400 text-base font-light">
-                    /{character.damage_type}
+                    /{character.damage_type_2}
                   </span>
                 </p>
               </div>
@@ -172,13 +175,13 @@ const CharacterDetails = () => {
               id="attack_stats"
               className="w-full flex flex-row justify-between py-2 border-b border-neutral-800"
             >
-              <p className="font-normal">{character.weapon}</p>
-              <p>+{character.atk_bonus}</p>
+              <p className="font-normal">{character.weapon_3}</p>
+              <p>+{character.atk_bonus_3}</p>
               <div>
                 <p>
-                  {character.damage}{' '}
+                  {character.damage_3}{' '}
                   <span className="text-neutral-400 text-base font-light">
-                    /{character.damage_type}
+                    /{character.damage_type_3}
                   </span>
                 </p>
               </div>
@@ -228,19 +231,27 @@ const CharacterDetails = () => {
       </div>
       <div>
         <div>
-          <div id="skills" className="w-80 p-2">
-            <ul className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
+          <div id="skills" className="w-80  p-2">
+            <ul className="mx-2 mt-0  p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
               <li>
                 <input
                   type="radio"
                   name="acrobatics"
                   id="acrobatics"
                   checked={character.acrobatics}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Dex</span>
                 <p>Acrobatics</p>
-                <span>{calculateModifier(character.dexterity)}</span>
+                <span>
+                  {character.acrobatics
+                    ? calculateSkillProficiency(
+                        character.dexterity,
+                        character.level
+                      )
+                    : calculateModifier(character.dexterity)}
+                </span>
               </li>
               <li>
                 <input
@@ -248,11 +259,19 @@ const CharacterDetails = () => {
                   name="animal_handling"
                   id="animal_handling"
                   checked={character.animal_handling}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Wis</span>
                 <p>Animal Handling</p>
-                <span>{calculateModifier(character.wisdom)}</span>
+                <span>
+                  {character.animal_handling
+                    ? calculateSkillProficiency(
+                        character.wisdom,
+                        character.level
+                      )
+                    : calculateModifier(character.wisdom)}
+                </span>
               </li>
               <li>
                 <input
@@ -260,11 +279,19 @@ const CharacterDetails = () => {
                   name="arcana"
                   id="arcana"
                   checked={character.arcana}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Int</span>
                 <p>Arcana</p>
-                <span>{calculateModifier(character.intelligence)}</span>
+                <span>
+                  {character.arcana
+                    ? calculateSkillProficiency(
+                        character.intelligence,
+                        character.level
+                      )
+                    : calculateModifier(character.intelligence)}
+                </span>
               </li>
               <li>
                 <input
@@ -272,11 +299,19 @@ const CharacterDetails = () => {
                   name="athletics"
                   id="athletics"
                   checked={character.athletics}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Str</span>
                 <p>Athletics</p>
-                <span>{calculateModifier(character.strength)}</span>
+                <span>
+                  {character.athletics
+                    ? calculateSkillProficiency(
+                        character.strength,
+                        character.level
+                      )
+                    : calculateModifier(character.strength)}
+                </span>
               </li>
               <li>
                 <input
@@ -284,11 +319,19 @@ const CharacterDetails = () => {
                   name="deception"
                   id="deception"
                   checked={character.deception}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Cha</span>
                 <p>Deception</p>
-                <span>{calculateModifier(character.charisma)}</span>
+                <span>
+                  {character.deception
+                    ? calculateSkillProficiency(
+                        character.charisma,
+                        character.level
+                      )
+                    : calculateModifier(character.charisma)}
+                </span>
               </li>
               <li>
                 <input
@@ -296,11 +339,19 @@ const CharacterDetails = () => {
                   name="history"
                   id="history"
                   checked={character.history}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Int</span>
                 <p>History</p>
-                <span>{calculateModifier(character.intelligence)}</span>
+                <span>
+                  {character.history
+                    ? calculateSkillProficiency(
+                        character.intelligence,
+                        character.level
+                      )
+                    : calculateModifier(character.intelligence)}
+                </span>
               </li>
               <li>
                 <input
@@ -308,11 +359,19 @@ const CharacterDetails = () => {
                   name="insight"
                   id="insight"
                   checked={character.insight}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Wis</span>
                 <p>Insight</p>
-                <span>{calculateModifier(character.wisdom)}</span>
+                <span>
+                  {character.insight
+                    ? calculateSkillProficiency(
+                        character.wisdom,
+                        character.level
+                      )
+                    : calculateModifier(character.wisdom)}
+                </span>
               </li>
               <li>
                 <input
@@ -320,11 +379,19 @@ const CharacterDetails = () => {
                   name="intimidation"
                   id="intimidation"
                   checked={character.intimidation}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Cha</span>
                 <p>Intimidation</p>
-                <span>{calculateModifier(character.charisma)}</span>
+                <span>
+                  {character.intimidation
+                    ? calculateSkillProficiency(
+                        character.charisma,
+                        character.level
+                      )
+                    : calculateModifier(character.charisma)}
+                </span>
               </li>
               <li>
                 <input
@@ -332,11 +399,19 @@ const CharacterDetails = () => {
                   name="investigation"
                   id="investigation"
                   checked={character.investigation}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Int</span>
                 <p>Investigation</p>
-                <span>{calculateModifier(character.intelligence)}</span>
+                <span>
+                  {character.investigation
+                    ? calculateSkillProficiency(
+                        character.intelligence,
+                        character.level
+                      )
+                    : calculateModifier(character.intelligence)}
+                </span>
               </li>
               <li>
                 <input
@@ -344,11 +419,19 @@ const CharacterDetails = () => {
                   name="medicine"
                   id="medicine"
                   checked={character.medicine}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Wis</span>
                 <p>Medicine</p>
-                <span>{calculateModifier(character.wisdom)}</span>
+                <span>
+                  {character.medicine
+                    ? calculateSkillProficiency(
+                        character.wisdom,
+                        character.level
+                      )
+                    : calculateModifier(character.wisdom)}
+                </span>
               </li>
               <li>
                 <input
@@ -356,11 +439,19 @@ const CharacterDetails = () => {
                   name="nature"
                   id="nature"
                   checked={character.nature}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Int</span>
                 <p>Nature</p>
-                <span>{calculateModifier(character.intelligence)}</span>
+                <span>
+                  {character.nature
+                    ? calculateSkillProficiency(
+                        character.intelligence,
+                        character.level
+                      )
+                    : calculateModifier(character.intelligence)}
+                </span>
               </li>
               <li>
                 <input
@@ -368,11 +459,19 @@ const CharacterDetails = () => {
                   name="perception"
                   id="perception"
                   checked={character.perception}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Wis</span>
                 <p>Perception</p>
-                <span>{calculateModifier(character.wisdom)}</span>
+                <span>
+                  {character.perception
+                    ? calculateSkillProficiency(
+                        character.wisdom,
+                        character.level
+                      )
+                    : calculateModifier(character.wisdom)}
+                </span>
               </li>
               <li>
                 <input
@@ -380,11 +479,19 @@ const CharacterDetails = () => {
                   name="performance"
                   id="performance"
                   checked={character.performance}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Cha</span>
                 <p>Performance</p>
-                <span>{calculateModifier(character.charisma)}</span>
+                <span>
+                  {character.performance
+                    ? calculateSkillProficiency(
+                        character.charisma,
+                        character.level
+                      )
+                    : calculateModifier(character.charisma)}
+                </span>
               </li>
               <li>
                 <input
@@ -392,11 +499,19 @@ const CharacterDetails = () => {
                   name="persuasion"
                   id="persuasion"
                   checked={character.persuasion}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Cha</span>
                 <p>Persuasion</p>
-                <span>{calculateModifier(character.charisma)}</span>
+                <span>
+                  {character.persuasion
+                    ? calculateSkillProficiency(
+                        character.charisma,
+                        character.level
+                      )
+                    : calculateModifier(character.charisma)}
+                </span>
               </li>
               <li>
                 <input
@@ -404,11 +519,19 @@ const CharacterDetails = () => {
                   name="religion"
                   id="religion"
                   checked={character.religion}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Int</span>
                 <p>Religion</p>
-                <span>{calculateModifier(character.intelligence)}</span>
+                <span>
+                  {character.religion
+                    ? calculateSkillProficiency(
+                        character.intelligence,
+                        character.level
+                      )
+                    : calculateModifier(character.intelligence)}
+                </span>
               </li>
               <li>
                 <input
@@ -416,11 +539,19 @@ const CharacterDetails = () => {
                   name="sleight_of_hand"
                   id="sleight_of_hand"
                   checked={character.sleight_of_hand}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Dex</span>
                 <p>Sleight of Hand</p>
-                <span>{calculateModifier(character.dexterity)}</span>
+                <span>
+                  {character.sleight_of_hand
+                    ? calculateSkillProficiency(
+                        character.dexterity,
+                        character.level
+                      )
+                    : calculateModifier(character.dexterity)}
+                </span>
               </li>
               <li>
                 <input
@@ -428,11 +559,19 @@ const CharacterDetails = () => {
                   name="stealth"
                   id="stealth"
                   checked={character.stealth}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Dex</span>
                 <p>Stealth</p>
-                <span>{calculateModifier(character.dexterity)}</span>
+                <span>
+                  {character.stealth
+                    ? calculateSkillProficiency(
+                        character.dexterity,
+                        character.level
+                      )
+                    : calculateModifier(character.dexterity)}
+                </span>
               </li>
               <li>
                 <input
@@ -440,11 +579,19 @@ const CharacterDetails = () => {
                   name="survival"
                   id="survival"
                   checked={character.survival}
+                  disabled
                   onChange={handleSkillChange}
                 />
                 <span className="stat_mod">Wis</span>
                 <p>Survival</p>
-                <span>{calculateModifier(character.wisdom)}</span>
+                <span>
+                  {character.survival
+                    ? calculateSkillProficiency(
+                        character.wisdom,
+                        character.level
+                      )
+                    : calculateModifier(character.wisdom)}
+                </span>
               </li>
             </ul>
           </div>
@@ -502,6 +649,10 @@ const CharacterDetails = () => {
             </div>
           </div>
         </div>
+        <Link to={`/character/${character.character_id}/edit`}>
+          {' '}
+          <button>Edit</button>
+        </Link>
       </div>
     </div>
   );

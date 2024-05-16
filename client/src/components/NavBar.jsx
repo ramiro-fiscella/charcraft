@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CharacterForm } from '../components';
 import { GiSecretBook } from 'react-icons/gi';
+import { MdOutlineDesignServices } from 'react-icons/md';
 import { FaBars } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -15,44 +16,46 @@ const NavBar = () => {
   return (
     <nav className="w-full h-14 fixed top-0 left-0 mx-auto  py-0 bg-emerald-950 bg-opacity-80 bg-blend-screen backdrop-blur-md border-b border-emerald-950 z-40">
       <div className="max-w-[1200px] px-4 h-full m-auto flex justify-between items-center">
-        <Link
-          to="/"
-          className="text-2xl flex flex-row items-center gap-4"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth',
-            });
-          }}
-        >
-          <GiSecretBook />
-          <h1 className="lg:hidden text-lg text-neutral-200 border-b border-yellow-500">
-            CharCraft
-          </h1>
-        </Link>
-        <ul
-          className={`hidden lg:flex items-center gap-4 ${
-            showMenu
-              ? 'flex-col absolute top-14 right-0 bg-emerald-950 py-2 '
-              : ''
-          }`}
-        >
-          <li>
-            <Link to="/" onClick={closeMenu}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/characters" onClick={closeMenu}>
-              Characters
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={closeMenu}>
-              About
-            </Link>
-          </li>
-        </ul>
+        <div className="flex gap-4">
+          <Link
+            to="/"
+            className="text-2xl flex flex-row items-center gap-4"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            <MdOutlineDesignServices />
+            <h1 className="lg:hidden text-lg text-neutral-200 border-b border-yellow-500">
+              CharCraft
+            </h1>
+          </Link>
+          <ul
+            className={`hidden  lg:flex items-center gap-4 ${
+              showMenu
+                ? 'flex-col absolute top-14 right-0 bg-emerald-950 py-2 '
+                : ''
+            }`}
+          >
+            <li>
+              <Link to="/" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/characters" onClick={closeMenu}>
+                Characters
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={closeMenu}>
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="flex gap-4">
           <button className="lg:hidden border-none" onClick={toggleMenu}>
             <FaBars />
