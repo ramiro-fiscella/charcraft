@@ -10,21 +10,64 @@ const getAttackStats = async (character_id) => {
 
 const setAttackStats = async (
   character_id,
-  { weapon, atk_bonus, damage, damage_type, atk_range }
+  {
+    weapon_1,
+    atk_bonus_1,
+    damage_1,
+    damage_type_1,
+    atk_range_1,
+    weapon_2,
+    atk_bonus_2,
+    damage_2,
+    damage_type_2,
+    atk_range_2,
+    weapon_3,
+    atk_bonus_3,
+    damage_3,
+    damage_type_3,
+    atk_range_3,
+  }
 ) => {
   const result = await query(
     `
     INSERT INTO attack_stats (
       character_id, 
-      weapon, 
-      atk_bonus, 
-      damage, 
-      damage_type, 
-      atk_range
-    ) VALUES ($1, $2, $3, $4, $5, $6)
+      weapon_1,
+    atk_bonus_1,
+    damage_1,
+    damage_type_1,
+    atk_range_1,
+    weapon_2,
+    atk_bonus_2,
+    damage_2,
+    damage_type_2,
+    atk_range_2,
+    weapon_3,
+    atk_bonus_3,
+    damage_3,
+    damage_type_3,
+    atk_range_3
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
     RETURNING *;
   `,
-    [character_id, weapon, atk_bonus, damage, damage_type, atk_range]
+    [
+      character_id,
+      weapon_1,
+      atk_bonus_1,
+      damage_1,
+      damage_type_1,
+      atk_range_1,
+      weapon_2,
+      atk_bonus_2,
+      damage_2,
+      damage_type_2,
+      atk_range_2,
+      weapon_3,
+      atk_bonus_3,
+      damage_3,
+      damage_type_3,
+      atk_range_3,
+    ]
   );
 
   return result.rows[0];

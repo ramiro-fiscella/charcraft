@@ -3,7 +3,7 @@ import {
   Home,
   CharactersView,
   CharacterDetails,
-  EditCharacter,
+  EditView,
   About,
 } from './views';
 import { NavBar, Footer } from './components';
@@ -19,7 +19,7 @@ function App() {
         <Route path="/characters" element={<CharactersView />} />
 
         <Route path="/character/:id" element={<CharacterDetails />} />
-        <Route path="/character/:id/edit" element={<EditCharacter />} />
+        <Route path="/character/:id/edit" element={<EditView />} />
 
         <Route path="/about" element={<About />} />
       </Routes>

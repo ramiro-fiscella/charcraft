@@ -1,37 +1,86 @@
-// EditCharacter.js
-import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import useCharacter from '../hooks/useCharacter';
-import CharacterForm from '../components/CharacterForm';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const EditCharacter = () => {
-  const { id } = useParams();
+const EditCharacter = ({ id }) => {
+  const [character, setCharacter] = useState(null);
   const navigate = useNavigate();
-  const { character, setCharacter, loading, error, updateCharacter } =
-    useCharacter(id);
+
+  useEffect(() => {
+    const fetchCharacter = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/characters/${id}`
+        );
+        setCharacter(response.data);
+      } catch (error) {
+        console.error('Error fetching character:', error);
+      }
+    };
+
+    fetchCharacter();
+  }, [id]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setCharacter((prevCharacter) => ({
-      ...prevCharacter,
-      [name]: value,
-    }));
+    if (character) {
+      setCharacter((prevCharacter) => ({
+        ...prevCharacter,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSave = async () => {
-    await updateCharacter(character);
-    navigate('/characters');
+    try {
+      if (character) {
+        await axios.put(`http://localhost:5000/characters/${id}`, character);
+        navigate('/characters');
+      }
+    } catch (error) {
+      console.error('Error saving character:', error);
+    }
   };
 
-  if (loading) return <div>Cargando...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (!character) {
+    return <div>Cargando...</div>;
+  }
 
   return (
-    <CharacterForm
-      character={character}
-      onChange={handleInputChange}
-      onSave={handleSave}
-    />
+    <form>
+      <input
+        type="text"
+        name="char_name"
+        value={character.char_name}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        name="race"
+        value={character.race}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        name="char_class"
+        value={character.char_class}
+        onChange={handleInputChange}
+      />
+      <input
+        type="number"
+        name="level"
+        value={character.level}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        name="avatar_url"
+        value={character.avatar_url}
+        onChange={handleInputChange}
+      />
+
+      <button onClick={handleSave}>Guardar</button>
+    </form>
   );
 };
 

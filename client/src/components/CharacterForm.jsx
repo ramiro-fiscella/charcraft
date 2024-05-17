@@ -1,29 +1,48 @@
 // CharacterForm.js
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
-import useCreateCharacter from '../hooks/useCreateCharacter';
 
 const CharacterForm = ({ closeForm }) => {
-  const {
-    character,
-    handleChange,
-    handleImageUpload,
-    createCharacter,
-    loading,
-    error,
-  } = useCreateCharacter();
+  const [character, setCharacter] = useState({
+    char_name: '',
+    race: '',
+    char_class: '',
+    level: '',
+    avatar_url: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setCharacter((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleImageUpload = (url) => {
+    setCharacter((prevState) => ({
+      ...prevState,
+      avatar_url: url,
+    }));
+  };
 
   const handleSubmit = async (event) => {
+    console.log(character);
     event.preventDefault();
-    const newCharacter = await createCharacter();
-    if (newCharacter) {
-      console.log('Character created:', newCharacter);
-      closeForm();
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/characters',
+        character
+      );
+      console.log('Character created:', response.data);
+    } catch (err) {
+      console.error('Error creating character:', err);
     }
   };
 
   return (
-    <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950">
+    <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950 ">
       <form
         className="rounded-lg w-[96%] max-w-[400px] mx-auto  h-[640px] p-14 flex flex-col items-center justify-center gap-4 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
@@ -48,6 +67,7 @@ const CharacterForm = ({ closeForm }) => {
           />
         </label>
         <label>
+          {' '}
           Class:
           <input
             type="text"
@@ -69,15 +89,13 @@ const CharacterForm = ({ closeForm }) => {
           <label>Upload Character Image</label>
           <UploadWidget onImageUpload={handleImageUpload} />
         </div>
+
         <div className="flex flex-col gap-2 w-full h-full mt-16">
-          <button type="submit" disabled={loading}>
-            {loading ? 'Creating...' : 'Create Character'}
-          </button>
+          <button type="submit">Create Character</button>
         </div>
-        {error && <div className="text-red-500">{error.message}</div>}
+
         <button
-          type="button"
-          className="flex bg-transparent text-slate-50 text-sm underline underline-offset-4 items-center justify-center"
+          className="flex  bg-transparent text-slate-50 text-sm underline underline-offset-4 items-center justify-center"
           onClick={closeForm}
         >
           CLOSE
