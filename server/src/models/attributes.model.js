@@ -1,4 +1,4 @@
-const { query } = require("../db");
+const { query } = require('../db');
 
 const getAttributes = async (character_id) => {
   const queryString = `
@@ -47,7 +47,42 @@ const setAttributes = async (
 
     return result.rows[0];
   } catch (err) {
-    console.error("Error al crear o actualizar los atributos:", err);
+    console.error('Error al crear o actualizar los atributos:', err);
+    throw err;
+  }
+};
+
+const updateAttributes = async (
+  character_id,
+  { strength, dexterity, constitution, intelligence, wisdom, charisma }
+) => {
+  const queryString = `
+    UPDATE attributes
+    SET
+      strength = $1,
+      dexterity = $2,
+      constitution = $3,
+      intelligence = $4,
+      wisdom = $5,
+      charisma = $6
+    WHERE character_id = $7
+    RETURNING *;
+  `;
+
+  try {
+    const result = await query(queryString, [
+      strength,
+      dexterity,
+      constitution,
+      intelligence,
+      wisdom,
+      charisma,
+      character_id,
+    ]);
+
+    return result.rows[0];
+  } catch (err) {
+    console.error('Error al actualizar los atributos:', err);
     throw err;
   }
 };
@@ -55,4 +90,5 @@ const setAttributes = async (
 module.exports = {
   setAttributes,
   getAttributes,
+  updateAttributes,
 };
