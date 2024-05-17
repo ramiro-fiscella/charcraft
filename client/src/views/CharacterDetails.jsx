@@ -652,7 +652,7 @@ const CharacterDetails = () => {
             </div>
           </div>
         </div>
-        <Link to={`/character/${character.character_id}/edit`}>
+        <Link to={`/character/${id}/edit`}>
           {' '}
           <button>Edit</button>
         </Link>
