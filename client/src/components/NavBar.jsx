@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CharacterForm } from '../components';
+import { CreateCharacter } from '../components';
 import { MdOutlineDesignServices } from 'react-icons/md';
 import { FaBars } from 'react-icons/fa';
 
@@ -97,7 +97,7 @@ const NavBar = () => {
           <button className="hidden lg:block" onClick={handleShowForm}>
             Create Character
           </button>
-          {showForm && <CharacterForm closeForm={() => setShowForm(false)} />}
+          {showForm && <CreateCharacter closeForm={() => setShowForm(false)} />}
           <button className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black ">
             Register
           </button>
