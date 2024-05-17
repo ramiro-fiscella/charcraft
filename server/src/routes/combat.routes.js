@@ -1,12 +1,14 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const {
   getCharacterCombatStats,
   setCharacterCombatStats,
-} = require("../controllers/combat.controller");
+  updateCharacterCombatStats,
+} = require('../controllers/combat.controller');
 
 const router = Router();
 
-router.get("/:id", getCharacterCombatStats);
-router.post("/:id", setCharacterCombatStats);
+router.get('/:id/combat', getCharacterCombatStats);
+router.post('/:id/combat', setCharacterCombatStats);
+router.put('/:id/combat', updateCharacterCombatStats);
 
 module.exports = router;

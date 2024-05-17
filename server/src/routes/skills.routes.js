@@ -1,12 +1,14 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const {
   getCharacterSkills,
   setCharacterSkills,
-} = require("../controllers/skills.controller");
+  updateCharacterSkills,
+} = require('../controllers/skills.controller');
 
 const router = Router();
 
-router.get("/:id", getCharacterSkills);
-router.post("/:id", setCharacterSkills);
+router.get('/:id/skills', getCharacterSkills);
+router.post('/:id/skills', setCharacterSkills);
+router.put('/:id/skills', updateCharacterSkills);
 
 module.exports = router;

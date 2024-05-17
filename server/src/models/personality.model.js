@@ -1,4 +1,4 @@
-const { query } = require("../db");
+const { query } = require('../db');
 
 const getPersonality = async (character_id) => {
   const queryString = `
@@ -71,7 +71,56 @@ const setPersonality = async (
   }
 };
 
+const updatePersonality = async (
+  character_id,
+  {
+    alignment,
+    personality_traits,
+    ideals,
+    bonds,
+    flaws,
+    quote,
+    features_and_traits,
+    languages,
+    other_proficiencies,
+  }
+) => {
+  const queryString = `
+    UPDATE personality
+    SET
+      alignment = $2,
+      personality_traits = $3,
+      ideals = $4,
+      bonds = $5,
+      flaws = $6,
+      quote = $7,
+      features_and_traits = $8,
+      languages = $9,
+      other_proficiencies = $10
+    WHERE character_id = $1
+    RETURNING *;
+  `;
+  try {
+    const result = await query(queryString, [
+      character_id,
+      alignment,
+      personality_traits,
+      ideals,
+      bonds,
+      flaws,
+      quote,
+      features_and_traits,
+      languages,
+      other_proficiencies,
+    ]);
+    return result.rows[0];
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 module.exports = {
   setPersonality,
   getPersonality,
+  updatePersonality,
 };
