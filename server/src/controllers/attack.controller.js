@@ -3,8 +3,35 @@ const AttackModel = require('../models/attack.model');
 const getCharacterAttackStats = async (req, res) => {
   const character_id = req.params.id;
   try {
-    const attackStats = await AttackModel.getAttackStats(character_id);
-    res.status(201).json(attackStats);
+    let attackStats = await AttackModel.getAttackStats(character_id);
+
+    // Si no existen estadísticas de ataque, crear una entrada nueva con valores predeterminados
+    if (!attackStats) {
+      const defaultAttackStats = {
+        weapon_1: '',
+        atk_bonus_1: 0,
+        damage_1: '0',
+        damage_type_1: '',
+        atk_range_1: '',
+        weapon_2: '',
+        atk_bonus_2: 0,
+        damage_2: '0',
+        damage_type_2: '',
+        atk_range_2: '',
+        weapon_3: '',
+        atk_bonus_3: 0,
+        damage_3: '0',
+        damage_type_3: '',
+        atk_range_3: '',
+      };
+
+      attackStats = await AttackModel.setAttackStats(
+        character_id,
+        defaultAttackStats
+      );
+    }
+
+    res.status(200).json(attackStats);
   } catch (err) {
     console.error(err);
     res

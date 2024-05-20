@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditAttack = ({ id }) => {
+const EditAttack = () => {
+  const { id } = useParams();
   const [attackStats, setAttackStats] = useState({
     weapon_1: '',
     atk_bonus_1: 0,
@@ -31,40 +32,11 @@ const EditAttack = ({ id }) => {
         setAttackStats(response.data);
       } catch (err) {
         console.error('Error fetching attack stats:', err);
-        initializeAttackStats();
       }
     };
 
     fetchAttackStats();
   }, [id]);
-
-  const initializeAttackStats = async () => {
-    try {
-      await axios.post(`http://localhost:5000/characters/${id}/attack`, {
-        weapon_1: 'Sword',
-        atk_bonus_1: 5,
-        damage_1: '1d8',
-        damage_type_1: 'Slashing',
-        atk_range_1: 'Melee',
-        weapon_2: 'Bow',
-        atk_bonus_2: 3,
-        damage_2: '1d6',
-        damage_type_2: 'Piercing',
-        atk_range_2: 'Ranged',
-        weapon_3: 'Dagger',
-        atk_bonus_3: 4,
-        damage_3: '1d4',
-        damage_type_3: 'Piercing',
-        atk_range_3: 'Melee',
-      });
-      const response = await axios.get(
-        `http://localhost:5000/characters/${id}/attack`
-      );
-      setAttackStats(response.data);
-    } catch (error) {
-      console.error('Error initializing attack stats:', error);
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;

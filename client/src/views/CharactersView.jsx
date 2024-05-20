@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CharacterDetails } from '../views';
-import { Card, CardCopy } from '../components';
-import { fetchCharacters } from '../services';
+import { CardCopy } from '../components';
+import { fetchCharacters, getCharacterById } from '../services';
 
 const CharactersView = () => {
   const [characters, setCharacters] = useState([]);
@@ -21,8 +21,10 @@ const CharactersView = () => {
   }, []);
 
   const handleCardClick = async (character) => {
+    console.log('Selected Character ID:', character.id);
     try {
       const characterData = await getCharacterById(character.id);
+      console.log('Fetched Character Data:', characterData);
       setSelectedCharacter(characterData);
     } catch (error) {
       console.error('Error fetching character:', error);
@@ -37,7 +39,6 @@ const CharactersView = () => {
       </p>
       <div className="max-w-[1200px] w-full m-auto my-12 mb-24 flex justify-center flex-wrap gap-8">
         {characters.map((character) => (
-          // <CardCopy
           <CardCopy
             key={character.id}
             character={character}

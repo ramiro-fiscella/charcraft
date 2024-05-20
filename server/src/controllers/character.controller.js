@@ -1,4 +1,4 @@
-const CharacterModel = require("../models/character.model");
+const CharacterModel = require('../models/character.model');
 
 const getCharacters = async (req, res) => {
   try {
@@ -6,7 +6,7 @@ const getCharacters = async (req, res) => {
     res.status(201).json(characters);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error al obtener los personajes" });
+    res.status(500).json({ message: 'Error al obtener los personajes' });
   }
 };
 
@@ -14,11 +14,19 @@ const getCharacter = async (req, res) => {
   const { id } = req.params;
   try {
     const character = await CharacterModel.getCharacterById(id);
-    res.status(201).json(character);
+    if (!character) {
+      return res.status(404).json({ message: 'Character not found' });
+    }
+    res.status(200).json(character);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error al obtener el personaje" });
+    res.status(500).json({ message: 'Error al obtener el personaje' });
   }
+};
+
+module.exports = {
+  getCharacter,
+  // otros controladores...
 };
 
 const createCharacter = async (req, res) => {
@@ -29,7 +37,7 @@ const createCharacter = async (req, res) => {
     res.status(201).json(newCharacter);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error al crear el personaje" });
+    res.status(500).json({ message: 'Error al crear el personaje' });
   }
 };
 
@@ -44,7 +52,7 @@ const updateCharacter = async (req, res) => {
     res.status(201).json(updatedCharacter);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error al actualizar el personaje" });
+    res.status(500).json({ message: 'Error al actualizar el personaje' });
   }
 };
 
@@ -55,7 +63,7 @@ const deleteCharacter = async (req, res) => {
     res.status(200).json(deletedCharacter);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error al borrar el personaje" });
+    res.status(500).json({ message: 'Error al borrar el personaje' });
   }
 };
 
