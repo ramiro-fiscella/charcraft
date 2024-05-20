@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const EditAttack = () => {
@@ -21,7 +21,6 @@ const EditAttack = () => {
     damage_type_3: '',
     atk_range_3: '',
   });
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAttackStats = async () => {
@@ -53,7 +52,6 @@ const EditAttack = () => {
         attackStats
       );
       console.log('Attack stats saved:', attackStats);
-      navigate(`/character/${id}`);
     } catch (error) {
       console.error('Error saving attackStats:', error);
     }

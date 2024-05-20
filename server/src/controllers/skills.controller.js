@@ -4,6 +4,31 @@ const getCharacterSkills = async (req, res) => {
   const character_id = req.params.id;
   try {
     const skills = await SkillsModel.getSkills(character_id);
+
+    if (!skills) {
+      const defaultSkills = {
+        acrobatics: false,
+        animal_handling: false,
+        arcana: false,
+        athletics: false,
+        deception: false,
+        history: false,
+        insight: false,
+        intimidation: false,
+        investigation: false,
+        medicine: false,
+        nature: false,
+        perception: false,
+        performance: false,
+        persuasion: false,
+        religion: false,
+        sleight_of_hand: false,
+        stealth: false,
+        survival: false,
+      };
+      skills = await SkillsModel.setSkills(character_id, defaultSkills);
+    }
+
     res.status(201).json(skills);
   } catch (err) {
     console.error(err);

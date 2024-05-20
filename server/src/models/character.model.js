@@ -24,7 +24,7 @@ const getCharacterById = async (id) => {
 
   const result = await query(queryString, [id]);
   const character = result.rows[0];
-  console.log(character);
+  // console.log(character);
   return character;
 };
 

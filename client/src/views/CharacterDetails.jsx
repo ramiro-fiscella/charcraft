@@ -5,7 +5,7 @@ import axios from 'axios';
 import { calculateModifier, calculateSkillProficiency } from '../services/';
 
 const CharacterDetails = () => {
-  const { id } = useParams(); // Obtiene el ID del parámetro de la URL
+  const { id } = useParams();
   const [character, setCharacter] = useState(null);
 
   useEffect(() => {
@@ -13,8 +13,8 @@ const CharacterDetails = () => {
       try {
         const response = await axios.get(
           `http://localhost:5000/characters/${id}`
-        ); // Hacer solicitud HTTP al servidor para obtener los detalles del personaje
-        console.log(response.data);
+        );
+        // console.log(response.data);
         setCharacter(response.data); // Establecer el estado del personaje con los datos recibidos
       } catch (error) {
         console.error('Error fetching character:', error);
@@ -22,14 +22,13 @@ const CharacterDetails = () => {
     };
 
     fetchCharacter();
-  }, [id]); // Ejecutar efecto cada vez que cambie el ID del personaje
+  }, [id]);
 
   if (!character) {
     return <div>Cargando...</div>;
   }
 
   const handleSkillChange = (event) => {
-    // Manejador de cambio para actualizar el estado del personaje con las habilidades seleccionadas
     const { name, checked } = event.target;
     disabled;
     setCharacter((prevCharacter) => ({
