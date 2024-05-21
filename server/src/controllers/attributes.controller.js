@@ -4,6 +4,22 @@ const getCharacterAttributes = async (req, res) => {
   const character_id = req.params.id;
   try {
     const attributes = await AttributesModel.getAttributes(character_id);
+
+    if (!attributes) {
+      const defaultAttributes = {
+        strength: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
+      };
+      attributes = await AttributesModel.setAttributes(
+        character_id,
+        defaultAttributes
+      );
+    }
+
     res.status(201).json(attributes);
   } catch (err) {
     console.error(err);

@@ -4,6 +4,7 @@ import {
   EditCharacterBase,
   EditAttack,
   EditSkills,
+  EditAttributes,
 } from '../components/EditComponents';
 
 const EditView = () => {
@@ -15,6 +16,7 @@ const EditView = () => {
       <EditCharacterBase id={id} />
       <EditAttack id={id} />
       <EditSkills id={id} />
+      <EditAttributes id={id} />
     </div>
   );
 };

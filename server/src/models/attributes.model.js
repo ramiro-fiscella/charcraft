@@ -34,22 +34,17 @@ const setAttributes = async (
     RETURNING *;
   `;
 
-  try {
-    const result = await query(queryString, [
-      character_id,
-      strength,
-      dexterity,
-      constitution,
-      intelligence,
-      wisdom,
-      charisma,
-    ]);
+  const result = await query(queryString, [
+    character_id,
+    strength,
+    dexterity,
+    constitution,
+    intelligence,
+    wisdom,
+    charisma,
+  ]);
 
-    return result.rows[0];
-  } catch (err) {
-    console.error('Error al crear o actualizar los atributos:', err);
-    throw err;
-  }
+  return result.rows[0];
 };
 
 const updateAttributes = async (
