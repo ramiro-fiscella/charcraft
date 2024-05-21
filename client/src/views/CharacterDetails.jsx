@@ -633,15 +633,21 @@ const CharacterDetails = () => {
                 </li>
                 <li>
                   <h5>Features and Traits</h5>
-                  <p>{character.features_adn_traits}</p>
+                  {character.features_and_traits.map((feature) => (
+                    <p key={feature}>• {feature}</p>
+                  ))}
                 </li>
                 <li>
                   <h5>Languajes </h5>
-                  <p>{character.languajes}</p>
+                  {character.languages.map((language) => (
+                    <p key={language}>• {language}</p>
+                  ))}
                 </li>
                 <li>
                   <h5>Other Proficiencies</h5>
-                  <p>{character.other_proficiencies}</p>
+                  {character.other_proficiencies.map((proficiency) => (
+                    <p key={proficiency}>• {proficiency}</p>
+                  ))}
                 </li>
               </ul>
             </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+import UploadWidget from '../../services/UploadWidget';
+
 const EditCharacter = ({ id }) => {
   const [character, setCharacter] = useState(null);
   const navigate = useNavigate();
@@ -29,6 +31,13 @@ const EditCharacter = ({ id }) => {
         [name]: value,
       }));
     }
+  };
+
+  const handleImageUpload = (imageUrl) => {
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      avatar_url: imageUrl,
+    }));
   };
 
   const handleSave = async () => {
@@ -72,12 +81,7 @@ const EditCharacter = ({ id }) => {
         value={character.level}
         onChange={handleInputChange}
       />
-      <input
-        type="text"
-        name="avatar_url"
-        value={character.avatar_url}
-        onChange={handleInputChange}
-      />
+      <UploadWidget onImageUpload={handleImageUpload} />
 
       <button onClick={handleSave}>Guardar</button>
     </form>

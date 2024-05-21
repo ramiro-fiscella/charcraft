@@ -42,10 +42,13 @@ const createCharacter = async ({
   return result.rows[0];
 };
 
-const updateCharacter = async (id, { char_name, race, char_class, level }) => {
+const updateCharacter = async (
+  id,
+  { char_name, race, char_class, level, avatar_url }
+) => {
   const result = await query(
-    'UPDATE characters SET char_name = $1, race = $2, char_class = $3, level = $4 WHERE id = $5 RETURNING *',
-    [char_name, race, char_class, level, id]
+    'UPDATE characters SET char_name = $1, race = $2, char_class = $3, level = $4, avatar_url = $5 WHERE id = $6 RETURNING *',
+    [char_name, race, char_class, level, avatar_url, id]
   );
   return result.rows[0];
 };
