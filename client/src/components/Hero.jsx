@@ -2,14 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative h-[90vh]  2-full overflow-hidden bg-fixed bg-parallax bg-cover">
-      {/* <img
-        src="https://cdnb.artstation.com/p/assets/images/images/006/036/033/original/andrii-shafetov-ancient-ruins-fx.gif?1497372245"
-        // src="https://cdna.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919"
-        alt="Hero Background"
-        className="absolute inset-0 bg-top object-cover w-full h-full left-0  "
-        data-speed="0.5" // Adjust parallax effect
-      /> */}
+    <div className="relative h-[90vh] overflow-hidden bg-fixed bg-parallax bg-cover">
       <div className="absolute bottom-0 w-[100vw] h-44 bg-gradient-to-t from-zinc-950"></div>
       <div className="relative h-full max-w-[1200px] m-auto">
         <div className="absolute md:w-[30rem] max-w-[1200px]  inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white">

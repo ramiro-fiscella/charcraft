@@ -1,53 +1,62 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React from 'react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <div className="about-container">
-      {/* Sección de información de la aplicación */}
-      <div className="app-info">
-        <h2 className="app-info-title">Sobre la Aplicación</h2>
-        <p className="app-info-description">
-          ¡Bienvenido a nuestra aplicación! Aquí puedes encontrar información
-          sobre nuestra plataforma de juegos de fantasía. Explora mundos
-          mágicos, crea personajes épicos y embarcarte en aventuras
-          inolvidables.
-        </p>
-        <img
-          src="/images/hero_image.jpg"
-          alt="Hero Image"
-          className="app-info-hero-image"
-        />
+    <div className="relative h-full  m-auto">
+      <div className="relative h-min  mx-auto p-4 py-20 md:p-20 overflow-hidden bg-fixed bg-about bg-cover">
+        <div className=" md:w-[30rem] max-w-[1200px] mx-auto  inset-4 md:inset-8 flex flex-col  justify-center  text-white">
+          <h1 className="text-4xl xl:text-6xl  font-semibold mb-4">
+            Acerca de CharCraft
+          </h1>
+          <p className="text-lg  leading-6 font-normal mb-6">
+            CharCraft es un proyecto open source que (por el momento) permite
+            crear hojas de personajes para el juego de rol de Dragon 5 edición
+            de manera sencilla.
+            <br />
+            <br />
+            El proyecto se encuentra en sus primeras etapas y aun queda mucho
+            trabajo por hacer. Si quieres contribuir o colaborar puedes hacerlo
+            en GitHub.
+          </p>
+        </div>
       </div>
 
-      {/* Sección de información personal */}
-      <div className="personal-info">
-        <h2 className="personal-info-title">Sobre Mí</h2>
-        <img
-          src="/images/profile_picture.jpg"
-          alt="Profile Picture"
-          className="personal-info-profile-picture"
-        />
-        <p className="personal-info-description">
-          Soy un desarrollador web freelance apasionado por la creación de
-          aplicaciones web increíbles. Si estás buscando un desarrollador
-          motivado y comprometido para tu próximo proyecto, ¡no dudes en
-          contactarme!
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-2xl">Contribuidores</h2>
+
+        <p className="text-lg text-left leading-6 font-normal mb-6">
+          Los GitHubs de las personas que contribuyan al proyecto se irán
+          añadiendo aqui.
         </p>
-        {/* Iconos de redes sociales */}
-        <div className="social-links">
-          <a href="https://github.com/tuusuario" className="social-link">
-            <FaGithub />
-          </a>
-          <a href="https://linkedin.com/in/tuusuario" className="social-link">
-            <FaLinkedin />
-          </a>
-          <a href="https://twitter.com/tuusuario" className="social-link">
-            <FaTwitter />
-          </a>
-        </div>
-        {/* Llamado a la acción */}
-        <button className="cta-button">¡Contáctame!</button>
+
+        <ul>
+          <li>
+            <a
+              href="https://github.com/ramiro-fiscella"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ramiro Fiscella
+            </a>
+          </li>
+        </ul>
+
+        <h2 className="text-2xl">Contacto</h2>
+
+        <p className="font-light">
+          Puedes contactar conmigo a traves de los siguientes canales.
+        </p>
+
+        <a href="https://ramirof.vercel.app" target="_blank">
+          <FaTwitter /> Portfolio
+        </a>
+        <a href="https://www.linkedin.com/in/ramiro-fiscella/" target="_blank">
+          <FaLinkedin /> LinkedIn
+        </a>
+        <a href="https://github.com/ramiro-fiscella" target="_blank">
+          <FaGithub /> GitHub
+        </a>
       </div>
     </div>
   );

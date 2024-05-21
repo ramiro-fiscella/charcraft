@@ -30,7 +30,9 @@ export default {
     extend: {
       backgroundImage: {
         parallax:
-          'url(https://cdnb.artstation.com/p/assets/images/images/006/036/033/original/andrii-shafetov-ancient-ruins-fx.gif?1497372245)',
+          'url(https://cdnb.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919)',
+        about:
+          'url(https://cdnb.artstation.com/p/assets/images/images/001/714/027/4k/ryan-richmond-castletrot-finalsmall.jpg?1451520850)',
       },
     },
   },
