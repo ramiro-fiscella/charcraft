@@ -8,34 +8,75 @@ const getSkills = async (character_id) => {
   return result.rows[0];
 };
 
-const setSkills = async (character_id, skills) => {
-  const query = `
-    INSERT INTO skills (character_id, acrobatics, animal_handling, arcana, athletics, deception, history, insight, intimidation, investigation, medicine, nature, perception, performance, persuasion, religion, sleight_of_hand, stealth, survival)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
-    RETURNING *;
-  `;
-  const values = [
-    character_id,
-    skills.acrobatics,
-    skills.animal_handling,
-    skills.arcana,
-    skills.athletics,
-    skills.deception,
-    skills.history,
-    skills.insight,
-    skills.intimidation,
-    skills.investigation,
-    skills.medicine,
-    skills.nature,
-    skills.perception,
-    skills.performance,
-    skills.persuasion,
-    skills.religion,
-    skills.sleight_of_hand,
-    skills.stealth,
-    skills.survival,
-  ];
-  const result = await query(query, values);
+const setSkills = async (
+  character_id,
+  {
+    acrobatics,
+    animal_handling,
+    arcana,
+    athletics,
+    deception,
+    history,
+    insight,
+    intimidation,
+    investigation,
+    medicine,
+    nature,
+    perception,
+    performance,
+    persuasion,
+    religion,
+    sleight_of_hand,
+    stealth,
+    survival,
+  }
+) => {
+  const result = await query(
+    `
+    INSERT INTO skills
+    (character_id,
+    acrobatics,
+    animal_handling,
+    arcana,
+    athletics,
+    deception,
+    history,
+    insight,
+    intimidation,
+    investigation,
+    medicine,
+    nature,
+    perception,
+    performance,
+    persuasion,
+    religion,
+    sleight_of_hand,
+    stealth,
+    survival)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING *;
+  `,
+    [
+      character_id,
+      acrobatics,
+      animal_handling,
+      arcana,
+      athletics,
+      deception,
+      history,
+      insight,
+      intimidation,
+      investigation,
+      medicine,
+      nature,
+      perception,
+      performance,
+      persuasion,
+      religion,
+      sleight_of_hand,
+      stealth,
+      survival,
+    ]
+  );
   return result.rows[0];
 };
 

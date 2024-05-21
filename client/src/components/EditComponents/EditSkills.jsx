@@ -31,9 +31,8 @@ const EditSkills = () => {
         const response = await axios.get(
           `http://localhost:5000/characters/${id}/skills`
         );
-        // Asegúrate de que response.data no contiene id ni character_id
-        const { id, character_id, ...skillsData } = response.data;
-        setSkills(skillsData);
+        const { id: skillId, character_id, ...skills } = response.data;
+        setSkills(skills);
       } catch (error) {
         console.error('Error fetching skills:', error);
       }

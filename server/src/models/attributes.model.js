@@ -5,7 +5,6 @@ const getAttributes = async (character_id) => {
     SELECT * FROM attributes WHERE character_id = $1
   `;
   const result = await query(queryString, [character_id]);
-
   return result.rows[0];
 };
 
@@ -64,22 +63,17 @@ const updateAttributes = async (
     RETURNING *;
   `;
 
-  try {
-    const result = await query(queryString, [
-      strength,
-      dexterity,
-      constitution,
-      intelligence,
-      wisdom,
-      charisma,
-      character_id,
-    ]);
+  const result = await query(queryString, [
+    strength,
+    dexterity,
+    constitution,
+    intelligence,
+    wisdom,
+    charisma,
+    character_id,
+  ]);
 
-    return result.rows[0];
-  } catch (err) {
-    console.error('Error al actualizar los atributos:', err);
-    throw err;
-  }
+  return result.rows[0];
 };
 
 module.exports = {

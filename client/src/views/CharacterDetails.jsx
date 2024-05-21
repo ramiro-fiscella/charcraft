@@ -47,7 +47,7 @@ const CharacterDetails = () => {
       id="character_details"
       className="h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
     >
-      <div>
+      <div className="min-w-[320px]">
         <div className="max-w-[2900px] mx-auto gap-4 items-start">
           <div className="flex flex-row justify-between items-start gap-4  border-b border-neutral-800 px-4 py-2  ">
             <div className="flex flex-row gap-2">
@@ -227,7 +227,7 @@ const CharacterDetails = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="min-w-[320px]">
         <div>
           <div id="skills" className="w-80  p-2">
             <ul className="mx-2 mt-0  p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800">
@@ -597,7 +597,7 @@ const CharacterDetails = () => {
       </div>
       <div>
         <div>
-          <div className="p-2">
+          <div className="p-2 min-w-[320px]">
             <div
               id="personality"
               className="mx-2 mt-0 p-3 shadow-lg shadow-neutral-950 rounded-xl border-t-2 border-neutral-800"

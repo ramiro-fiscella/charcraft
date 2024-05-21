@@ -17,9 +17,13 @@ const EditAttributes = () => {
     const fetchAttributes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/characters/${id}`
+          `http://localhost:5000/characters/${id}/attributes`
         );
-        const { id, character_id, ...attributesData } = response.data;
+        const {
+          id: attributeId,
+          character_id,
+          ...attributesData
+        } = response.data;
         setAttributes(attributesData);
       } catch (error) {
         console.log('Error fetching attributes:', error);
@@ -51,10 +55,10 @@ const EditAttributes = () => {
 
   return (
     <div>
-      <h1>Edit Attributes</h1>
+      <h1>Editar Atributos</h1>
       <form>
         <label>
-          Strength
+          Fuerza
           <input
             type="number"
             name="strength"
@@ -63,7 +67,7 @@ const EditAttributes = () => {
           />
         </label>
         <label>
-          Dexterity
+          Destreza
           <input
             type="number"
             name="dexterity"
@@ -72,7 +76,7 @@ const EditAttributes = () => {
           />
         </label>
         <label>
-          Constitution
+          Constitución
           <input
             type="number"
             name="constitution"
@@ -81,7 +85,7 @@ const EditAttributes = () => {
           />
         </label>
         <label>
-          Intelligence
+          Inteligencia
           <input
             type="number"
             name="intelligence"
@@ -90,7 +94,7 @@ const EditAttributes = () => {
           />
         </label>
         <label>
-          Wisdom
+          Sabiduría
           <input
             type="number"
             name="wisdom"
@@ -99,7 +103,7 @@ const EditAttributes = () => {
           />
         </label>
         <label>
-          Charisma
+          Carisma
           <input
             type="number"
             name="charisma"
@@ -108,7 +112,7 @@ const EditAttributes = () => {
           />
         </label>
         <button type="submit" onClick={handleSave}>
-          Save
+          Guardar
         </button>
       </form>
     </div>
