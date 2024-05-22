@@ -32,7 +32,7 @@ export default {
         parallax:
           'url(https://cdnb.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919)',
         about:
-          'url(https://cdnb.artstation.com/p/assets/images/images/001/714/027/4k/ryan-richmond-castletrot-finalsmall.jpg?1451520850)',
+          'url(https://cdna.artstation.com/p/assets/images/images/001/215/892/large/raphael-lubke-crystal-lake2-2-copyright2.jpg?1443930020)',
       },
     },
   },

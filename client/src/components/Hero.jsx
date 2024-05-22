@@ -20,10 +20,10 @@ const Hero = () => {
         </div>
 
         <div className="absolute right-4 md:right-12 bottom-8 text-sm text-right">
-          <p className="font-normal">Art by Andrii Shafetov</p>
+          <p className="font-normal">Art by Ryan Richmond</p>
           <a
             target="_blank"
-            href="https://andriishafetov.artstation.com/"
+            href="https://ryanrichmond.art/"
             className=" text-emerald-600 underline-offset-2 underline"
           >
             Link to his website
