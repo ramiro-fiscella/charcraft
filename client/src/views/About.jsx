@@ -4,7 +4,7 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 
 const About = () => {
   return (
-    <div className="relative h-full m-auto">
+    <div className="m-auto">
       <div className="relative  mx-auto p-4 py-20 pt-40 overflow-hidden bg-fixed bg-about bg-cover">
         <div className=" md:w-[30rem] max-w-[1200px] mx-auto inset-4 flex flex-col  justify-center text-white">
           <h1 className="text-4xl xl:text-6xl  font-semibold mb-4">
@@ -22,23 +22,18 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col gap-8 py-12  justify-between items-center pointer-events-none bg-gradient-to-b from-yellow-600 to-amber-600 border-double border-y-4 border-yellow-500 ">
-        <MdOutlineDesignServices className="text-4xl text-yellow-300" />
+      <div className="w-full flex flex-col gap-8 py-12  justify-between items-center pointer-events-none bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
+        <MdOutlineDesignServices className="text-4xl text-yellow-500" />
         <h1 className="max-w-[1200px] m-auto px-4 md:px-24 inset-4 md:inset-8 font-bold text-3xl md:text-4xl text-center text-white">
           Si quieres contribuir o colaborar puedes hacerlo en GitHub
         </h1>
 
-        <a
-          className="w-full md:w-56 px-4"
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/ramirofiscella/charcraft"
-        >
-          <button className="w-full">Ir al repositorio</button>
+        <a id="githubBtn" className="w-full md:w-56">
+          Ir al repositorio
         </a>
       </div>
 
-      <div className="my-32 mx-8 flex flex-col-reverse md:flex-row gap-5 justify-center">
+      <div className="max-w-[600px] lg:max-w-[1200px] my-32 mx-8 lg:mx-auto flex flex-col-reverse lg:flex-row gap-5 justify-center">
         <div className="flex flex-col justify-evenly text-left z-30  rounded-xl">
           <h2 className="text-3xl">Un mensaje del creador</h2>
 

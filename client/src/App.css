@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
+button,
+#githubBtn {
   @apply py-3 px-6 bg-emerald-950 text-stone-200 tracking-wider border-x-4 border-y border-double border-yellow-500 uppercase cursor-pointer transition-all duration-200;
 }
 button:hover {
