@@ -5,14 +5,12 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 const About = () => {
   return (
     <div className="m-auto w-full">
-      <div className="relative w-full mx-auto p-4 py-20 pt-64 overflow-hidden bg-fixed bg-about bg-cover"></div>
+      <div className="relative h-96 flex items-center justify-center w-full mx-auto p-4 py-20 pt-36 overflow-hidden bg-fixed bg-about bg-cover">
+        <MdOutlineDesignServices className="w-20 h-20 font-regular text-yellow-600" />
+      </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1200px] mx-auto py-24 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <img
-            className="w-96 object-cover rounded-lg"
-            src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/305231400/original/90a39c5e8c3893ce5644be2bb7a52caa6e1a0bd1/create-your-dnd-or-fantasy-character.png"
-            alt=""
-          />
+          <div className="md:w-96 h-96 md:h-auto object-cover rounded-xl bg-aboutCreator bg-cover"></div>
 
           <div className="md:w-96 ">
             <h1 className="text-2xl xl:text-2xl  font-semibold mb-4">
@@ -26,6 +24,15 @@ const About = () => {
               <br />
               El proyecto se encuentra en sus primeras etapas y aun queda mucho
               trabajo por hacer.
+            </p>
+            <p className="font-light">
+              Arte de{' '}
+              <a
+                className="hover:underline underline-offset-4"
+                href="https://efr83.artstation.com/"
+              >
+                Efren Alpízar Cordero
+              </a>
             </p>
           </div>
         </div>
@@ -45,7 +52,7 @@ const About = () => {
       <div className="relative w-full h-full mx-auto p-4 py-20 pt-64 overflow-hidden bg-fixed bg-about bg-cover"></div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1200px] mx-auto py-24 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="w-60 h-72 md:w-96 md:h-[555px] m-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500"></div>
+          <div className="w-60 h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500 "></div>
 
           <div className="md:w-96">
             <h1 className="text-2xl xl:text-2xl  font-semibold mb-4">

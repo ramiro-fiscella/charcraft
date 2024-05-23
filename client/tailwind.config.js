@@ -33,6 +33,8 @@ export default {
           'url(https://cdnb.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919)',
         about:
           'url(https://cdna.artstation.com/p/assets/images/images/001/215/892/large/raphael-lubke-crystal-lake2-2-copyright2.jpg?1443930020)',
+        aboutCreator:
+          'url(https://cdnb.artstation.com/p/assets/images/images/044/132/745/large/efren-alpizar-cordero-planeamiento.jpg?1639169107)',
       },
     },
   },
