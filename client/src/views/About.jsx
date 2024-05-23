@@ -43,14 +43,15 @@ const About = () => {
             un poco sobre este proyecto.
             <br />
             <br />
-            La idea de CharCraft nació principalmente para reforzar mis
+            La idea de CharCraft surgió inicialmente para reforzar mis
             conocimientos en backend, pero rápidamente me encariñé con la idea
-            de poder usar y compartir a mis compañeros roleros una base de datos
-            para crear y usar personajes para nuestras partidas de D&D.
+            de crear y compartir una base de datos con mis compañeros roleros
+            para diseñar y utilizar personajes en nuestras partidas de D&D.
             <br />
             <br />
-            Si bien ya existen algunas plataformas que lo hacen, no encuentro la
-            simpleza que busco a la hora de crear hojas de personajes.
+            Aunque ya existen algunas plataformas que ofrecen esta
+            funcionalidad, no he encontrado la simplicidad que busco a la hora
+            de crear hojas de personajes.
           </p>
 
           <h3 className="text-xl mb-2">Mis Links:</h3>
