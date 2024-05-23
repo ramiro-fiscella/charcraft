@@ -62,7 +62,7 @@ const Footer = () => {
           </a>
 
           <a href="https://rfiscella.vercel.app/" target="_blank">
-            <SiDiaspora className="text-orange-500" />
+            <SiDiaspora className="text-orange-500 hover:text-emerald-600" />
           </a>
 
           <a href="https://github.com/ramiro-fiscella" target="_blank">

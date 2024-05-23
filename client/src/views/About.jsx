@@ -4,9 +4,9 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 
 const About = () => {
   return (
-    <div className="m-auto w-full">
+    <>
       <div className="relative h-96 flex items-center justify-center w-full mx-auto p-4 py-20 pt-36 overflow-hidden bg-fixed bg-about bg-cover">
-        <MdOutlineDesignServices className="w-20 h-20 font-regular text-yellow-600" />
+        <MdOutlineDesignServices className="w-12 h-12 font-regular text-yellow-600" />
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1200px] mx-auto py-24 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
@@ -38,13 +38,18 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full h-min flex flex-col gap-8 py-12 px-4 justify-between items-center pointer-events-none bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
+      <div className="z-40 w-full h-min flex flex-col gap-8 py-12 px-4 justify-between items-center pointer-events-none bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
         <MdOutlineDesignServices className="text-4xl text-yellow-500" />
         <h1 className="max-w-[1200px] m-auto md:px-24 inset-4 md:inset-8 font-bold text-3xl md:text-4xl text-center text-white">
           Si quieres contribuir o colaborar puedes hacerlo en GitHub
         </h1>
 
-        <a id="githubBtn" className="w-full md:w-56 text-center">
+        <a
+          href="https://github.com/ramiro-fiscella/charcraft"
+          target="_blank"
+          id="githubBtn"
+          className="w-full md:w-56 text-center"
+        >
           Ir al repositorio
         </a>
       </div>
@@ -52,7 +57,7 @@ const About = () => {
       <div className="relative w-full h-full mx-auto p-4 py-20 pt-64 overflow-hidden bg-fixed bg-about bg-cover"></div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1200px] mx-auto py-24 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="w-60 h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500 "></div>
+          <div className="w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500 "></div>
 
           <div className="md:w-96">
             <h1 className="text-2xl xl:text-2xl  font-semibold mb-4">
@@ -111,10 +116,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="my-32 mx-8 flex flex-col-reverse md:flex-row gap-5 justify-center">
+      {/* <div className="my-32 mx-8 flex flex-col-reverse md:flex-row gap-5 justify-center">
         <h2>El futuro de CharCraft</h2>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 };
 
