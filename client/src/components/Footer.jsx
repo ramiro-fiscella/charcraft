@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { FaTree, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
+import { FaLinkedin, FaGithubSquare } from 'react-icons/fa';
+import { SiDiaspora } from 'react-icons/si';
 
 const Footer = () => {
   return (
@@ -47,21 +48,21 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:flex flex-col max-w-[1240px] px-2 py-4 m-auto items-center justify-between sm:flex-row text-center">
+      <div className="md:flex flex-col max-w-[1240px] px-2 py-4 m-auto mt-12 items-center justify-between sm:flex-row text-center">
         <p className="font-light text-white">
           {new Date().getFullYear()} RKF. This website is for study purposes
           only.
         </p>
-        <div className="flex justify-end gap-6 sm:w-[200px] pt-6 md:p-0 text-2xl ">
-          <a href="https://rfiscella.vercel.app/" target="_blank">
-            <FaTree className="hover:text-yellow-500 text-white" />
-          </a>
-
+        <div className="flex justify-center md:justify-end gap-6 sm:w-[200px] pt-6 md:p-0 text-2xl">
           <a
             href="https://www.linkedin.com/in/ramiro-fiscella/"
             target="_blank"
           >
             <FaLinkedin className="hover:text-yellow-500  text-white" />
+          </a>
+
+          <a href="https://rfiscella.vercel.app/" target="_blank">
+            <SiDiaspora className="text-orange-500" />
           </a>
 
           <a href="https://github.com/ramiro-fiscella" target="_blank">
