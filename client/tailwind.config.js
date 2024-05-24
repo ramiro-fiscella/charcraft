@@ -38,6 +38,9 @@ export default {
         aboutCreator:
           'url(https://cdnb.artstation.com/p/assets/images/images/044/132/745/large/efren-alpizar-cordero-planeamiento.jpg?1639169107)',
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
     },
   },
   plugins: [],
