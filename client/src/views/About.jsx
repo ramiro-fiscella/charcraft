@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdOutlineDesignServices } from 'react-icons/md';
+import { SiDiaspora } from 'react-icons/si';
 
 const About = () => {
   return (
@@ -106,7 +107,7 @@ const About = () => {
                   rel="noreferrer"
                   className="flex pt-1 gap-2 text-lg hover:border-0"
                 >
-                  <FaTwitter />
+                  <SiDiaspora className="text-orange-500 animate-spin-slow" />
                   Portfolio
                 </a>
               </li>

@@ -54,64 +54,100 @@ const EditAttributes = () => {
   };
 
   return (
-    <div>
-      <h1>Editar Atributos</h1>
+    <div className="p-4 border border-neutral-800 rounded-xl">
+      <h2 className="text-xl text-center">Editar Atributos</h2>
       <form>
-        <label>
-          Fuerza
-          <input
-            type="number"
-            name="strength"
-            value={attributes.strength}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Destreza
-          <input
-            type="number"
-            name="dexterity"
-            value={attributes.dexterity}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Constitución
-          <input
-            type="number"
-            name="constitution"
-            value={attributes.constitution}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Inteligencia
-          <input
-            type="number"
-            name="intelligence"
-            value={attributes.intelligence}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Sabiduría
-          <input
-            type="number"
-            name="wisdom"
-            value={attributes.wisdom}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Carisma
-          <input
-            type="number"
-            name="charisma"
-            value={attributes.charisma}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit" onClick={handleSave}>
+        <ul className="flex gap-4 mt-4">
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_success"
+            >
+              Fuerza
+            </label>
+            <input
+              type="number"
+              name="strength"
+              value={attributes.strength}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_failure"
+            >
+              Destreza
+            </label>
+            <input
+              type="number"
+              name="dexterity"
+              value={attributes.dexterity}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_failure"
+            >
+              Constitución
+            </label>
+            <input
+              type="number"
+              name="constitution"
+              value={attributes.constitution}
+              onChange={handleChange}
+            />
+          </li>
+        </ul>
+
+        <ul className="flex gap-4 mt-4">
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_success"
+            >
+              Inteligencia
+            </label>
+            <input
+              type="number"
+              name="intelligence"
+              value={attributes.intelligence}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_failure"
+            >
+              Sabiduría
+            </label>
+            <input
+              type="number"
+              name="wisdom"
+              value={attributes.wisdom}
+              onChange={handleChange}
+            />
+          </li>
+          <li>
+            <label
+              className="font-condensed text-base mb-1 flex justify-center items-center"
+              htmlFor="death_save_failure"
+            >
+              Carisma
+            </label>
+            <input
+              type="number"
+              name="charisma"
+              value={attributes.charisma}
+              onChange={handleChange}
+            />
+          </li>
+        </ul>
+
+        <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
           Guardar
         </button>
       </form>

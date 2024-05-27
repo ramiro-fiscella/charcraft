@@ -18,6 +18,9 @@
   margin: 0;
 }
 
+#root {
+  height: 100vh;
+}
 :root {
   --color-primario: #facc15;
   --color-secundario: #ccc;

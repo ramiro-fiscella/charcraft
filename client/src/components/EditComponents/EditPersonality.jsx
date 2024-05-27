@@ -60,7 +60,8 @@ const EditPersonality = () => {
   };
 
   return (
-    <div>
+    <div className="p-4 border border-neutral-800 rounded-xl">
+      <h2 className="text-xl text-center mb-4">Rasgos y personalidad</h2>
       <label>
         Alineamiento:
         <input
@@ -142,7 +143,9 @@ const EditPersonality = () => {
           onChange={handleArrayChange}
         />
       </label>
-      <button onClick={handleSave}>Guardar</button>
+      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+        Guardar
+      </button>
     </div>
   );
 };

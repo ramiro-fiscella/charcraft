@@ -7,7 +7,7 @@ button,
   @apply py-3 px-6 bg-emerald-950 text-stone-200 tracking-wider border-x-4 border-y border-double border-yellow-500 uppercase cursor-pointer transition-all duration-200;
 }
 button:hover {
-  @apply bg-yellow-500 text-emerald-950 border-emerald-950 border font-bold;
+  @apply bg-yellow-500 text-emerald-900 border-emerald-900 border;
 }
 
 #email {

@@ -10,23 +10,24 @@ const Hero = () => {
             Forge Your Own Legends
           </h1>
           <p className="text-lg text-left leading-6 font-normal mb-6">
-            There can't be a good adventure if there are no good characters.
-            Unleash your creativity with our{' '}
-            <span className="text-yellow-400">
-              customizable character sheets!
-            </span>
+            Crea hojas de personaje para el juego de rol Dungeon & Dragons de
+            manera{' '}
+            <span className="text-yellow-600 font-semibold">
+              simple y rápida
+            </span>{' '}
+            .
           </p>
-          <button className="">Start your adventure</button>
+          <button className="">Crea tu personaje</button>
         </div>
 
         <div className="absolute right-4 md:right-12 bottom-8 text-sm text-right">
-          <p className="font-normal">Art by Ryan Richmond</p>
+          <p className="font-normal">Arte de </p>
           <a
             target="_blank"
             href="https://ryanrichmond.art/"
             className=" text-emerald-600 underline-offset-2 underline"
           >
-            Link to his website
+            Ryan Richmond
           </a>
         </div>
       </div>

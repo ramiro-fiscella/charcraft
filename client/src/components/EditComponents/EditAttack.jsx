@@ -58,7 +58,8 @@ const EditAttack = () => {
   };
 
   return (
-    <div>
+    <div className="p-4 border border-neutral-800 rounded-xl">
+      <h2 className="text-xl text-center mb-4">Estadísticas de ataque</h2>
       <label>
         Weapon 1:
         <input
@@ -194,7 +195,9 @@ const EditAttack = () => {
           onChange={handleChange}
         />
       </label>
-      <button onClick={handleSave}>Save</button>
+      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+        Guardar
+      </button>{' '}
     </div>
   );
 };

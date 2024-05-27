@@ -52,109 +52,178 @@ const EditCombat = () => {
   };
 
   return (
-    <div>
-      <h1>Edit Combat Stats</h1>
-      <div>
-        <label htmlFor="max_hp">Max HP:</label>
-        <input
-          type="number"
-          id="max_hp"
-          name="max_hp"
-          value={combatStats.max_hp}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="current_hp">Current HP:</label>
-        <input
-          type="number"
-          id="current_hp"
-          name="current_hp"
-          value={combatStats.current_hp}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="temp_hp">Temp HP:</label>
-        <input
-          type="number"
-          id="temp_hp"
-          name="temp_hp"
-          value={combatStats.temp_hp}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="armor_class">Armor Class:</label>
-        <input
-          type="number"
-          id="armor_class"
-          name="armor_class"
-          value={combatStats.armor_class}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="initiative">Initiative:</label>
-        <input
-          type="number"
-          id="initiative"
-          name="initiative"
-          value={combatStats.initiative}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="speed">Speed:</label>
-        <input
-          type="number"
-          id="speed"
-          name="speed"
-          value={combatStats.speed}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="hit_dice">Hit Dice:</label>
-        <input
-          type="text"
-          id="hit_dice"
-          name="hit_dice"
-          value={combatStats.hit_dice}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="total_hit_dice">Total Hit Dice:</label>
-        <input
-          type="text"
-          id="total_hit_dice"
-          name="total_hit_dice"
-          value={combatStats.total_hit_dice}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="death_save_success">Death Save Success:</label>
-        <input
-          type="number"
-          id="death_save_success"
-          name="death_save_success"
-          value={combatStats.death_save_success}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="death_save_failure">Death Save Failure:</label>
-        <input
-          type="number"
-          id="death_save_failure"
-          name="death_save_failure"
-          value={combatStats.death_save_failure}
-          onChange={handleChange}
-        />
-      </div>
-      <button onClick={handleSave}>Save</button>
+    <div className="p-4 border rounded-xl border-neutral-800">
+      <h2 className="text-xl text-center mb-4">Edit Combat Stats</h2>
+      <ul className="flex flex-row justify-between gap-4">
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="max_hp"
+          >
+            Max HP
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="max_hp"
+            name="max_hp"
+            value={combatStats.max_hp}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="current_hp"
+          >
+            Current HP
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="current_hp"
+            name="current_hp"
+            value={combatStats.current_hp}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="temp_hp"
+          >
+            Temp HP
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="temp_hp"
+            name="temp_hp"
+            value={combatStats.temp_hp}
+            onChange={handleChange}
+          />
+        </li>
+      </ul>
+
+      <ul className="flex flex-row justify-between gap-4 mt-4">
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="max_hp"
+          >
+            Armor Class
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="armor_class"
+            name="armor_class"
+            value={combatStats.armor_class}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="current_hp"
+          >
+            Initiative
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="initiative"
+            name="initiative"
+            value={combatStats.initiative}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="temp_hp"
+          >
+            Speed
+          </label>
+          <input
+            className="h-12 full text-2xl px-2"
+            type="number"
+            id="speed"
+            name="speed"
+            value={combatStats.speed}
+            onChange={handleChange}
+          />
+        </li>
+      </ul>
+
+      <ul className="flex gap-4 mt-4">
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="death_save_success"
+          >
+            Hit Dice:
+          </label>
+          <input
+            type="text"
+            id="hit_dice"
+            name="hit_dice"
+            value={combatStats.hit_dice}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="death_save_failure"
+          >
+            Total Hit Dice:
+          </label>
+          <input
+            type="text"
+            id="total_hit_dice"
+            name="total_hit_dice"
+            value={combatStats.total_hit_dice}
+            onChange={handleChange}
+          />
+        </li>
+      </ul>
+
+      <ul className="flex gap-4 mt-4">
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="death_save_success"
+          >
+            Death Save Success:
+          </label>
+          <input
+            type="number"
+            id="death_save_success"
+            name="death_save_success"
+            value={combatStats.death_save_success}
+            onChange={handleChange}
+          />
+        </li>
+        <li>
+          <label
+            className="font-condensed text-base mb-1 flex justify-center items-center"
+            htmlFor="death_save_failure"
+          >
+            Death Save Failure:
+          </label>
+          <input
+            type="number"
+            id="death_save_failure"
+            name="death_save_failure"
+            value={combatStats.death_save_failure}
+            onChange={handleChange}
+          />
+        </li>
+      </ul>
+      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+        Guardar
+      </button>
     </div>
   );
 };

@@ -8,16 +8,17 @@ const Footer = () => {
     <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-stone-200 py-8 px-4  lg:px-16">
       <div className="max-w-[1240px] mx-auto grid grid-cols-2 gap-y-12 md:grid-cols-5 border-b border-stone-600 py-8">
         <div>
-          <h6>Support</h6>
+          <h6>Mapa de Sitio</h6>
           <ul>
-            <li>Pricing</li>
-            <li>Documentation</li>
-            <li>Guides</li>
-            <li>Model Status</li>
+            <li>Inicio</li>
+            <li>Personajes</li>
+            <li>Crea tu personaje</li>
+            <li>Registro</li>
+            <li>Inicio de sesión</li>
           </ul>
         </div>
         <div>
-          <h6>Contact</h6>
+          <h6>Contacto</h6>
           <ul>
             <li>Email</li>
             <li>Portfolio</li>
@@ -29,17 +30,19 @@ const Footer = () => {
         <div>
           <h6>Legal</h6>
           <ul>
-            <li>Claims</li>
-            <li>Privacy</li>
-            <li>Terms</li>
-            <li>Policies</li>
-            <li>Conditions</li>
+            <li>Reclamos</li>
+            <li>Privacidad</li>
+            <li>Terminos</li>
+            <li>Políticas</li>
+            <li>Condiciones</li>
           </ul>
         </div>
         <div className="col-span-2 p-0">
-          <h5 className="text-2xl font-medium">Subscribe to our newsletter!</h5>
+          <h5 className="text-2xl font-medium">
+            Suscríbete para conocer novedades!
+          </h5>
           <p className="py-4 font-light">
-            The lastest news, articles and resources, sent to your inbox weekly.
+            Entérate de todas las actualizaciones importantes.
           </p>
           <form className="flex flex-col">
             <input id="email" type="email" placeholder="Enter email" />

@@ -59,31 +59,28 @@ const EditSkills = () => {
   };
 
   return (
-    <div className="px-8">
-      <h2 className="text-3xl mb-4 text-center">Edit Skills</h2>
-      <form className="max-w-[1200px] w-full m-auto my-12 mb-24 flex justify-center flex-wrap gap-8">
+    <div className="p-4 border border-neutral-800 rounded-xl">
+      <h2 className="text-xl mb-4 text-center">Habilidades</h2>
+      <form className="w-full m-auto flex flex-col  justify-center gap-2">
         {Object.keys(skills).map((skill) => (
-          <div key={skill} className="flex items-center">
+          <div key={skill} className="flex items-center w-full">
             <input
               type="checkbox"
               id={skill}
               name={skill}
               checked={skills[skill]}
               onChange={handleChange}
-              className="mr-2"
+              className="w-8 mb-0"
             />
-            <label htmlFor={skill} className="text-lg">
+            <label htmlFor={skill} className="text-lg capitalize">
               {skill.replace(/_/g, ' ')}
             </label>
           </div>
         ))}
       </form>
       <div className="text-center">
-        <button
-          onClick={handleSave}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Save Skills
+        <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+          Guardar Habilidades
         </button>
       </div>
     </div>

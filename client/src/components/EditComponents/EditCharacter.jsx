@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -7,6 +7,7 @@ import UploadWidget from '../../services/UploadWidget';
 const EditCharacter = ({ id }) => {
   const [character, setCharacter] = useState(null);
   const navigate = useNavigate();
+  const widgetRef = useRef();
 
   useEffect(() => {
     const fetchCharacter = async () => {
@@ -56,7 +57,24 @@ const EditCharacter = ({ id }) => {
   }
 
   return (
-    <form>
+    <form className="p-4 border rounded-xl border-neutral-800">
+      <div
+        onClick={() => widgetRef.current.open()}
+        className="relative group cursor-pointer mb-2"
+      >
+        <img
+          className="h-32 w-full object-cover cursor-pointer opacity-50 rounded-lg"
+          src={character.avatar_url}
+          alt="Character avatar"
+        />
+        <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-white text-lg font-semibold">
+            Change Avatar
+          </span>
+        </div>
+      </div>
+      <UploadWidget ref={widgetRef} onImageUpload={handleImageUpload} />
+
       <input
         type="text"
         name="char_name"
@@ -81,9 +99,10 @@ const EditCharacter = ({ id }) => {
         value={character.level}
         onChange={handleInputChange}
       />
-      <UploadWidget onImageUpload={handleImageUpload} />
 
-      <button onClick={handleSave}>Guardar</button>
+      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+        Guardar
+      </button>
     </form>
   );
 };

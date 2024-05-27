@@ -1,7 +1,11 @@
-// UploadWidget.js
-import React, { useEffect, useRef } from "react";
+import React, {
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 
-const UploadWidget = ({ onImageUpload }) => {
+const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
 
@@ -9,32 +13,29 @@ const UploadWidget = ({ onImageUpload }) => {
     cloudinaryRef.current = window.cloudinary;
     widgetRef.current = cloudinaryRef.current.createUploadWidget(
       {
-        cloudName: "dsrohvpsm",
-        uploadPreset: "rr94kc3b",
-        // sources: ["local", "url"],
+        cloudName: 'dsrohvpsm',
+        uploadPreset: 'rr94kc3b',
         multiple: false,
         cropping: false,
         multipleUploads: false,
       },
       function (error, result) {
-        if (!error && result && result.event === "success") {
-          console.log("Done! Here is the image info: ", result.info);
+        if (!error && result && result.event === 'success') {
+          console.log('Done! Here is the image info: ', result.info);
           const url = result.info.secure_url;
-          onImageUpload(url); // Llama a la función para actualizar el estado con la URL de la imagen
+          onImageUpload(url);
         }
       }
     );
-  }, []);
+  }, [onImageUpload]);
 
-  return (
-    <button
-      className="bg-transparent font-medium border border-white text-white hover:bg-yellow-500  hover:text-black"
-      type="button"
-      onClick={() => widgetRef.current.open()}
-    >
-      Upload
-    </button>
-  );
-};
+  useImperativeHandle(ref, () => ({
+    open() {
+      widgetRef.current.open();
+    },
+  }));
+
+  return null;
+});
 
 export default UploadWidget;

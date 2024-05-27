@@ -10,17 +10,25 @@ import {
 } from '../components/EditComponents';
 
 const EditView = () => {
-  const { id } = useParams(); // Obtener el ID del personaje de la URL
+  const { id } = useParams();
 
   return (
-    <div>
-      <h1>Edit Character</h1>
-      <EditCharacterBase id={id} />
-      <EditCombat id={id} />
-      <EditAttack id={id} />
-      <EditSkills id={id} />
-      <EditAttributes id={id} />
-      <EditPersonality id={id} />
+    <div className=" mt-24 text-xl max-w-[1200px] mx-auto">
+      <h1 className="text-3xl text-center mb-20">Edit Character</h1>
+      <div className="flex flex-row flex-wrap justify-center items-start gap-4 *:w-80">
+        <div className="flex flex-col  gap-4">
+          <EditCharacterBase id={id} />
+          <EditCombat id={id} />
+        </div>
+
+        <div className="flex flex-col  gap-4">
+          <EditAttributes id={id} />
+          <EditSkills id={id} />
+        </div>
+
+        <EditAttack id={id} />
+        <EditPersonality id={id} />
+      </div>
     </div>
   );
 };
