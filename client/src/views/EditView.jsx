@@ -14,7 +14,12 @@ const EditView = () => {
 
   return (
     <div className=" mt-24 text-xl max-w-[1200px] mx-auto">
-      <h1 className="text-3xl text-center mb-20">Edit Character</h1>
+      <div className=" mb-20">
+        <h1 className="text-3xl text-center">Editar Personaje</h1>
+        <p className="text-center font-light">
+          Aqui podrás editar tu hoja de personaje.
+        </p>
+      </div>
       <div className="flex flex-row flex-wrap justify-center items-start gap-4 *:w-80">
         <div className="flex flex-col  gap-4">
           <EditCharacterBase id={id} />

@@ -33,7 +33,7 @@ const CharactersView = () => {
   };
 
   return (
-    <div className="w-full h-min flex flex-col gap-8 py-20 px-4 justify-between items-center pointer-events-none bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
+    <div className="w-full h-min flex flex-col gap-8 py-20 px-4 justify-between items-center bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
       <MdOutlineDesignServices className="text-4xl text-yellow-500" />
       <h1 className="max-w-[1200px] m-auto md:px-24 inset-4 md:inset-8 font-bold text-3xl md:text-4xl text-center text-white">
         Personajes de la comunidad

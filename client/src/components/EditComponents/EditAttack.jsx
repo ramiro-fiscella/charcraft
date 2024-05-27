@@ -61,7 +61,7 @@ const EditAttack = () => {
     <div className="p-4 border border-neutral-800 rounded-xl">
       <h2 className="text-xl text-center mb-4">Estadísticas de ataque</h2>
       <label>
-        Weapon 1:
+        Arma 1:
         <input
           type="text"
           name="weapon_1"
@@ -70,7 +70,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Bonus 1:
+        Bono de Ataque 1:
         <input
           type="text"
           name="atk_bonus_1"
@@ -79,7 +79,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage 1:
+        Daño 1:
         <input
           type="text"
           name="damage_1"
@@ -88,7 +88,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage Type 1:
+        Tipo de Daño 1:
         <input
           type="text"
           name="damage_type_1"
@@ -97,7 +97,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Range 1:
+        Rango de Ataque 1:
         <input
           type="text"
           name="atk_range_1"
@@ -105,8 +105,9 @@ const EditAttack = () => {
           onChange={handleChange}
         />
       </label>
+      <hr className="my-4 border-neutral-800" />
       <label>
-        Weapon 2:
+        Arma 2:
         <input
           type="text"
           name="weapon_2"
@@ -115,7 +116,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Bonus 2:
+        Bono de Ataque 2:
         <input
           type="text"
           name="atk_bonus_2"
@@ -124,7 +125,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage 2:
+        Daño 2:
         <input
           type="text"
           name="damage_2"
@@ -133,7 +134,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage Type 2:
+        Tipo de Daño 2:
         <input
           type="text"
           name="damage_type_2"
@@ -142,7 +143,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Range 2:
+        Rango de Ataque 2:
         <input
           type="text"
           name="atk_range_2"
@@ -150,8 +151,9 @@ const EditAttack = () => {
           onChange={handleChange}
         />
       </label>
+      <hr className="my-4 border-neutral-800" />
       <label>
-        Weapon 3:
+        Arma 3:
         <input
           type="text"
           name="weapon_3"
@@ -160,7 +162,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Bonus 3:
+        Bono de Ataque 3:
         <input
           type="text"
           name="atk_bonus_3"
@@ -169,7 +171,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage 3:
+        Daño 3:
         <input
           type="text"
           name="damage_3"
@@ -178,7 +180,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Damage Type 3:
+        Tipo de Daño 3:
         <input
           type="text"
           name="damage_type_3"
@@ -187,7 +189,7 @@ const EditAttack = () => {
         />
       </label>
       <label>
-        Attack Range 3:
+        Rango de Ataque 3:
         <input
           type="text"
           name="atk_range_3"

@@ -53,7 +53,7 @@ const EditCombat = () => {
 
   return (
     <div className="p-4 border rounded-xl border-neutral-800">
-      <h2 className="text-xl text-center mb-4">Edit Combat Stats</h2>
+      <h2 className="text-xl text-center mb-4">Estadísticas de Combate</h2>
       <ul className="flex flex-row justify-between gap-4">
         <li>
           <label

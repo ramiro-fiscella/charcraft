@@ -30,11 +30,12 @@ export default {
     extend: {
       backgroundImage: {
         parallax:
-          'url(https://cdnb.artstation.com/p/assets/images/images/010/629/620/large/ryan-richmond-planets.jpg?1525397919)',
+          'url(https://cdnb.artstation.com/p/assets/images/images/048/799/125/4k/andreas-rocha-pinecastle01.jpg?1650974921)',
         about:
-          'url(https://cdnb.artstation.com/p/assets/images/images/060/771/131/4k/andreas-rocha-cronicas-de-enigma-os-inuteis-00.jpg?1679304867)',
+          'url(https://cdna.artstation.com/p/assets/images/images/059/516/332/4k/andreas-rocha-destination01.jpg?1676553487)',
         about2:
-          'url(https://cdnb.artstation.com/p/assets/images/images/002/341/477/large/eric-braddock-004-collapsedpath.jpg?1460499571)',
+          'url(https://cdna.artstation.com/p/assets/images/images/068/607/478/large/andreas-rocha-pillarsofthought02.jpg?1698232230)',
+        otra: 'url(https://cdnb.artstation.com/p/assets/images/images/009/074/825/4k/andreas-rocha-peaceofmind01.jpg?1516978582)',
         aboutCreator:
           'url(https://cdnb.artstation.com/p/assets/images/images/044/132/745/large/efren-alpizar-cordero-planeamiento.jpg?1639169107)',
       },

@@ -45,12 +45,12 @@ const CharacterDetails = () => {
   return (
     <div
       id="character_details"
-      className="h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
+      className="min-h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
     >
       <div className="min-w-[320px]">
         <div className="max-w-[2900px] mx-auto gap-4 items-start">
-          <div className="flex flex-row justify-between items-start gap-4  border-b border-neutral-800 px-4 py-2  ">
-            <div className="flex flex-row gap-2">
+          <div className="relative flex flex-row justify-between items-start gap-4  border-b border-neutral-800 px-4 py-2  ">
+            <div className=" flex flex-row gap-2">
               <img
                 className="w-20 h-20 object-cover object-center rounded-md"
                 src={character.avatar_url}
@@ -69,6 +69,10 @@ const CharacterDetails = () => {
                   LVL {character.level}
                 </p>
               </div>
+              <Link className="absolute right-4" to={`/character/${id}/edit`}>
+                {' '}
+                <button>Edit</button>
+              </Link>
             </div>
           </div>
 
@@ -656,10 +660,6 @@ const CharacterDetails = () => {
             </div>
           </div>
         </div>
-        <Link to={`/character/${id}/edit`}>
-          {' '}
-          <button>Edit</button>
-        </Link>
       </div>
     </div>
   );
