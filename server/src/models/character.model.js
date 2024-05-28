@@ -34,21 +34,22 @@ const createCharacter = async ({
   char_class,
   level,
   avatar_url,
+  user_id,
 }) => {
   const result = await query(
-    'INSERT INTO characters (char_name, race, char_class, level, avatar_url) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-    [char_name, race, char_class, level, avatar_url]
+    'INSERT INTO characters (char_name, race, char_class, level, avatar_url, user_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+    [char_name, race, char_class, level, avatar_url, user_id]
   );
   return result.rows[0];
 };
 
 const updateCharacter = async (
   id,
-  { char_name, race, char_class, level, avatar_url }
+  { char_name, race, char_class, level, avatar_url, user_id }
 ) => {
   const result = await query(
-    'UPDATE characters SET char_name = $1, race = $2, char_class = $3, level = $4, avatar_url = $5 WHERE id = $6 RETURNING *',
-    [char_name, race, char_class, level, avatar_url, id]
+    'UPDATE characters SET char_name = $1, race = $2, char_class = $3, level = $4, avatar_url = $5, user_id = $6 WHERE id = $7 RETURNING *',
+    [char_name, race, char_class, level, avatar_url, user_id, id]
   );
   return result.rows[0];
 };

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Proficiency } from '../services';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const CardCopy = ({ character, onClick }) => {
+  const { user } = useAuth0();
+
   return (
     // CARD CONTAINER
     <Link to={`/character/${character.id}`}>
@@ -61,6 +64,10 @@ const CardCopy = ({ character, onClick }) => {
                   ? character.quote
                   : 'Click the card to edit your character.'}
               </p>
+
+              <p className="pt-1 text-neutral-500">
+                - {user.name ? user.name : '-'}
+              </p>
             </div>
 
             <div
@@ -70,14 +77,15 @@ const CardCopy = ({ character, onClick }) => {
               <h3 className="font-bold text-sm text-black">
                 +{Proficiency(character.level)}
               </h3>
-              ;
             </div>
           </div>
         </div>
 
-        <footer className="mx-2 mt-3 flex justify-between items-end">
-          <p className="text-[6px] text-neutral-300 text-left">RKF TTCD ©</p>
-          <p className="text-[6px] text-neutral-300 text-left">
+        <footer className="mx-2 mt-[10px] flex justify-between items-end">
+          <p className="text-[8px] font-light text-neutral-300 text-left">
+            RKF TTCD ©
+          </p>
+          <p className="text-[8px] font-light text-neutral-300 text-left">
             Charcraft · 2024
           </p>
         </footer>
