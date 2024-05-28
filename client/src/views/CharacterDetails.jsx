@@ -45,7 +45,7 @@ const CharacterDetails = () => {
   return (
     <div
       id="character_details"
-      className="min-h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900"
+      className="min-h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900/40"
     >
       <div className="min-w-[320px]">
         <div className="max-w-[2900px] mx-auto gap-4 items-start">
@@ -69,9 +69,12 @@ const CharacterDetails = () => {
                   LVL {character.level}
                 </p>
               </div>
-              <Link className="absolute right-4" to={`/character/${id}/edit`}>
+              <Link
+                className="absolute right-4 bottom-2"
+                to={`/character/${id}/edit`}
+              >
                 {' '}
-                <button>Edit</button>
+                <button className="p-2 text-xs">Editar</button>
               </Link>
             </div>
           </div>

@@ -4,7 +4,9 @@ import {
   CharactersView,
   CharacterDetails,
   EditView,
+  LoginView,
   About,
+  ProfileView,
 } from './views';
 import { NavBar, Footer } from './components';
 
@@ -16,6 +18,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginView />} />
+        <Route path="/profile" element={<ProfileView />} />
+
         <Route path="/characters" element={<CharactersView />} />
 
         <Route path="/character/:id" element={<CharacterDetails />} />
