@@ -107,14 +107,13 @@ const NavBar = () => {
             </div>
           )}
           <button className="hidden lg:block" onClick={handleShowForm}>
-            Create Character
+            Crea tu personaje
           </button>
           {showForm && <CharacterForm closeForm={() => setShowForm(false)} />}
-          <Link
-            className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black "
-            to="/login"
-          >
-            Register
+          <Link to="/login">
+            <button className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black ">
+              Register
+            </button>
           </Link>
         </div>
       </div>
