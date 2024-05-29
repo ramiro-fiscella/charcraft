@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Proficiency } from '../services';
-import { useAuth0 } from '@auth0/auth0-react';
 
 const CardCopy = ({ character, onClick }) => {
-  const { user } = useAuth0();
-
   return (
     // CARD CONTAINER
     <Link to={`/character/${character.id}`}>
@@ -65,9 +62,7 @@ const CardCopy = ({ character, onClick }) => {
                   : 'Click the card to edit your character.'}
               </p>
 
-              <p className="pt-1 text-neutral-500">
-                - {user.name ? user.name : '-'}
-              </p>
+              <p className="pt-1 text-neutral-500">-</p>
             </div>
 
             <div

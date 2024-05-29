@@ -1,7 +1,13 @@
 CREATE DATABASE charcraft_db;
 
+CREATE TABLE users (
+    uid SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL
+);
+
 CREATE TABLE characters (
     id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(uid) ON DELETE CASCADE,
     char_name VARCHAR(50) NOT NULL,
     race VARCHAR(50) NOT NULL,
     char_class VARCHAR(50) NOT NULL,

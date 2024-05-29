@@ -24,11 +24,6 @@ const getCharacter = async (req, res) => {
   }
 };
 
-module.exports = {
-  getCharacter,
-  // otros controladores...
-};
-
 const createCharacter = async (req, res) => {
   const characterData = req.body;
 
@@ -36,7 +31,7 @@ const createCharacter = async (req, res) => {
     const newCharacter = await CharacterModel.createCharacter(characterData);
     res.status(201).json(newCharacter);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     res.status(500).json({ message: 'Error al crear el personaje' });
   }
 };

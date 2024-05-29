@@ -3,7 +3,8 @@ const { query } = require('../db');
 const getCharacters = async () => {
   const result = await query(`SELECT characters.*, personality.quote
   FROM characters
-  LEFT JOIN personality ON characters.id = personality.character_id;
+  LEFT JOIN personality ON characters.id = personality.character_id
+  LEFT JOIN users ON characters.user_id = users.uid;
   `);
 
   return result.rows;

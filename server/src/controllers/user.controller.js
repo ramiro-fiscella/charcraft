@@ -1,11 +1,9 @@
-// controllers/userController.js
 const UserModel = require('../models/user.model');
 
-const createUser = async (req, res) => {
-  const { username } = req.body;
+const getUsers = async (req, res) => {
   try {
-    const user = await UserModel.createUser(username);
-    res.status(201).json(user);
+    const users = await UserModel.getUsers();
+    res.status(201).json(users);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -26,7 +24,19 @@ const getUserById = async (req, res) => {
   }
 };
 
+const createUser = async (req, res) => {
+  const userData = req.body;
+  try {
+    const user = await UserModel.createUser(userData);
+    res.status(201).json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
 module.exports = {
-  createUser,
+  getUsers,
   getUserById,
+  createUser,
 };
