@@ -1,9 +1,10 @@
-// CharacterForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const CharacterForm = ({ closeForm }) => {
+  const { user } = useAuth0();
   const [character, setCharacter] = useState({
     char_name: '',
     race: '',
@@ -28,12 +29,15 @@ const CharacterForm = ({ closeForm }) => {
   };
 
   const handleSubmit = async (event) => {
-    console.log(character);
     event.preventDefault();
+    const characterData = {
+      ...character,
+      auth0_id: user.sub, // Assuming user.sub is the unique identifier from Auth0
+    };
     try {
       const response = await axios.post(
         'http://localhost:5000/characters',
-        character
+        characterData
       );
       console.log('Character created:', response.data);
     } catch (err) {
@@ -67,7 +71,6 @@ const CharacterForm = ({ closeForm }) => {
           />
         </label>
         <label>
-          {' '}
           Class:
           <input
             type="text"

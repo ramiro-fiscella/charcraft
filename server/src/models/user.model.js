@@ -55,16 +55,13 @@ const getUserById = async (id) => {
 };
 
 const createUser = async ({ auth0_id, username }) => {
-  // Verificar si el usuario ya existe
   const result = await query('SELECT * FROM users WHERE auth0_id = $1;', [
     auth0_id,
   ]);
 
   if (result.rows.length > 0) {
-    // Usuario ya existe, retornarlo
     return result.rows[0];
   } else {
-    // Usuario no existe, crear uno nuevo
     const insertResult = await query(
       'INSERT INTO users (auth0_id, username) VALUES ($1, $2) RETURNING *;',
       [auth0_id, username]

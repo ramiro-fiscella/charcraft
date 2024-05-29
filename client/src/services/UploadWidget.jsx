@@ -35,7 +35,7 @@ const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
     },
   }));
 
-  return <button>Subir Imágen</button>;
+  return <button onClick={() => widgetRef.current.open()}>Subir Imágen</button>;
 });
 
 export default UploadWidget;
