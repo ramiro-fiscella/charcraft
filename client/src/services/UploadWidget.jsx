@@ -35,7 +35,7 @@ const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
     },
   }));
 
-  return null;
+  return <button>Subir Imágen</button>;
 });
 
 export default UploadWidget;

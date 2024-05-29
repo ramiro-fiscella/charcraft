@@ -25,9 +25,9 @@ const getUserById = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const userData = req.body;
+  const { auth0_id, username } = req.body;
   try {
-    const user = await UserModel.createUser(userData);
+    const user = await UserModel.createUser({ auth0_id, username });
     res.status(201).json(user);
   } catch (err) {
     console.error(err.message);

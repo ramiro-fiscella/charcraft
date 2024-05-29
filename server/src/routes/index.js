@@ -17,6 +17,6 @@ router.use('/characters', personalityRoutes);
 router.use('/characters', combatRoutes);
 router.use('/characters', attackRoutes);
 
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
