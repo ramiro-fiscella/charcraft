@@ -7,6 +7,7 @@ const NavBar = () => {
   const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   const { isAuthenticated } = useAuth0();
 
@@ -16,7 +17,12 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
         closeMenu();
       }
     };
@@ -73,14 +79,18 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="flex gap-4 justify-center items-center">
-          <button onClick={toggleMenu} className="lg:hidden">
+          <button
+            ref={menuButtonRef}
+            onClick={toggleMenu}
+            className="lg:hidden"
+          >
             {showMenu ? 'Cerrar' : 'Menu'}
           </button>
 
           {showMenu && (
             <div
               ref={menuRef}
-              className="lg:hidden w-64 h-auto rounded-b-2xl pb-16 px-4 absolute top-[4.94rem] right-4 border border-t-0 border-yellow-500 flex flex-col items-center text-right justify-between bg-gradient-to-b from-emerald-950 from-20% to-neutral-950 z-40"
+              className="lg:hidden w-64 h-auto rounded-b-2xl pb-16 px-4 absolute top-[4.9rem] right-4 border border-t-0 border-yellow-500 flex flex-col items-center text-right justify-between bg-gradient-to-b from-emerald-950 from-20% to-neutral-950 z-40"
             >
               <ul className="flex flex-col h-auto gap-4 mt-16 justify-center text-center">
                 <li className="*:text-lg">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdOutlineDesignServices } from 'react-icons/md';
 import { SiDiaspora } from 'react-icons/si';
@@ -53,14 +54,11 @@ const About = () => {
           Si quieres contribuir o colaborar puedes hacerlo en GitHub
         </h1>
 
-        <a
-          href="https://github.com/ramiro-fiscella/charcraft"
-          target="_blank"
-          id="githubBtn"
-          className="w-full md:w-56 text-center"
-        >
-          Ir al repositorio
-        </a>
+        <Link to="https://github.com/ramiro-fiscella/charcraft" target="_blank">
+          <button className="w-full md:w-56 text-center">
+            Ir al repositorio
+          </button>
+        </Link>
       </div>
 
       <div className="relative w-full h-96 mx-auto p-4 overflow-hidden bg-fixed bg-about2 bg-center bg-cover">

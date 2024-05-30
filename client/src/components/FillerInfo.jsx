@@ -8,7 +8,7 @@ const HomeSection = () => {
         className=" flex flex-col sm:flex-row justify-center gap-12 sm:gap-4 lg:gap-24 items-center"
         id="filler"
       >
-        <div className="flex flex-col justify-evenly h-[420px] max-w-96 text-left z-30  rounded-xl">
+        <div className="flex flex-col justify-evenly h-[420px] max-w-96 text-left rounded-xl">
           <h2 className="text-3xl mb-4">Qué es Charcraft?</h2>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
             Charcraft es un proyecto open source que (por el momento) permite

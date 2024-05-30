@@ -45,16 +45,15 @@ const Footer = () => {
             Entérate de todas las actualizaciones importantes.
           </p>
           <form className="flex flex-col">
-            <input id="email" type="email" placeholder="Enter email" />
-            <button>Suscribe</button>
+            <input id="email" type="email" placeholder="ejemplo@mail.com" />
+            <button>Suscríbete</button>
           </form>
         </div>
       </div>
 
       <div className="md:flex flex-col max-w-[1240px] px-2 py-4 m-auto mt-12 items-center justify-between sm:flex-row text-center">
-        <p className="font-light text-white">
-          {new Date().getFullYear()} RKF. This website is for study purposes
-          only.
+        <p className="font-light text-white md:text-left">
+          {new Date().getFullYear()} Este sitio es un proyecto de estudio.
         </p>
         <div className="flex justify-center md:justify-end gap-6 sm:w-[200px] pt-6 md:p-0 text-2xl">
           <a
