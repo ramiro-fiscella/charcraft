@@ -8,6 +8,7 @@ import FillerInfo from './FillerInfo';
 import LoginBtn from './Auth/LoginBtn';
 import LogoutBtn from './Auth/LogoutBtn';
 import Profile from './Profile';
+import Banner from './Banner';
 
 import CardCopy from './CardCopy';
 
@@ -23,4 +24,5 @@ export {
   LoginBtn,
   LogoutBtn,
   Profile,
+  Banner,
 };

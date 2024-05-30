@@ -51,9 +51,9 @@ const CharacterForm = ({ closeForm }) => {
         className="rounded-lg w-[96%] max-w-[400px] mx-auto  h-[640px] p-14 flex flex-col items-center justify-center gap-4 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl">Create Character</h2>
-        <label>
-          Name:
+        <h2 className="text-2xl">Crea tu Personaje</h2>
+        <label className="font-light">
+          Nombre:
           <input
             type="text"
             name="char_name"
@@ -61,8 +61,8 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Race:
+        <label className="font-light">
+          Raza:
           <input
             type="text"
             name="race"
@@ -70,8 +70,8 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Class:
+        <label className="font-light">
+          Clase:
           <input
             type="text"
             name="char_class"
@@ -79,8 +79,8 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Level:
+        <label className="font-light">
+          Nivel:
           <input
             type="number"
             name="level"
@@ -89,19 +89,21 @@ const CharacterForm = ({ closeForm }) => {
           />
         </label>
         <div className="w-full flex items-center justify-between">
-          <label>Upload Character Image</label>
+          <label className="font-light w-1/2">
+            Sube una imágen de tu personaje
+          </label>
           <UploadWidget onImageUpload={handleImageUpload} />
         </div>
 
         <div className="flex flex-col gap-2 w-full h-full mt-16">
-          <button type="submit">Create Character</button>
+          <button type="submit">Crear personaje</button>
         </div>
 
         <button
-          className="flex  bg-transparent text-slate-50 text-sm underline underline-offset-4 items-center justify-center"
+          className="flex  bg-transparent text-slate-50 text-sm w-full tems-center justify-center"
           onClick={closeForm}
         >
-          CLOSE
+          Cerrar
         </button>
       </form>
     </div>

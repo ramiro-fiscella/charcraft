@@ -4,10 +4,10 @@
 
 button,
 #githubBtn {
-  @apply py-3 px-6 bg-emerald-950 text-stone-200 tracking-wider border-x-4 border-y border-double border-yellow-500 uppercase cursor-pointer transition-all duration-200;
+  @apply py-3 px-6 font-bold bg-emerald-950 text-white tracking-wider border  border-yellow-500 rounded uppercase cursor-pointer transition-all duration-200;
 }
 button:hover {
-  @apply bg-yellow-500 text-emerald-900 border-emerald-900 border;
+  @apply bg-emerald-800 border-white;
 }
 
 #email {
