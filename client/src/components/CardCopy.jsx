@@ -5,7 +5,15 @@ import { Proficiency } from '../services';
 const CardCopy = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
-    <Link to={`/character/${character.id}`}>
+    <Link
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }}
+      to={`/character/${character.id}`}
+    >
       <div
         className="cursor-pointer w-[220px] h-[308px] rounded-lg bg-gradient-to-tl from-neutral-950 to-emerald-950 bg-blend-screen backdrop-blur-md border border-yellow-400 border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all shadow-lg shadow-zinc-950"
         id="card"

@@ -42,7 +42,6 @@ const NavBar = () => {
             onClick={() => {
               window.scrollTo({
                 top: 0,
-                behavior: 'smooth',
               });
             }}
           >
@@ -59,17 +58,41 @@ const NavBar = () => {
             }`}
           >
             <li>
-              <Link to="/" onClick={closeMenu}>
+              <Link
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                  });
+                  closeMenu();
+                }}
+                to="/"
+              >
                 Inicio
               </Link>
             </li>
             <li>
-              <Link to="/characters" onClick={closeMenu}>
+              <Link
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                  });
+                  closeMenu();
+                }}
+                to="/characters"
+              >
                 Personajes
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={closeMenu}>
+              <Link
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                  });
+                  closeMenu();
+                }}
+                to="/about"
+              >
                 Acerca de
               </Link>
             </li>
@@ -91,17 +114,41 @@ const NavBar = () => {
             >
               <ul className="flex flex-col h-auto gap-4 mt-16 justify-center text-center">
                 <li className="*:text-lg">
-                  <Link to="/" onClick={closeMenu}>
+                  <Link
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                      });
+                      closeMenu();
+                    }}
+                    to="/"
+                  >
                     Inicio
                   </Link>
                 </li>
                 <li className="*:text-lg">
-                  <Link to="/characters" onClick={closeMenu}>
+                  <Link
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                      });
+                      closeMenu();
+                    }}
+                    to="/characters"
+                  >
                     Personajes
                   </Link>
                 </li>
                 <li className="*:text-lg">
-                  <Link to="/about" onClick={closeMenu}>
+                  <Link
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                      });
+                      closeMenu();
+                    }}
+                    to="/about"
+                  >
                     Acerca de
                   </Link>
                 </li>
@@ -133,7 +180,14 @@ const NavBar = () => {
           {showForm && <CharacterForm closeForm={() => setShowForm(false)} />}
 
           {!isAuthenticated ? (
-            <Link to="/login">
+            <Link
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                });
+              }}
+              to="/login"
+            >
               <button className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black text-lg">
                 Ingresar
               </button>

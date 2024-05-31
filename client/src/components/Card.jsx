@@ -1,9 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({ character }) => {
   return (
-    <Link to={`/character/${character.id}`}>
+    <Link
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }}
+      to={`/character/${character.id}`}
+    >
       <div className="card">
         <div
           className="cursor-pointer w-[220px] h-[330px] rounded-lg  bg-emerald-950 bg-opacity-60 bg-blend-screen backdrop-blur-md border border-yellow-400  border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all duration-200 shadow-lg shadow-zinc-950"
@@ -29,7 +37,7 @@ const Card = ({ character }) => {
             <div className="mx-1 h-48 border rounded-md border-yellow-500 border-opacity-70">
               <img
                 className="w-full h-full object-cover object-top rounded-md"
-                src={character.avatar_url || "assets/card-placeholder.jpg"}
+                src={character.avatar_url || 'assets/card-placeholder.jpg'}
                 alt=" Character's image"
               />
             </div>
@@ -54,7 +62,7 @@ const Card = ({ character }) => {
                 <p className="pb-1 font-light">
                   {character.quote
                     ? character.quote
-                    : "Click the card to edit your character."}
+                    : 'Click the card to edit your character.'}
                 </p>
               </div>
             </div>

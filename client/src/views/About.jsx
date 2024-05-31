@@ -54,7 +54,16 @@ const About = () => {
           Si quieres contribuir o colaborar puedes hacerlo en GitHub
         </h1>
 
-        <Link to="https://github.com/ramiro-fiscella/charcraft" target="_blank">
+        <Link
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            });
+          }}
+          to="https://github.com/ramiro-fiscella/charcraft"
+          target="_blank"
+        >
           <button className="w-full md:w-56 text-center">
             Ir al repositorio
           </button>

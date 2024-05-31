@@ -19,7 +19,15 @@ const HomeSection = () => {
             El proyecto se encuentra en sus primeras etapas y aun queda mucho
             trabajo por hacer.
           </p>
-          <Link to="/about">
+          <Link
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+            }}
+            to="/about"
+          >
             <button className="w-full shadow-md shadow-zinc-950">
               Ver mas
             </button>
