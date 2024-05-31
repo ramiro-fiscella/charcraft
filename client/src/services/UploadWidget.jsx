@@ -35,7 +35,11 @@ const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
     },
   }));
 
-  return <button onClick={() => widgetRef.current.open()}>Subir Imágen</button>;
+  return (
+    <button className="hidden" onClick={() => widgetRef.current.open()}>
+      Subir Imágen
+    </button>
+  );
 });
 
 export default UploadWidget;

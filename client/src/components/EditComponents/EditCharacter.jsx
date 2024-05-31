@@ -1,10 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import UploadWidget from '../../services/UploadWidget';
 
-const EditCharacter = ({ id }) => {
+const EditCharacter = forwardRef((params, ref) => {
+  const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const navigate = useNavigate();
   const widgetRef = useRef();
@@ -52,6 +59,10 @@ const EditCharacter = ({ id }) => {
     }
   };
 
+  useImperativeHandle(ref, () => ({
+    handleSave,
+  }));
+
   if (!character) {
     return <div>Cargando...</div>;
   }
@@ -67,7 +78,7 @@ const EditCharacter = ({ id }) => {
           src={character.avatar_url}
           alt="Character avatar"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 hover:border hover:border-yellow-500 hover:rounded-lg  transition-opacity duration-200">
           <span className="text-white text-lg font-semibold">
             Change Avatar
           </span>
@@ -99,12 +110,8 @@ const EditCharacter = ({ id }) => {
         value={character.level}
         onChange={handleInputChange}
       />
-
-      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
-        Guardar
-      </button>
     </form>
   );
-};
+});
 
 export default EditCharacter;

@@ -88,7 +88,7 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <div className="w-full flex items-center justify-between">
+        <div className="*:block *:w-full w-full flex flex-col items-center justify-between gap-2">
           <label className="font-light w-1/2">
             Sube una imágen de tu personaje
           </label>

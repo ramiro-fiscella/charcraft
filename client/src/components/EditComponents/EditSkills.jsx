@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditSkills = () => {
+const EditSkills = forwardRef((props, ref) => {
   const { id } = useParams();
   const [skills, setSkills] = useState({
     acrobatics: false,
@@ -58,6 +63,11 @@ const EditSkills = () => {
     }
   };
 
+  // Expose the handleSave method to the parent component via ref
+  useImperativeHandle(ref, () => ({
+    handleSave,
+  }));
+
   return (
     <div className="p-4 border border-neutral-800 rounded-xl">
       <h2 className="text-xl mb-4 text-center">Habilidades</h2>
@@ -78,13 +88,8 @@ const EditSkills = () => {
           </div>
         ))}
       </form>
-      <div className="text-center">
-        <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
-          Guardar Habilidades
-        </button>
-      </div>
     </div>
   );
-};
+});
 
 export default EditSkills;

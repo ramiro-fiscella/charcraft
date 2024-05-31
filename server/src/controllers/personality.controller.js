@@ -3,7 +3,7 @@ const PersonalityModel = require('../models/personality.model');
 const getCharacterPersonality = async (req, res) => {
   const character_id = req.params.id;
   try {
-    const personality = await PersonalityModel.getPersonality(character_id);
+    let personality = await PersonalityModel.getPersonality(character_id);
 
     if (!personality) {
       const defaultPersonality = {

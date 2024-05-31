@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditPersonality = () => {
+const EditPersonality = forwardRef((props, ref) => {
   const { id } = useParams();
   const [personalityStats, setPersonalityStats] = useState({
     alignment: '',
@@ -58,6 +63,11 @@ const EditPersonality = () => {
       console.error('Error saving personality stats:', error);
     }
   };
+
+  // Expose the handleSave method to the parent component via ref
+  useImperativeHandle(ref, () => ({
+    handleSave,
+  }));
 
   return (
     <div className="p-4 border border-neutral-800 rounded-xl">
@@ -143,11 +153,8 @@ const EditPersonality = () => {
           onChange={handleArrayChange}
         />
       </label>
-      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
-        Guardar
-      </button>
     </div>
   );
-};
+});
 
 export default EditPersonality;

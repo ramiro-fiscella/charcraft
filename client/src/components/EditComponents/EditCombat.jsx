@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditCombat = () => {
+const EditCombat = forwardRef((props, ref) => {
   const { id } = useParams();
   const [combatStats, setCombatStats] = useState({
     max_hp: 0,
@@ -50,6 +55,10 @@ const EditCombat = () => {
       console.error('Error saving combat stats:', err);
     }
   };
+
+  useImperativeHandle(ref, () => ({
+    handleSave,
+  }));
 
   return (
     <div className="p-4 border rounded-xl border-neutral-800">
@@ -221,11 +230,8 @@ const EditCombat = () => {
           />
         </li>
       </ul>
-      <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
-        Guardar
-      </button>
     </div>
   );
-};
+});
 
 export default EditCombat;

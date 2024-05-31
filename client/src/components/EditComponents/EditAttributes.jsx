@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditAttributes = () => {
+const EditAttributes = forwardRef((params, ref) => {
   const { id } = useParams();
   const [attributes, setAttributes] = useState({
     strength: 0,
@@ -52,6 +57,10 @@ const EditAttributes = () => {
       console.error('Error saving attributes');
     }
   };
+
+  useImperativeHandle(ref, () => ({
+    handleSave,
+  }));
 
   return (
     <div className="p-4 border border-neutral-800 rounded-xl">
@@ -146,13 +155,9 @@ const EditAttributes = () => {
             />
           </li>
         </ul>
-
-        <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
-          Guardar
-        </button>
       </form>
     </div>
   );
-};
+});
 
 export default EditAttributes;

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { calculateModifier, calculateSkillProficiency } from '../services/';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const CharacterDetails = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const CharacterDetails = () => {
           `http://localhost:5000/characters/${id}`
         );
         // console.log(response.data);
-        setCharacter(response.data); // Establecer el estado del personaje con los datos recibidos
+        setCharacter(response.data);
       } catch (error) {
         console.error('Error fetching character:', error);
       }
@@ -37,10 +38,6 @@ const CharacterDetails = () => {
       disabled,
     }));
   };
-
-  if (!character) {
-    return <div>Cargando...</div>;
-  }
 
   return (
     <div
@@ -69,13 +66,14 @@ const CharacterDetails = () => {
                   LVL {character.level}
                 </p>
               </div>
-              <Link
-                className="absolute right-4 bottom-2"
-                to={`/character/${id}/edit`}
-              >
-                {' '}
-                <button className="p-2 text-xs">Editar</button>
-              </Link>
+              <div>
+                <Link
+                  className="absolute right-4 bottom-2"
+                  to={`/character/${id}/edit`}
+                >
+                  <button className="p-2 text-xs">Editar</button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -612,8 +610,8 @@ const CharacterDetails = () => {
               <h3 className="text-lg mb-2">Description</h3>
               <ul>
                 <li>
-                  <h5>Aligment</h5>
-                  <p>{character.aligment}</p>
+                  <h5>Alignment</h5>
+                  <p>{character.alignment}</p>
                 </li>
 
                 <li>
@@ -664,6 +662,12 @@ const CharacterDetails = () => {
           </div>
         </div>
       </div>
+      <button
+        onClick={() => window.history.back()}
+        className="fixed bottom-4 right-4 rounded-full p-4"
+      >
+        <FaArrowLeft />
+      </button>
     </div>
   );
 };
