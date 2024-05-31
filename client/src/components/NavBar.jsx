@@ -47,12 +47,9 @@ const NavBar = () => {
             }}
           >
             <img
-              className="w-12"
-              src="https://img.icons8.com/?size=100&id=Jtv187xsQJWd&format=png&color=FAB005"
+              className="w-10"
+              src="https://img.icons8.com/?size=100&id=guN1L1FPjt2n&format=png&color=FAB005"
             />
-            <h1 className="hidden md:block text-lg text-neutral-200 border-b border-yellow-500">
-              CharCraft
-            </h1>
           </Link>
           <ul
             className={`hidden lg:flex items-center gap-4 ${
@@ -90,7 +87,7 @@ const NavBar = () => {
           {showMenu && (
             <div
               ref={menuRef}
-              className="lg:hidden w-64 h-auto rounded-b-2xl pb-16 px-4 absolute top-[4.9rem] right-4 border border-t-0 border-yellow-500 flex flex-col items-center text-right justify-between bg-gradient-to-b from-emerald-950 from-20% to-neutral-950 z-40"
+              className="lg:hidden w-64 h-auto rounded-b-2xl pb-16 px-4 absolute top-[4.94rem] right-4 border border-t-0 border-yellow-500 flex flex-col items-center text-right justify-between bg-gradient-to-b from-emerald-950 from-20% to-neutral-950 z-40"
             >
               <ul className="flex flex-col h-auto gap-4 mt-16 justify-center text-center">
                 <li className="*:text-lg">
