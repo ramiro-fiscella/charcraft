@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = () => {
+const Hero = ({ openForm }) => {
   return (
     <div className="relative h-[90vh] overflow-hidden bg-fixed bg-otra bg-cover bg-left">
       <div className="absolute bottom-0 w-[100vw] h-44 bg-gradient-to-t from-zinc-950"></div>
@@ -12,18 +12,17 @@ const Hero = () => {
           <p className="md:w-72 text-lg text-left leading-6 font-normal mb-6">
             <span className="text-yellow-500 font-semibold">
               ¡Aventurero, tu próxima gran historia comienza aquí! <br />
-            </span>{' '}
+            </span>
             <br />
             Crea hojas de personaje para el juego de rol Dungeon & Dragons de
             manera{' '}
             <span className="text-yellow-500 font-semibold">
               simple y rápida
-            </span>{' '}
+            </span>
             .
           </p>
-          <button className="">Crea tu personaje</button>
+          <button onClick={openForm}>Crea tu personaje</button>
         </div>
-
         <div className="absolute max-w-[1200px] right-4 bottom-4 text-sm text-right">
           <p className="font-light">
             Arte de{' '}

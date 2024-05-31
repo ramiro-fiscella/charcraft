@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
+import { FaTimes } from 'react-icons/fa';
 
 const CharacterForm = ({ closeForm }) => {
   const { user } = useAuth0();
@@ -43,15 +44,17 @@ const CharacterForm = ({ closeForm }) => {
     } catch (err) {
       console.error('Error creating character:', err);
     }
+
+    closeForm();
   };
 
   return (
-    <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950 ">
+    <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950 z-50">
       <form
-        className="rounded-lg w-[96%] max-w-[400px] mx-auto  h-[640px] p-14 flex flex-col items-center justify-center gap-4 bg-neutral-950 bg-opacity-90"
+        className="rounded-lg w-[96%] max-w-[400px] mx-auto  h-[640px] p-14 flex flex-col items-center justify-center gap-2 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl">Crea tu Personaje</h2>
+        <h2 className="text-2xl text-center">Crea tu Personaje</h2>
         <label className="font-light">
           Nombre:
           <input
@@ -88,22 +91,27 @@ const CharacterForm = ({ closeForm }) => {
             onChange={handleChange}
           />
         </label>
-        <div className="*:block *:w-full w-full flex flex-col items-center justify-between gap-2">
-          <label className="font-light w-1/2">
-            Sube una imágen de tu personaje
-          </label>
-          <UploadWidget onImageUpload={handleImageUpload} />
+
+        <div className="*:block  w-full flex items-center justify-between gap-4">
+          <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
+          {character.avatar_url && (
+            <img
+              className="rounded w-1/2 object-cover"
+              src={character.avatar_url}
+              alt="Thumbnail"
+            />
+          )}
         </div>
 
-        <div className="flex flex-col gap-2 w-full h-full mt-16">
+        <div className="flex flex-col gap-2 w-full h-full mt-4">
           <button type="submit">Crear personaje</button>
         </div>
 
         <button
-          className="flex  bg-transparent text-slate-50 text-sm w-full tems-center justify-center"
+          className="fixed top-4 left-4 rounded-full text-lg p-3 "
           onClick={closeForm}
         >
-          Cerrar
+          <FaTimes />
         </button>
       </form>
     </div>

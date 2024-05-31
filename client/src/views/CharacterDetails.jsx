@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { calculateModifier, calculateSkillProficiency } from '../services/';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaAccusoft, FaArrowLeft, FaTrash, FaTrashAlt } from 'react-icons/fa';
 
 const CharacterDetails = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCharacter = async () => {
@@ -24,6 +25,15 @@ const CharacterDetails = () => {
 
     fetchCharacter();
   }, [id]);
+
+  const handleDeleteCharacter = async () => {
+    try {
+      await axios.delete(`http://localhost:5000/characters/${id}`);
+      navigate('/characters');
+    } catch (error) {
+      console.error('Error deleting character:', error);
+    }
+  };
 
   if (!character) {
     return <div>Cargando...</div>;
@@ -63,7 +73,7 @@ const CharacterDetails = () => {
                   {character.race} - {character.char_class}
                 </p>
                 <p className="font-condensed text-xs font-light tracking-wide ">
-                  LVL {character.level}
+                  NIVEL {character.level}
                 </p>
               </div>
               <div>
@@ -81,14 +91,14 @@ const CharacterDetails = () => {
             <div id="combat_stats">
               <ul className="mx-2 grid grid-cols-2 gap-4 text-center tracking-tight">
                 <li>
-                  <h5>Hit Points</h5>
+                  <h5>Puntos de Golpe</h5>
                   <p>
                     {character.current_hp}/{character.max_hp}
                   </p>
                 </li>
 
                 <li>
-                  <h5>Temporary Hit Points</h5>
+                  <h5>Puntos de Golpe Temporales</h5>
                   <p>{character.temp_hp}</p>
                 </li>
               </ul>
@@ -97,8 +107,8 @@ const CharacterDetails = () => {
 
           <div className=" p-2">
             <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
-              <p>Hit Dice: {character.hit_dice}</p>
-              <p>Total Hit Dice: {character.total_hit_dice}</p>
+              <p>Dados de Golpe: {character.hit_dice}</p>
+              <p>Dados de Golpe Totales: {character.total_hit_dice}</p>
             </div>
           </div>
 
@@ -106,15 +116,15 @@ const CharacterDetails = () => {
             <div id="combat_stats">
               <ul className="mx-2 grid grid-cols-3 gap-4 text-center tracking-tight">
                 <li>
-                  <h5>Armor Class</h5>
+                  <h5>Clase de Armadura</h5>
                   <p>{character.armor_class}</p>
                 </li>
                 <li>
-                  <h5>Initiative</h5>
+                  <h5>Iniciativa</h5>
                   <p>{character.initiative}</p>
                 </li>
                 <li>
-                  <h5>Speed</h5>
+                  <h5>Velocidad</h5>
                   <p>
                     {character.speed}
                     <span className="text-neutral-400 text-base">ft.</span>
@@ -130,16 +140,16 @@ const CharacterDetails = () => {
               className="w-full flex flex-row justify-between py-2  border-b border-neutral-800"
             >
               <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
-                Name
+                Nombre
               </p>
               <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide">
-                Atk Bonus
+                Bono de Ataque
               </p>
               <div>
                 <p className="text-xs text-neutral-400 uppercase font-medium tracking-wide">
-                  Damage
+                  Daño
                   <span className="text-xs text-neutral-400 uppercase font-medium tracking-wide ">
-                    /Type
+                    /Tipo
                   </span>
                 </p>
               </div>
@@ -194,37 +204,37 @@ const CharacterDetails = () => {
           <div id="attributes" className=" p-2">
             <ul className="mx-2 grid grid-rows-2 grid-cols-3 gap-4 text-center tracking-tight">
               <li>
-                <h5>Strenght</h5>
+                <h5>Fuerza</h5>
                 <p>{calculateModifier(character.strength)}</p>
                 <h6>{character.strength}</h6>
               </li>
 
               <li>
-                <h5>Dexterity</h5>
+                <h5>Destreza</h5>
                 <p>{calculateModifier(character.dexterity)}</p>
                 <h6>{character.dexterity}</h6>
               </li>
 
               <li>
-                <h5>Constitution</h5>
+                <h5>Constitución</h5>
                 <p>{calculateModifier(character.constitution)}</p>
                 <h6>{character.constitution}</h6>
               </li>
 
               <li>
-                <h5>Intelligence</h5>
+                <h5>Inteligencia</h5>
                 <p>{calculateModifier(character.intelligence)}</p>
                 <h6>{character.intelligence}</h6>
               </li>
 
               <li>
-                <h5>Wisdom</h5>
+                <h5>Sabiduría</h5>
                 <p>{calculateModifier(character.wisdom)}</p>
                 <h6>{character.wisdom}</h6>
               </li>
 
               <li>
-                <h5>Charisma</h5>
+                <h5>Carisma</h5>
                 <p>{calculateModifier(character.charisma)}</p>
                 <h6>{character.charisma}</h6>
               </li>
@@ -610,48 +620,48 @@ const CharacterDetails = () => {
               <h3 className="text-lg mb-2">Description</h3>
               <ul>
                 <li>
-                  <h5>Alignment</h5>
+                  <h5>Alineamiento</h5>
                   <p>{character.alignment}</p>
                 </li>
 
                 <li>
-                  <h5>Personality</h5>
+                  <h5>Personalidad</h5>
                   <p>{character.personality_traits}</p>
                 </li>
 
                 <li>
-                  <h5>Ideals</h5>
+                  <h5>Ideales</h5>
                   <p>{character.ideals}</p>
                 </li>
 
                 <li>
-                  <h5>Bonds</h5>
+                  <h5>Vínculo</h5>
                   <p>{character.bonds}</p>
                 </li>
                 <li>
-                  <h5>Flaws</h5>
+                  <h5>Defectos</h5>
                   <p>{character.flaws}</p>
                 </li>
                 <li>
-                  <h5>Quote</h5>
+                  <h5>Frase</h5>
                   <p>{character.quote}</p>
                 </li>
                 <li>
-                  <h5>Features and Traits</h5>
+                  <h5>Características y Rasgos</h5>
                   {character.features_and_traits &&
                     character.features_and_traits.map((feature) => (
                       <p key={feature}>• {feature}</p>
                     ))}
                 </li>
                 <li>
-                  <h5>Languajes </h5>
+                  <h5>Lenguajes </h5>
                   {character.languages &&
                     character.languages.map((language) => (
                       <p key={language}>• {language}</p>
                     ))}
                 </li>
                 <li>
-                  <h5>Other Proficiencies</h5>
+                  <h5>Otras competencias</h5>
                   {character.other_proficiencies &&
                     character.other_proficiencies.map((proficiency) => (
                       <p key={proficiency}>• {proficiency}</p>
@@ -662,6 +672,13 @@ const CharacterDetails = () => {
           </div>
         </div>
       </div>
+      <button
+        onClick={handleDeleteCharacter}
+        className="fixed bottom-4 left-4 rounded-full p-4 bg-red-800 hover:bg-red-700"
+      >
+        <FaTrashAlt />
+      </button>
+
       <button
         onClick={() => window.history.back()}
         className="fixed bottom-4 right-4 rounded-full p-4"

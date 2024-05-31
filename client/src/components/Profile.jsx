@@ -36,7 +36,7 @@ const Profile = () => {
     isAuthenticated && (
       <>
         <img
-          className="border border-yellow-600 rounded-full w-12 h-12 p-0 m-0"
+          className="border border-yellow-600 rounded-full w-[50px] h-[50px] p-0 m-0"
           src={user.picture}
           alt={user.name}
         />

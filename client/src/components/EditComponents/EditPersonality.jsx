@@ -118,7 +118,7 @@ const EditPersonality = forwardRef((props, ref) => {
         />
       </label>
       <label>
-        Cita:
+        Frase:
         <input
           type="text"
           name="quote"

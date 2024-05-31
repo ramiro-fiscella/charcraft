@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { CharacterForm, Profile, LogoutBtn } from '../components';
 import { useAuth0 } from '@auth0/auth0-react';
 
+import { FaDiceD20 } from 'react-icons/fa';
+
 const NavBar = () => {
   const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -38,17 +40,18 @@ const NavBar = () => {
         <div className="flex gap-4 items-center justify-center">
           <Link
             to="/"
-            className="text-2xl flex flex-row items-center gap-4"
+            className="text-4xl flex flex-row items-center gap-4"
             onClick={() => {
               window.scrollTo({
                 top: 0,
               });
             }}
           >
-            <img
+            {/* <img
               className="w-10"
               src="https://img.icons8.com/?size=100&id=guN1L1FPjt2n&format=png&color=FAB005"
-            />
+            /> */}
+            <FaDiceD20 />
           </Link>
           <ul
             className={`hidden lg:flex items-center gap-4 ${
