@@ -67,7 +67,7 @@ const EditView = () => {
       </div>
       <button
         onClick={() => window.history.back()}
-        className="fixed bottom-4 right-4 rounded-full p-4"
+        className="fixed text-[16px] bottom-4 right-4 rounded-full p-4"
       >
         <FaArrowLeft />
       </button>

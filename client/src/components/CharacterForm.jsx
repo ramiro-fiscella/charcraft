@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FaTimes } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const CharacterForm = ({ closeForm }) => {
   const { user } = useAuth0();
@@ -108,10 +108,10 @@ const CharacterForm = ({ closeForm }) => {
         </div>
 
         <button
-          className="fixed top-4 left-4 rounded-full text-lg p-3 "
-          onClick={closeForm}
+          onClick={() => window.history.back()}
+          className="fixed text-[16px] bottom-4 right-4 rounded-full p-4"
         >
-          <FaTimes />
+          <FaArrowLeft />
         </button>
       </form>
     </div>

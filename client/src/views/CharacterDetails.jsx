@@ -52,7 +52,7 @@ const CharacterDetails = () => {
   return (
     <div
       id="character_details"
-      className="min-h-full w-full flex flex-row flex-wrap items-start justify-center  pt-20 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900/40"
+      className="min-h-full w-full flex flex-row flex-wrap items-start justify-center  pt-28 pb-32 mb-[-8rem] text-neutral-200 bg-neutral-900/40"
     >
       <div className="min-w-[320px]">
         <div className="max-w-[2900px] mx-auto gap-4 items-start">
@@ -81,8 +81,14 @@ const CharacterDetails = () => {
                   className="absolute right-4 bottom-2"
                   to={`/character/${id}/edit`}
                 >
-                  <button className="p-2 text-xs">Editar</button>
+                  <button className="w-16 p-2 text-xs">Editar</button>
                 </Link>
+                <button
+                  onClick={handleDeleteCharacter}
+                  className="w-16 absolute right-4 top-2 p-2 text-xs bg-red-800 hover:bg-red-700"
+                >
+                  Borrar
+                </button>
               </div>
             </div>
           </div>
@@ -91,14 +97,14 @@ const CharacterDetails = () => {
             <div id="combat_stats">
               <ul className="mx-2 grid grid-cols-2 gap-4 text-center tracking-tight">
                 <li>
-                  <h5>Puntos de Golpe</h5>
+                  <h5>HP Total</h5>
                   <p>
                     {character.current_hp}/{character.max_hp}
                   </p>
                 </li>
 
                 <li>
-                  <h5>Puntos de Golpe Temporales</h5>
+                  <h5>HP Temporal</h5>
                   <p>{character.temp_hp}</p>
                 </li>
               </ul>
@@ -107,8 +113,8 @@ const CharacterDetails = () => {
 
           <div className=" p-2">
             <div className="mx-2 grid grid-cols-2 gap-2 text-left text-xs *:font-normal *:font-condensed *:tracking-wider *:border *:border-neutral-800 *:shadow-lg *:shadow-neutral-950 *:py-1 *:px-2 *:rounded">
-              <p>Dados de Golpe: {character.hit_dice}</p>
-              <p>Dados de Golpe Totales: {character.total_hit_dice}</p>
+              <p>Hit Dice: {character.hit_dice}</p>
+              <p>Hit Dice Totales: {character.total_hit_dice}</p>
             </div>
           </div>
 
@@ -116,7 +122,7 @@ const CharacterDetails = () => {
             <div id="combat_stats">
               <ul className="mx-2 grid grid-cols-3 gap-4 text-center tracking-tight">
                 <li>
-                  <h5>Clase de Armadura</h5>
+                  <h5>Armadura</h5>
                   <p>{character.armor_class}</p>
                 </li>
                 <li>
@@ -672,12 +678,6 @@ const CharacterDetails = () => {
           </div>
         </div>
       </div>
-      <button
-        onClick={handleDeleteCharacter}
-        className="fixed bottom-4 left-4 rounded-full p-4 bg-red-800 hover:bg-red-700"
-      >
-        <FaTrashAlt />
-      </button>
 
       <button
         onClick={() => window.history.back()}
