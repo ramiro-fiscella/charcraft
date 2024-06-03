@@ -70,7 +70,7 @@ const Card = ({ character }) => {
 
           <div className="mx-2 mt-2 flex justify-between items-end text-emerald-600 font-normal tracking-wide">
             <p className="text-[8px] text-left">RKF TTCD ©</p>
-            <p className="text-[8px] text-right">Charcraft · 2024</p>
+            <p className="text-[8px] text-right">Cleric · 2024</p>
           </div>
         </div>
       </div>

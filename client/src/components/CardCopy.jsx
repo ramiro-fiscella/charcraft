@@ -86,7 +86,7 @@ const CardCopy = ({ character, onClick }) => {
             RKF TTCD ©
           </p>
           <p className="text-[8px] font-light text-neutral-300 text-left">
-            Charcraft · 2024
+            Cleric · 2024
           </p>
         </footer>
       </div>

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { useAuth0 } from '@auth0/auth0-react';
 import { calculateModifier, calculateSkillProficiency } from '../services/';
 import { FaArrowLeft } from 'react-icons/fa';
 
 const CharacterDetails = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
+  const [owner, setOwner] = useState(null); // Estado para almacenar los datos del propietario
   const navigate = useNavigate();
+  const { user } = useAuth0();
 
   useEffect(() => {
     const fetchCharacter = async () => {
@@ -18,6 +20,13 @@ const CharacterDetails = () => {
         );
         // console.log(response.data);
         setCharacter(response.data);
+
+        // Obtiene el usuario que creó el personaje
+        const userResponse = await axios.get(
+          `http://localhost:5000/users/${response.data.user_id}`
+        );
+        setOwner(userResponse.data);
+        console.log(userResponse.data);
       } catch (error) {
         console.error('Error fetching character:', error);
       }
@@ -35,10 +44,6 @@ const CharacterDetails = () => {
     }
   };
 
-  if (!character) {
-    return <div>Cargando...</div>;
-  }
-
   const handleSkillChange = (event) => {
     const { name, checked } = event.target;
     disabled;
@@ -48,6 +53,15 @@ const CharacterDetails = () => {
       disabled,
     }));
   };
+
+  if (!character || !owner) {
+    return <div>Cargando...</div>;
+  }
+
+  // Verifica si el usuario actual es el propietario del personaje
+  const isOwner = user && owner.auth0_id === user.sub;
+
+  console.log('user:', user, 'Characters user:', character.user_id);
 
   return (
     <div
@@ -79,20 +93,22 @@ const CharacterDetails = () => {
                   de {character.username}
                 </p>
               </div>
-              <div>
-                <Link
-                  className="absolute right-4 bottom-2"
-                  to={`/character/${id}/edit`}
-                >
-                  <button className="w-16 p-2 text-xs">Editar</button>
-                </Link>
-                <button
-                  onClick={handleDeleteCharacter}
-                  className="w-16 absolute right-4 top-2 p-2 text-xs bg-red-800 hover:bg-red-700"
-                >
-                  Borrar
-                </button>
-              </div>
+              {isOwner && (
+                <div>
+                  <Link
+                    className="absolute right-4 bottom-2"
+                    to={`/character/${id}/edit`}
+                  >
+                    <button className="w-16 p-2 text-xs">Editar</button>
+                  </Link>
+                  <button
+                    onClick={handleDeleteCharacter}
+                    className="w-16 absolute right-4 top-2 p-2 text-xs bg-red-800 hover:bg-red-700"
+                  >
+                    Borrar
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 

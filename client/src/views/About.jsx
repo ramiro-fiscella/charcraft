@@ -23,10 +23,10 @@ const About = () => {
           <div className="md:w-96 h-96 md:h-auto object-cover rounded-xl bg-aboutCreator bg-cover"></div>
 
           <div className="md:w-96 ">
-            <h1 className="text-5x font-semibold mb-4">Acerca de CharCraft</h1>
+            <h1 className="text-5x font-semibold mb-4">Acerca de Cleric</h1>
             <p className="text-pretty w-full text-lg leading-6 font-normal mb-6">
               <span className="text-emerald-500">
-                CharCraft es un proyecto open source
+                Cleric es un proyecto open source
               </span>{' '}
               que te permite crear hojas de personajes para el juego de rol de
               Dragon 5 edición de manera sencilla.
@@ -61,7 +61,7 @@ const About = () => {
               behavior: 'smooth',
             });
           }}
-          to="https://github.com/ramiro-fiscella/charcraft"
+          to="https://github.com/ramiro-fiscella/Cleric"
           target="_blank"
         >
           <button className="w-full md:w-56 text-center">
@@ -94,7 +94,7 @@ const About = () => {
               Déjame contarte un poco sobre este proyecto.
               <br />
               <br />
-              La idea de CharCraft surgió inicialmente para reforzar mis
+              La idea de Cleric surgió inicialmente para reforzar mis
               conocimientos en backend, pero rápidamente me encariñé con la idea
               de crear y compartir una base de datos con mis compañeros roleros
               para diseñar y utilizar personajes en nuestras partidas de D&D.
@@ -143,7 +143,7 @@ const About = () => {
         </div>
       </div>
       {/* <div className="my-32 mx-8 flex flex-col-reverse md:flex-row gap-5 justify-center">
-        <h2>El futuro de CharCraft</h2>
+        <h2>El futuro de Cleric</h2>
       </div> */}
     </>
   );

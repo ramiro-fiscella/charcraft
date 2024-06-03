@@ -28,7 +28,7 @@ const getUsers = async () => {
 
 const getUserById = async (id) => {
   const result = await query(
-    `SELECT users.uid, users.username, characters.char_name 
+    `SELECT users.uid, users.username, auth0_id, characters.char_name
      FROM users 
      LEFT JOIN characters ON users.uid = characters.user_id 
      WHERE users.uid = $1;`,
@@ -42,6 +42,7 @@ const getUserById = async (id) => {
   const user = {
     uid: result.rows[0].uid,
     username: result.rows[0].username,
+    auth0_id: result.rows[0].auth0_id,
     characters: [],
   };
 

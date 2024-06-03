@@ -9,10 +9,10 @@ const HomeSection = () => {
         id="filler"
       >
         <div className="flex flex-col justify-evenly h-[420px] max-w-96 text-left rounded-xl">
-          <h2 className="text-3xl mb-4">Qué es Charcraft?</h2>
+          <h2 className="text-3xl mb-4">Qué es Cleric?</h2>
           <p className="text-lg leading-6 font-light mb-6 text-pretty">
-            Charcraft es un proyecto open source que (por el momento) permite
-            crear hojas de personajes para el juego de rol Dungeons & Dragons 5ª
+            Cleric es un proyecto open source que (por el momento) permite crear
+            hojas de personajes para el juego de rol Dungeons & Dragons 5ª
             edición de manera sencilla.
             <br />
             <br />
