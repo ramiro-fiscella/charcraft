@@ -38,10 +38,12 @@ const EditView = () => {
     if (personalityRef.current) {
       personalityRef.current.handleSave();
     }
+
+    window.location.reload();
   };
 
   return (
-    <div className="mt-24 text-xl max-w-[1200px] mx-auto">
+    <div className="mt-24 text-xl max-w-[800px] mx-auto">
       <div className="mb-20">
         <h1 className="text-3xl text-center">Editar Personaje</h1>
         <p className="text-center font-light">
@@ -60,17 +62,17 @@ const EditView = () => {
         <EditAttack ref={attackRef} id={id} />
         <EditPersonality ref={personalityRef} id={id} />
       </div>
-      <div className="text-center">
-        <button className="w-full h-10 p-2 mt-4" onClick={handleSave}>
+      <div className="fixed bottom-4 right-4 flex flex-row justify-center gap-4">
+        <button className="text-[16px] rounded-full p-4" onClick={handleSave}>
           Guardar Cambios
         </button>
+        <button
+          onClick={() => window.history.back()}
+          className="text-[16px] rounded-full p-4"
+        >
+          <FaArrowLeft />
+        </button>
       </div>
-      <button
-        onClick={() => window.history.back()}
-        className="fixed text-[16px] bottom-4 right-4 rounded-full p-4"
-      >
-        <FaArrowLeft />
-      </button>
     </div>
   );
 };

@@ -86,24 +86,28 @@ const EditCharacter = forwardRef((params, ref) => {
       </div>
       <UploadWidget ref={widgetRef} onImageUpload={handleImageUpload} />
 
+      <label htmlFor="char_name">Nombre:</label>
       <input
         type="text"
         name="char_name"
         value={character.char_name}
         onChange={handleInputChange}
       />
+      <label htmlFor="race">Raza:</label>
       <input
         type="text"
         name="race"
         value={character.race}
         onChange={handleInputChange}
       />
+      <label htmlFor="char_class">Clase:</label>
       <input
         type="text"
         name="char_class"
         value={character.char_class}
         onChange={handleInputChange}
       />
+      <label htmlFor="level">Nivel:</label>
       <input
         type="number"
         name="level"

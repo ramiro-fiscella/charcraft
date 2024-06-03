@@ -69,7 +69,7 @@ const EditSkills = forwardRef((props, ref) => {
   }));
 
   return (
-    <div className="p-4 border border-neutral-800 rounded-xl">
+    <div className="h-[630px] p-4 border border-neutral-800 rounded-xl">
       <h2 className="text-xl mb-4 text-center">Habilidades</h2>
       <form className="w-full m-auto flex flex-col  justify-center gap-2">
         {Object.keys(skills).map((skill) => (

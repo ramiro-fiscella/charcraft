@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const CharacterForm = ({ closeForm }) => {
+const CharacterForm = ({ closeForm, addCharacter }) => {
   const { user, isAuthenticated } = useAuth0();
   const [character, setCharacter] = useState({
     char_name: '',
@@ -34,7 +34,7 @@ const CharacterForm = ({ closeForm }) => {
     event.preventDefault();
     const characterData = {
       ...character,
-      auth0_id: user.sub, // Assuming user.sub is the unique identifier from Auth0
+      auth0_id: user.sub,
     };
     try {
       const response = await axios.post(
@@ -42,11 +42,12 @@ const CharacterForm = ({ closeForm }) => {
         characterData
       );
       console.log('Character created:', response.data);
+      addCharacter = { addCharacter }; // Agrega el nuevo personaje a la lista de personajes
     } catch (err) {
       console.error('Error creating character:', err);
     }
 
-    closeForm();
+    window.location.reload();
   };
 
   if (!isAuthenticated) {
