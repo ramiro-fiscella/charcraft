@@ -36,11 +36,17 @@ const CharacterDetails = () => {
   }, [id]);
 
   const handleDeleteCharacter = async () => {
-    try {
-      await axios.delete(`http://localhost:5000/characters/${id}`);
-      navigate('/characters');
-    } catch (error) {
-      console.error('Error deleting character:', error);
+    const confirmDelete = window.confirm(
+      '¿Estás seguro de que quieres borrar este personaje?'
+    );
+
+    if (confirmDelete) {
+      try {
+        await axios.delete(`http://localhost:5000/characters/${id}`);
+        navigate('/characters');
+      } catch (error) {
+        console.error('Error deleting character:', error);
+      }
     }
   };
 
