@@ -168,7 +168,7 @@ const NavBar = () => {
 
                 {!isAuthenticated && (
                   <button
-                    className="bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black text-xl"
+                    className="bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black"
                     onClick={closeMenu}
                   >
                     Ingresar
@@ -191,7 +191,7 @@ const NavBar = () => {
               }}
               to="/login"
             >
-              <button className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black text-lg">
+              <button className="hidden lg:block bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black ">
                 Ingresar
               </button>
             </Link>

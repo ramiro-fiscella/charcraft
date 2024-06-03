@@ -5,23 +5,23 @@ const Hero = ({ openForm }) => {
     <div className="relative h-[90vh] overflow-hidden bg-fixed bg-otra bg-cover bg-left">
       <div className="absolute bottom-0 w-[100vw] h-44 bg-gradient-to-t from-zinc-950"></div>
       <div className="relative h-full max-w-[1200px] m-auto">
-        <div className="absolute md:w-96 max-w-[1200px]  inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white">
+        <div className="absolute md:w-96 max-w-[1200px] inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white">
           <h1 className="text-4xl xl:text-6xl text-left font-semibold mb-4">
             Bienvenido a ??????????
           </h1>
           <p className="md:w-72 text-lg text-left leading-6 font-normal mb-6">
-            <span className="text-yellow-500 font-semibold">
+            <span className="text-yellow-500 font-medium">
               ¡Aventurero, tu próxima gran historia comienza aquí! <br />
             </span>
             <br />
             Crea hojas de personaje para el juego de rol Dungeon & Dragons de
             manera{' '}
-            <span className="text-yellow-500 font-semibold">
-              simple y rápida
-            </span>
+            <span className="text-yellow-500 font-medium">simple y rápida</span>
             .
           </p>
-          <button onClick={openForm}>Crea tu personaje</button>
+          <button onClick={openForm} className="text-lg">
+            Crea tu personaje
+          </button>
         </div>
         <div className="absolute max-w-[1200px] right-4 bottom-4 text-sm text-right">
           <p className="font-light">

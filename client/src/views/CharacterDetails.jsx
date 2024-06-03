@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { calculateModifier, calculateSkillProficiency } from '../services/';
-import { FaAccusoft, FaArrowLeft, FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const CharacterDetails = () => {
   const { id } = useParams();
@@ -74,6 +74,9 @@ const CharacterDetails = () => {
                 </p>
                 <p className="font-condensed text-xs font-light tracking-wide ">
                   NIVEL {character.level}
+                </p>
+                <p className="font-condensed text-xs font-light tracking-wide text-neutral-400">
+                  de {character.username}
                 </p>
               </div>
               <div>
