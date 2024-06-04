@@ -5,6 +5,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+const URL =
+  'postgres://default:h0umCvMfE8aF@ep-broad-bread-a4i687er.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
+
 const CharacterForm = ({ closeForm, addCharacter }) => {
   const { user, isAuthenticated } = useAuth0();
   const [character, setCharacter] = useState({
@@ -37,10 +40,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
       auth0_id: user.sub,
     };
     try {
-      const response = await axios.post(
-        'http://localhost:5000/characters',
-        characterData
-      );
+      const response = await axios.post(URL + '/characters', characterData);
       console.log('Character created:', response.data);
       addCharacter = { addCharacter }; // Agrega el nuevo personaje a la lista de personajes
     } catch (err) {
