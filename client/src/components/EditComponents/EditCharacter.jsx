@@ -19,9 +19,7 @@ const EditCharacter = forwardRef((params, ref) => {
   useEffect(() => {
     const fetchCharacter = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}`
-        );
+        const response = await axios.get(`/characters/${id}`);
         setCharacter(response.data);
       } catch (error) {
         console.error('Error fetching character:', error);
@@ -51,7 +49,7 @@ const EditCharacter = forwardRef((params, ref) => {
   const handleSave = async () => {
     try {
       if (character) {
-        await axios.put(`http://localhost:5000/characters/${id}`, character);
+        await axios.put(`/characters/${id}`, character);
         navigate('/characters');
       }
     } catch (error) {

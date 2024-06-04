@@ -25,9 +25,7 @@ const EditCombat = forwardRef((props, ref) => {
   useEffect(() => {
     const fetchCombatStats = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}/combat`
-        );
+        const response = await axios.get(`/characters/${id}/combat`);
         setCombatStats(response.data);
       } catch (err) {
         console.error('Error fetching character:', err);
@@ -46,10 +44,7 @@ const EditCombat = forwardRef((props, ref) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/characters/${id}/combat`,
-        combatStats
-      );
+      await axios.put(`/characters/${id}/combat`, combatStats);
       console.log('Combat stats saved:', combatStats);
     } catch (err) {
       console.error('Error saving combat stats:', err);

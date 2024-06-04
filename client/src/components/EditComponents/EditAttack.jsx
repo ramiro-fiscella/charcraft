@@ -30,9 +30,7 @@ const EditAttack = forwardRef((params, ref) => {
   useEffect(() => {
     const fetchAttackStats = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}/attack`
-        );
+        const response = await axios.get(`/characters/${id}/attack`);
         setAttackStats(response.data);
       } catch (err) {
         console.error('Error fetching attack stats:', err);
@@ -52,10 +50,7 @@ const EditAttack = forwardRef((params, ref) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/characters/${id}/attack`,
-        attackStats
-      );
+      await axios.put(`/characters/${id}/attack`, attackStats);
       console.log('Attack stats saved:', attackStats);
     } catch (error) {
       console.error('Error saving attackStats:', error);

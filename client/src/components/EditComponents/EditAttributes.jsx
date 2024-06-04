@@ -21,9 +21,7 @@ const EditAttributes = forwardRef((params, ref) => {
   useEffect(() => {
     const fetchAttributes = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}/attributes`
-        );
+        const response = await axios.get(`/characters/${id}/attributes`);
         const {
           id: attributeId,
           character_id,
@@ -48,10 +46,7 @@ const EditAttributes = forwardRef((params, ref) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/characters/${id}/attributes`,
-        attributes
-      );
+      await axios.put(`/characters/${id}/attributes`, attributes);
       console.log('Attributes saved:', attributes);
     } catch (error) {
       console.error('Error saving attributes');

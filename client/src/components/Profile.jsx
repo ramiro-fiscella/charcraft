@@ -8,7 +8,7 @@ const Profile = () => {
   useEffect(() => {
     const createUser = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/users', {
+        const response = await axios.post('/users', {
           auth0_id: user.sub,
           username: user.name,
         });

@@ -15,16 +15,12 @@ const CharacterDetails = () => {
   useEffect(() => {
     const fetchCharacter = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}`
-        );
+        const response = await axios.get(`/characters/${id}`);
         // console.log(response.data);
         setCharacter(response.data);
 
         // Obtiene el usuario que creó el personaje
-        const userResponse = await axios.get(
-          `http://localhost:5000/users/${response.data.user_id}`
-        );
+        const userResponse = await axios.get(`/users/${response.data.user_id}`);
         setOwner(userResponse.data);
         console.log(userResponse.data);
       } catch (error) {
@@ -42,7 +38,7 @@ const CharacterDetails = () => {
 
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:5000/characters/${id}`);
+        await axios.delete(`/characters/${id}`);
         navigate('/characters');
       } catch (error) {
         console.error('Error deleting character:', error);

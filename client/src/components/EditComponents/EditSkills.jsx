@@ -33,9 +33,7 @@ const EditSkills = forwardRef((props, ref) => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}/skills`
-        );
+        const response = await axios.get(`/characters/${id}/skills`);
         const { id: skillId, character_id, ...skills } = response.data;
         setSkills(skills);
       } catch (error) {
@@ -56,7 +54,7 @@ const EditSkills = forwardRef((props, ref) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:5000/characters/${id}/skills`, skills);
+      await axios.put(`/characters/${id}/skills`, skills);
       console.log('Skills stats saved:', skills);
     } catch (error) {
       console.error('Error saving skills:', error);

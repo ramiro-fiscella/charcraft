@@ -24,9 +24,7 @@ const EditPersonality = forwardRef((props, ref) => {
   useEffect(() => {
     const fetchPersonalityStats = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/characters/${id}/personality`
-        );
+        const response = await axios.get(`/characters/${id}/personality`);
         setPersonalityStats(response.data);
       } catch (err) {
         console.error('Error fetching personality stats:', err);
@@ -54,10 +52,7 @@ const EditPersonality = forwardRef((props, ref) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/characters/${id}/personality`,
-        personalityStats
-      );
+      await axios.put(`/characters/${id}/personality`, personalityStats);
       console.log('Personality stats saved:', personalityStats);
     } catch (error) {
       console.error('Error saving personality stats:', error);
