@@ -51,8 +51,8 @@ const NavBar = () => {
               className="w-11"
               // src="https://img.icons8.com/?size=100&id=i7K4cVpvn7YD&format=png&color=FAB005"
               // src="https://img.icons8.com/?size=100&id=eIXPDPLyxTpE&format=png&color=FAB005"
-              src="https://img.icons8.com/?size=100&id=Cb8QNFPzIfTZ&format=png&color=FAB005"
-              // src="https://img.icons8.com/?size=100&id=mWwlM6PcBaa9&format=png&color=FAB005"
+              // src="https://img.icons8.com/?size=100&id=Cb8QNFPzIfTZ&format=png&color=FAB005"
+              src="https://img.icons8.com/?size=100&id=mWwlM6PcBaa9&format=png&color=FAB005"
             />
             {/* <FaDiceD20 /> */}
           </Link>
