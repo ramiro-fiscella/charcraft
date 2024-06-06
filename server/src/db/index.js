@@ -1,11 +1,11 @@
 // require("dotenv").config();
 const { Pool } = require('pg');
 
-// const PGDATABASE = process.env.PGDATABASE;
-// const PGHOST = process.env.PGHOST;
-// const PGPASSWORD = process.env.PGPASSWORD;
+// const POSTGRES_DATABASEBASE = process.env.POSTGRES_DATABASEBASE;
+// const POSTGRES_HOST = process.env.POSTGRES_HOST;
+// const POSTGRES_PASSWORDORD = process.env.POSTGRES_PASSWORDORD;
 // const PGPORT = process.env.PGPORT;
-// const PGUSER = process.env.PGUSER;
+// const PPOSTGRES_USER = process.env.PPOSTGRES_USER;
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
