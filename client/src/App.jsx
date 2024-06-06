@@ -13,7 +13,7 @@ import { NavBar, Footer } from './components';
 import axios from 'axios';
 
 axios.defaults.baseURL =
-  'postgres://default:h0umCvMfE8aF@ep-broad-bread-a4i687er-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
+  'psql "postgres://default:h0umCvMfE8aF@ep-broad-bread-a4i687er.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"';
 
 import './App.css';
 
