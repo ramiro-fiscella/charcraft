@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "build:css": "postcss src/index.css -o public/build/index.css",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "vite": "^2.0.0",
     "@auth0/auth0-react": "^2.2.4",
     "@cloudinary/react": "^1.13.0",
     "@cloudinary/url-gen": "^1.19.0",
