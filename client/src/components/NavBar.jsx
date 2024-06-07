@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { CharacterForm, Profile, LogoutBtn } from '../components';
 import { useAuth0 } from '@auth0/auth0-react';
 
-import { FaDiceD20 } from 'react-icons/fa';
-
 const NavBar = () => {
   const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -167,7 +165,11 @@ const NavBar = () => {
                   Crear Personaje
                 </button>
 
-                {isAuthenticated && <LogoutBtn closeMenu={closeMenu} />}
+                {isAuthenticated && (
+                  <div className="*:block *:w-full">
+                    <LogoutBtn closeMenu={closeMenu} />
+                  </div>
+                )}
 
                 {!isAuthenticated && (
                   <button
@@ -199,7 +201,10 @@ const NavBar = () => {
               </button>
             </Link>
           ) : (
-            <Profile />
+            <div className="flex gap-4 items-center *:lg:block">
+              <LogoutBtn closeMenu={closeMenu} />
+              <Profile />
+            </div>
           )}
         </div>
       </div>
