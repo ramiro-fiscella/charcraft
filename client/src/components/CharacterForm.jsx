@@ -40,7 +40,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
       auth0_id: user.sub,
     };
     try {
-      const response = await axios.post(URL + '/characters', characterData);
+      const response = await axios.post('/characters', characterData);
       console.log('Character created:', response.data);
       addCharacter = { addCharacter }; // Agrega el nuevo personaje a la lista de personajes
     } catch (err) {
