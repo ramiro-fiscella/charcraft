@@ -12,7 +12,9 @@ import { NavBar, Footer } from './components';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL =
+  'postgres://default:h0umCvMfE8aF@ep-broad-bread-a4i687er.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
+// axios.defaults.baseURL = 'http://localhost:5000';
 
 import './App.css';
 
