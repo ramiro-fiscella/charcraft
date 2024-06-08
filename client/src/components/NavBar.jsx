@@ -172,12 +172,14 @@ const NavBar = () => {
                 )}
 
                 {!isAuthenticated && (
-                  <button
-                    className="bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black"
-                    onClick={closeMenu}
-                  >
-                    Ingresar
-                  </button>
+                  <Link className="*:w-full" to="/login">
+                    <button
+                      className="bg-transparent border border-white text-white hover:bg-yellow-400 hover:text-black"
+                      onClick={closeMenu}
+                    >
+                      Ingresar
+                    </button>
+                  </Link>
                 )}
               </ul>
             </div>

@@ -40,7 +40,7 @@ const CardCopy = ({ character, onClick }) => {
           <div className="mx-1 h-36">
             <img
               className="w-full h-full object-cover object-top border-double border-x-4 border-neutral-600 shadow-md shadow-stone-800"
-              src={character.avatar_url || 'assets/card-placeholder.jpg'}
+              src={character.avatar_url || 'public/assets/card-placeholder.jpg'}
               alt="Character's image"
             />
           </div>

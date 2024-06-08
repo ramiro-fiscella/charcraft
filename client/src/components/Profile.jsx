@@ -10,7 +10,7 @@ const Profile = () => {
       try {
         const response = await axios.post('/users', {
           auth0_id: user.sub,
-          username: user.name,
+          username: user.nickname || user.name,
         });
 
         if (response.status === 201) {
