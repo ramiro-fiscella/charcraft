@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Proficiency } from '../services';
 
+import icon from '../../public/assets/icon.png';
+
 const CardCopy = ({ character, onClick }) => {
   return (
     // CARD CONTAINER
@@ -22,7 +24,7 @@ const CardCopy = ({ character, onClick }) => {
         <div className="m-2 h-[90%] pt-2 px-1 flex-row rounded rounded-b-2xl bg-gradient-to-b from-neutral-300 to-stone-200">
           {/* NOMBRE Y NIVEL */}
           <div
-            className="relative w-[100%] h-6 p-[2px] flex justify-between items-center border-[1px] border-neutral-600 rounded-t-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-800"
+            className="relative w-[100%] h-6  p-[2px] flex justify-between items-center border-[1px] border-neutral-600 rounded-t-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-800"
             aria-label="Name and level of the character"
           >
             <h1 className="text-sm tracking-widest">{character.char_name}</h1>
@@ -47,19 +49,19 @@ const CardCopy = ({ character, onClick }) => {
 
           {/* RACE-CLASS */}
           <div
-            className="w-[100%] h-6 p-[2px] px-1 tracking-wide flex justify-between items-end border-[1px] border-neutral-600 rounded-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-500"
+            className="w-[100%] min-h-6 max-h-8 p-[2px] px-1 tracking-wide flex justify-between items-center border-[1px] border-neutral-600 rounded-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-500"
             aria-label="Race and class of the character"
           >
-            <h4 className="text-xs font-bold">
+            <h4 className="text-xs font-bold leading-3">
               {character.race} - {character.char_class}
             </h4>
-            <p className="text-xs">🔱</p>
+            <img src={icon} className="text-red-500" />
           </div>
 
           {/* INFO */}
           <div className="mx-1 h-20">
             <div
-              className="w-full h-full p-2 flex flex-col justify-between items-start outline outline-1 outline-neutral-500 rounded-b bg-gradient-to-b from-neutral-200 to-stone-100 text-[.7rem] text-pretty leading-none text-neutral-900 shadow-md shadow-stone-950"
+              className="w-full h-full p-2 flex flex-col justify-between items-start outline outline-1 outline-neutral-500 rounded-b bg-gradient-to-b from-neutral-200 to-stone-100 text-pretty leading-4 text-neutral-900 shadow-md shadow-stone-950"
               aria-label="Character's quote"
             >
               <p className="pb-2 border-b border-neutral-400">
@@ -67,7 +69,7 @@ const CardCopy = ({ character, onClick }) => {
                   ? character.quote
                   : 'Click the card to edit your character.'}
               </p>
-              <p className=" text-neutral-500">- {character.username}</p>
+              <p className="text-neutral-500">- {character.username}</p>
             </div>
 
             <div
