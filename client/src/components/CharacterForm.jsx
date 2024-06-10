@@ -5,9 +5,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const URL =
-  'postgres://default:h0umCvMfE8aF@ep-broad-bread-a4i687er.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require';
-
 const CharacterForm = ({ closeForm, addCharacter }) => {
   const { user, isAuthenticated } = useAuth0();
   const [character, setCharacter] = useState({
