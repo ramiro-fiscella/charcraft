@@ -7,7 +7,7 @@ const Hero = ({ openForm }) => {
       <div className="relative h-full max-w-[1200px] m-auto">
         <div className="absolute md:w-96 max-w-[1200px] inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white">
           <h1 className="text-4xl xl:text-6xl text-left font-semibold mb-4">
-            Bienvenido a Cleric
+            Bienvenido a Cleric!
           </h1>
           <p className="md:w-72 text-lg text-left leading-6 font-normal mb-6">
             <span className="text-yellow-500 font-medium">
