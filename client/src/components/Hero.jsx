@@ -4,8 +4,8 @@ const Hero = ({ openForm }) => {
   return (
     <div className="relative h-[90vh] overflow-hidden bg-fixed bg-otra bg-cover bg-left">
       <div className="absolute bottom-0 w-[100vw] h-44 bg-gradient-to-t from-zinc-950"></div>
-      <div className="relative h-full max-w-[1200px] m-auto ">
-        <div className="absolute  max-w-[1200px] inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white ">
+      <div className="relative h-full max-w-[1400px] m-auto ">
+        <div className="absolute  max-w-[1400px] inset-4 md:inset-8 flex flex-col items-start justify-center text-center text-white ">
           <h1
             id="title"
             className="text-4xl xl:text-6xl text-left mb-4 leading-14 "
@@ -41,7 +41,7 @@ const Hero = ({ openForm }) => {
             </button>
           </div>
         </div>
-        <div className="absolute max-w-[1200px] right-4 bottom-4 text-sm text-right">
+        <div className="absolute max-w-[1400px] right-4 bottom-4 text-sm text-right">
           <p className="font-light">
             Arte de{' '}
             <a

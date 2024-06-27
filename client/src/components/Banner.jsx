@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <section className=" my-32 lg:my-12 pt-12 mx-auto max-w-[1274px] px-4 flex flex-col items-center justify-around md:flex-row gap-8 *:relative  *:h-40 *:flex *:flex-col *:items-center *:gap-1">
+    <section className=" my-32 lg:my-12 pt-12 mx-auto max-w-[1400px] px-4 flex flex-col items-center justify-around md:flex-row gap-8 *:relative  *:h-40 *:flex *:flex-col *:items-center *:gap-1">
       <div className="border border-yellow-500/40 bg-emerald-950/10 rounded-md pb-12 p-4 text-center ">
         <img
           src="https://img.icons8.com/?size=100&id=2Ojl08SSyMuZ&format=png&color=eab308"

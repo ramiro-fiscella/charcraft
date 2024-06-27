@@ -19,7 +19,7 @@ const About = () => {
         </p>
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
-        <div className="md:max-w-[1200px] mx-auto py-32 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
+        <div className="md:max-w-[1400px] mx-auto py-32 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
           <div className="md:w-96 h-96 md:h-auto object-cover rounded-xl bg-aboutCreator bg-cover"></div>
 
           <div className="md:w-96 ">
@@ -50,7 +50,7 @@ const About = () => {
 
       <div className="z-40 w-full h-min flex flex-col gap-8 py-20 px-4 justify-between items-center bg-gradient-to-b from-emerald-950/40 to-teal-900/40 border-double border-y-4 border-yellow-500 ">
         <MdOutlineDesignServices className="text-4xl text-yellow-500" />
-        <h1 className="max-w-[1200px] m-auto md:px-24 inset-4 md:inset-8 font-bold text-3xl md:text-4xl text-center text-white">
+        <h1 className="max-w-[1400px] m-auto md:px-24 inset-4 md:inset-8 font-bold text-3xl md:text-4xl text-center text-white">
           Si quieres contribuir o colaborar puedes hacerlo en GitHub
         </h1>
 
@@ -82,7 +82,7 @@ const About = () => {
         </p>
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
-        <div className="md:max-w-[1200px] mx-auto pt-36 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
+        <div className="md:max-w-[1400px] mx-auto pt-36 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
           <div className="w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500 "></div>
 
           <div className="md:w-96">

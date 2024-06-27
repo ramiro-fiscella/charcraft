@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomeSection = () => {
   return (
-    <section className="w-full mt-32 mb-4 mx-auto max-w-[1200px] px-4">
+    <section className="w-full mt-32 mb-4 mx-auto max-w-[1400px] px-4">
       <div
         className=" flex flex-col sm:flex-row justify-center gap-12 sm:gap-4 lg:gap-24 items-center"
         id="filler"
