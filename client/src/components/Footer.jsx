@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full bg-gradient-to-b from-zinc-950 to-black text-stone-200 py-8 px-4  lg:px-16">
       <div className="max-w-[1240px] mx-auto grid grid-cols-2 gap-y-12 md:grid-cols-5 border-b border-stone-600 py-8">
         <div>
-          <h6>Mapa de Sitio</h6>
+          <p className="mb-4">Mapa de Sitio</p>
           <ul>
             <li>Inicio</li>
             <li>Personajes</li>
@@ -18,7 +18,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6>Contacto</h6>
+          <p className="mb-4">Contacto</p>
           <ul>
             <li>Email</li>
             <li>Portfolio</li>
@@ -28,7 +28,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6>Legal</h6>
+          <p className="mb-4">Legal</p>
           <ul>
             <li>Reclamos</li>
             <li>Privacidad</li>
@@ -38,9 +38,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-span-2 p-0">
-          <h5 className="text-2xl font-medium">
+          <h4 className="text-2xl uppercase font-medium">
             Suscríbete para conocer novedades!
-          </h5>
+          </h4>
           <p className="py-4 font-light">
             Entérate de todas las actualizaciones importantes.
           </p>

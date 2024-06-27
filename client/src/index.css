@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 /*
 
 */
@@ -106,27 +108,30 @@ ul {
 }
 
 h1,
-h2,
-h3,
-h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  font-family: 'alegreya sc';
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-h1,
 h2,
 h3 {
   font-family: 'Alegreya SC', serif;
-  font-size: 2.2rem;
   text-transform: uppercase;
+  font-size: 2.2rem;
   line-height: 1.2;
 
   letter-spacing: 2px;
 }
 button {
-  font-family: 'alegreya sc', serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  padding-top: 20px;
+  padding-bottom: 16px;
 }
 /* button {
   cursor: pointer;
@@ -141,6 +146,13 @@ button:hover {
   background-color: white;
 } */
 /* MIS ESTILOS */
+
+#title {
+  filter: drop-shadow(2px 2px 2px #111);
+}
+#hero-text {
+  filter: drop-shadow(2px 2px 2px #111);
+}
 
 #card {
   font-family: 'Alegreya SC', serif;

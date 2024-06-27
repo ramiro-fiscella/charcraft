@@ -27,11 +27,8 @@ const CardCopy = ({ character, onClick }) => {
             className="relative w-[100%] h-6  p-[2px] flex justify-between items-center border-[1px] border-neutral-600 rounded-t-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-800"
             aria-label="Name and level of the character"
           >
-            <h1 className="text-sm tracking-widest">{character.char_name}</h1>
-            <div
-              id="bookmark"
-              className="flex justify-center items-center rounded-3xl w-7 h-7 border border-yellow-500 border-opacity-70 shadow-sm shadow-gray-950 bg-gradient-to-b from-neutral-950 to-stone-900"
-            >
+            <h4 className="text-sm tracking-widest">{character.char_name}</h4>
+            <div className="flex justify-center items-center rounded-3xl w-7 h-7 border border-yellow-500 border-opacity-70 shadow-sm shadow-gray-950 bg-gradient-to-b from-neutral-950 to-stone-900">
               <h3 className="tracking-normal text-base text-white m-auto">
                 {character.level}
               </h3>
@@ -52,7 +49,7 @@ const CardCopy = ({ character, onClick }) => {
             className="w-[100%] min-h-6 max-h-8 p-[2px] px-1 tracking-wide flex justify-between items-center border-[1px] border-neutral-600 rounded-sm text-neutral-900 bg-gradient-to-b from-neutral-300 to-stone-200 shadow-md shadow-stone-500"
             aria-label="Race and class of the character"
           >
-            <h4 className="text-xs font-bold leading-3">
+            <h4 className="text-xs font-bold">
               {character.race} - {character.char_class}
             </h4>
             <img src={icon} className="text-red-500" />
@@ -67,7 +64,7 @@ const CardCopy = ({ character, onClick }) => {
               <p className="pb-2 border-b border-neutral-400">
                 {character.quote
                   ? character.quote
-                  : 'Click the card to edit your character.'}
+                  : 'Haz click en la carta para ver y editar tu personaje.'}
               </p>
               <p className="text-neutral-500">- {character.username}</p>
             </div>

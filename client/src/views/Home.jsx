@@ -37,7 +37,6 @@ const Home = () => {
       <div className="w-full absolute h-48 pointer-events-none bg-gradient-to-b from-zinc-950"></div>
       <Banner />
       <CharactersView characters={characters} />
-      <FillerInfo />
     </>
   );
 };

@@ -11,7 +11,7 @@ button:hover {
 }
 
 #email {
-  @apply py-3 px-6 bg-zinc-950 text-stone-200 tracking-wider border-x-4 border-y border-double border-stone-400 rounded-none;
+  @apply py-3 px-6 bg-zinc-950 text-stone-200 tracking-wider border  border-stone-400 rounded-none;
 }
 
 nav button {
@@ -31,7 +31,7 @@ footer li:hover {
   @apply text-yellow-500 border-y-yellow-500 cursor-pointer;
 }
 footer h6 {
-  @apply font-medium text-xl mb-4;
+  @apply font-medium  mb-4;
 }
 
 /* ATTRIBUTES */

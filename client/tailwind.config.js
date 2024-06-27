@@ -34,8 +34,8 @@ export default {
         about:
           'url(https://cdna.artstation.com/p/assets/images/images/059/516/332/4k/andreas-rocha-destination01.jpg?1676553487)',
         about2:
-          'url(https://cdna.artstation.com/p/assets/images/images/068/607/478/large/andreas-rocha-pillarsofthought02.jpg?1698232230)',
-        otra: 'url(https://cdnb.artstation.com/p/assets/images/images/009/074/825/4k/andreas-rocha-peaceofmind01.jpg?1516978582)',
+          'url(https://cdna.artstation.com/p/assets/images/images/053/147/044/large/pedro-kruger-envar-studio-05bw005t1rq-namicleric.jpg?1661521226)',
+        otra: 'url(https://cdna.artstation.com/p/assets/images/images/074/840/804/large/shen-jia-highresscreenshot00187.jpg?1713115035)',
         aboutCreator:
           'url(https://cdnb.artstation.com/p/assets/images/images/044/132/745/large/efren-alpizar-cordero-planeamiento.jpg?1639169107)',
       },
