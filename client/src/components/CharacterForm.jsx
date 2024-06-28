@@ -55,13 +55,16 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             Por favor, inicia sesión para crear un personaje.
           </h2>
           <Link className="w-full" to="/login">
-            <button className="w-full text-lg text-white" onClick={closeForm}>
+            <button
+              className="w-full text-lg text-white"
+              onMouseDown={closeForm}
+            >
               Iniciar Sesión
             </button>
           </Link>
           <button
             className="w-full text-lg text-white  bg-neutral-950/60"
-            onClick={closeForm}
+            onMouseDown={closeForm}
           >
             Volver
           </button>
@@ -134,7 +137,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
         </div>
         <button
           className="fixed top-4 left-4 rounded-full text-lg p-3 text-white"
-          onClick={closeForm}
+          onMouseDown={closeForm}
         >
           <FaTimes />
         </button>

@@ -4,10 +4,10 @@
 
 button,
 #githubBtn {
-  @apply py-3 px-6 font-bold bg-emerald-950 text-white tracking-wider border  border-yellow-500 rounded uppercase cursor-pointer transition-all duration-200;
+  @apply py-3 px-6 font-bold bg-gradient-to-t from-emerald-900 to-emerald-800 text-white tracking-wider border border-yellow-500 rounded uppercase cursor-pointer transition-all duration-200;
 }
 button:hover {
-  @apply bg-emerald-800 border-white;
+  @apply bg-gradient-to-t from-emerald-700 to-emerald-600 border-white;
 }
 
 #email {
@@ -19,7 +19,7 @@ nav button {
 }
 
 li a:hover {
-  @apply text-yellow-500 border-y border-double border-y-yellow-500 transition-all duration-500 cursor-pointer;
+  @apply text-yellow-500 border-b pb-2 border-y-yellow-500 transition-all duration-500 cursor-pointer;
 }
 footer ul {
   @apply flex flex-col gap-3 text-sm;

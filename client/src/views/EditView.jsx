@@ -63,11 +63,14 @@ const EditView = () => {
         <EditPersonality ref={personalityRef} id={id} />
       </div>
       <div className="fixed bottom-4 right-4 flex flex-row justify-center gap-4">
-        <button className="text-[16px] rounded-full p-4" onClick={handleSave}>
+        <button
+          className="text-[16px] rounded-full p-4"
+          onMouseDown={handleSave}
+        >
           Guardar Cambios
         </button>
         <button
-          onClick={() => window.history.back()}
+          onMouseDown={() => window.history.back()}
           className="text-[16px] rounded-full p-4"
         >
           <FaArrowLeft />

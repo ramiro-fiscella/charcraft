@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CharacterModal = ({ character, onClose }) => {
   return (
@@ -90,7 +90,7 @@ const CharacterModal = ({ character, onClose }) => {
 
       <button
         className="absolute top-2 right-2 w-9 h-9 rounded-3xl bg-red-500  flex items-center justify-center text-xl"
-        onClick={onClose}
+        onMouseDown={onClose}
       >
         ✖
       </button>

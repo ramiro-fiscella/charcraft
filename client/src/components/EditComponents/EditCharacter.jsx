@@ -68,7 +68,7 @@ const EditCharacter = forwardRef((params, ref) => {
   return (
     <form className="p-4 border rounded-xl border-neutral-800">
       <div
-        onClick={() => widgetRef.current.open()}
+        onMouseDown={() => widgetRef.current.open()}
         className="relative group cursor-pointer mb-2"
       >
         <img

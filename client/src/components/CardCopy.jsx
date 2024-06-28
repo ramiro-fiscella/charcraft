@@ -4,11 +4,11 @@ import { Proficiency } from '../services';
 
 import icon from '../../public/assets/icon.png';
 
-const CardCopy = ({ character, onClick }) => {
+const CardCopy = ({ character, onMouseDown }) => {
   return (
     // CARD CONTAINER
     <Link
-      onClick={() => {
+      onMouseDown={() => {
         window.scrollTo({
           top: 0,
           behavior: 'smooth',
@@ -19,7 +19,7 @@ const CardCopy = ({ character, onClick }) => {
       <div
         className="cursor-pointer w-[220px] h-[308px] rounded-lg bg-gradient-to-tl from-neutral-950 to-emerald-950 bg-blend-screen backdrop-blur-md border border-yellow-400 border-opacity-50 hover:border-opacity-90 hover:outline-double hover:outline-4 hover:outline-amber-500 transition-all shadow-lg shadow-zinc-950"
         id="card"
-        onClick={onClick}
+        onMouseDown={onMouseDown}
       >
         <div className="m-2 h-[90%] pt-2 px-1 flex-row rounded rounded-b-2xl bg-gradient-to-b from-neutral-300 to-stone-200">
           {/* NOMBRE Y NIVEL */}

@@ -39,7 +39,7 @@ const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
     <button
       className="hidden"
       type="button"
-      onClick={() => widgetRef.current.open()}
+      onMouseDown={() => widgetRef.current.open()}
     >
       Subir Imágen
     </button>

@@ -14,6 +14,7 @@ export default {
       serif: ['alegreya sc', 'serif'],
       condensed: ['reddit sans condensed', 'sans-serif'],
     },
+
     fontSize: {
       '2xs': '0.625rem',
       xs: '0.75rem',
@@ -32,15 +33,20 @@ export default {
         parallax:
           'url(https://cdnb.artstation.com/p/assets/images/images/048/799/125/4k/andreas-rocha-pinecastle01.jpg?1650974921)',
         about:
-          'url(https://cdna.artstation.com/p/assets/images/images/059/516/332/4k/andreas-rocha-destination01.jpg?1676553487)',
+          'url(https://cdnb.artstation.com/p/assets/images/images/077/383/065/large/grafit-studio-nexus-environment-31-08-logo.jpg?1719321349)',
         about2:
           'url(https://cdna.artstation.com/p/assets/images/images/053/147/044/large/pedro-kruger-envar-studio-05bw005t1rq-namicleric.jpg?1661521226)',
         otra: 'url(https://cdna.artstation.com/p/assets/images/images/074/840/804/large/shen-jia-highresscreenshot00187.jpg?1713115035)',
         aboutCreator:
-          'url(https://cdnb.artstation.com/p/assets/images/images/044/132/745/large/efren-alpizar-cordero-planeamiento.jpg?1639169107)',
+          'url(https://cdnb.artstation.com/p/assets/images/images/010/619/767/large/grafit-studio-falling-wizard-logos.jpg?1614279308)',
+        lastAbout:
+          'url(https://cdnb.artstation.com/p/assets/images/images/029/621/391/large/denman-rooke-keeperoftheaccord-comp.jpg?1598131975)',
       },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
+      },
+      colors: {
+        'yellow-500': '#FAB005',
       },
     },
   },

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ character }) => {
   return (
     <Link
-      onClick={() => {
+      onMouseDown={() => {
         window.scrollTo({
           top: 0,
           behavior: 'smooth',

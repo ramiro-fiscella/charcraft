@@ -104,7 +104,7 @@ const CharacterDetails = () => {
                     <button className="w-16 p-2 text-xs">Editar</button>
                   </Link>
                   <button
-                    onClick={handleDeleteCharacter}
+                    onMouseDown={handleDeleteCharacter}
                     className="w-16 absolute right-4 top-2 p-2 text-xs bg-red-800 hover:bg-red-700"
                   >
                     Borrar
@@ -701,7 +701,7 @@ const CharacterDetails = () => {
       </div>
 
       <button
-        onClick={() => window.history.back()}
+        onMouseDown={() => window.history.back()}
         className="fixed bottom-4 right-4 rounded-full p-4"
       >
         <FaArrowLeft />

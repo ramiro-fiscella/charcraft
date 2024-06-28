@@ -20,7 +20,7 @@ const HomeSection = () => {
             trabajo por hacer.
           </p>
           <Link
-            onClick={() => {
+            onMouseDown={() => {
               window.scrollTo({
                 top: 0,
                 behavior: 'smooth',

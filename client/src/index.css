@@ -151,7 +151,7 @@ button:hover {
   filter: drop-shadow(2px 2px 2px #111);
 }
 #hero-text {
-  filter: drop-shadow(2px 2px 2px #111);
+  filter: drop-shadow(1px 1px 1px #000);
 }
 
 #card {
@@ -179,10 +179,9 @@ p {
 
 li a {
   color: white;
-  font-family: 'alegreya sc', serif;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  line-height: 0;
 }
 
 #attributes ul li h6 {

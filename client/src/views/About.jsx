@@ -20,7 +20,7 @@ const About = () => {
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1400px] mx-auto py-32 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="md:w-96 h-96 md:h-auto object-cover rounded-xl bg-aboutCreator bg-cover"></div>
+          <div className="md:w-96 h-72 md:h-auto object-cover  rounded bg-aboutCreator bg-cover"></div>
 
           <div className="md:w-96 ">
             <h1 className="text-5x font-semibold mb-4">Acerca de Cleric</h1>
@@ -83,7 +83,7 @@ const About = () => {
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1400px] mx-auto pt-36 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded-lg bg-emerald-900 border-4 border-double border-yellow-500 "></div>
+          <div className="w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded border bg-center bg-cover bg-lastAbout"></div>
 
           <div className="md:w-96">
             <h1 className="text-2xl xl:text-2xl  font-semibold mb-4">
@@ -94,10 +94,8 @@ const About = () => {
               Déjame contarte un poco sobre este proyecto.
               <br />
               <br />
-              La idea de Cleric surgió inicialmente para reforzar mis
-              conocimientos en backend, pero rápidamente me encariñé con la idea
-              de crear y compartir una base de datos con mis compañeros roleros
-              para diseñar y utilizar personajes en nuestras partidas de D&D.
+              La idea de Cleric surgió como un herramienta para poder crear y
+              utilizar personajes en mis partidas de D&D.
               <br />
               <br />
               Así que me puse a investigar algunas plataformas que ofrecen esta
