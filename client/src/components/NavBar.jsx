@@ -227,7 +227,7 @@ const NavBar = () => {
             </div>
           )}
           <a
-            className="hidden lg:block py-2 px-4 bg-gradient-to-t from-emerald-800 to-emerald-700 text-white tracking-wider border border-none rounded-md uppercase"
+            className="hidden lg:block py-2 px-4 bg-emerald-700 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600"
             onClick={handleShowForm}
           >
             Crear personaje
@@ -243,7 +243,7 @@ const NavBar = () => {
               }}
               to="/login"
             >
-              <a className="hidden lg:block py-2 px-4 bg-gradient-to-t from-zinc-900/70 to-zinc-800/70 text-white tracking-wider border border-none rounded-md uppercase">
+              <a className="hidden lg:block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
                 Ingresar
               </a>
             </Link>

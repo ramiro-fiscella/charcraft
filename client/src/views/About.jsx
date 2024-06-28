@@ -7,7 +7,7 @@ import { SiDiaspora } from 'react-icons/si';
 const About = () => {
   return (
     <>
-      <div className="relative h-96 flex items-center justify-center w-full mx-auto p-4 py-20 overflow-hidden bg-fixed bg-about bg-cover">
+      <div className="relative h-96 lg:h-[72vh] flex items-center justify-center w-full mx-auto p-4 py-20 overflow-hidden bg-fixed bg-about bg-cover">
         <p className="absolute bottom-4 right-4 font-light">
           Arte de{' '}
           <a

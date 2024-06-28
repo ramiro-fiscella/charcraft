@@ -46,7 +46,7 @@ const Footer = () => {
           </p>
           <form className="flex flex-col">
             <input id="email" type="email" placeholder="ejemplo@mail.com" />
-            <button>Suscríbete</button>
+            <button className="rounded-sm pt-4 pb-3">Suscríbete</button>
           </form>
         </div>
       </div>
