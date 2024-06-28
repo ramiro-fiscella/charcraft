@@ -12,15 +12,25 @@ const About = () => {
           Arte de{' '}
           <a
             className="hover:underline underline-offset-4"
-            href="https://www.andreasrocha.com/"
+            href="https://grafit.artstation.com/"
           >
-            Andreas Rocha
+            Grafit Studio
           </a>
         </p>
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1400px] mx-auto py-32 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="md:w-96 h-72 md:h-auto object-cover  rounded bg-aboutCreator bg-cover"></div>
+          <div className="relative md:w-96 h-72 md:h-auto object-cover rounded bg-aboutCreator bg-cover">
+            <p className="absolute bottom-2 right-3 font-light">
+              Arte de{' '}
+              <a
+                className="hover:underline underline-offset-4"
+                href="https://cdnb.artstation.com/p/assets/images/images/010/619/767/large/grafit-studio-falling-wizard-logos.jpg?1614279308"
+              >
+                Grafit Studio
+              </a>
+            </p>
+          </div>
 
           <div className="md:w-96 ">
             <h1 className="text-5x font-semibold mb-4">Acerca de Cleric</h1>
@@ -34,15 +44,6 @@ const About = () => {
               <br />
               El proyecto se encuentra en sus primeras etapas y aun queda mucho
               trabajo por hacer.
-            </p>
-            <p className="font-light">
-              Arte de{' '}
-              <a
-                className="hover:underline underline-offset-4"
-                href="https://efr83.artstation.com/"
-              >
-                Efren Alpízar Cordero
-              </a>
             </p>
           </div>
         </div>
@@ -75,15 +76,25 @@ const About = () => {
           Arte de{' '}
           <a
             className="hover:underline underline-offset-4"
-            href="https://www.andreasrocha.com/"
+            href="https://pedrokruger.artstation.com/"
           >
-            Andreas Rocha
+            Pedro Krüger
           </a>
         </p>
       </div>
       <div className="w-full border-t-4 border-double border-yellow-500">
         <div className="md:max-w-[1400px] mx-auto pt-36 px-4 inset-4 flex flex-col-reverse md:flex-row justify-center gap-12 text-white ">
-          <div className="w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded border bg-center bg-cover bg-lastAbout"></div>
+          <div className="relative w-full h-72 md:w-96 md:h-[555px] mx-auto md:mx-0 rounded border bg-center bg-cover bg-lastAbout">
+            <p className="absolute bottom-2 right-3 font-light">
+              Arte de{' '}
+              <a
+                className="hover:underline underline-offset-4"
+                href="https://denmanrooke.artstation.com/"
+              >
+                Denman Rooke
+              </a>
+            </p>
+          </div>
 
           <div className="md:w-96">
             <h1 className="text-2xl xl:text-2xl  font-semibold mb-4">
@@ -103,14 +114,14 @@ const About = () => {
               de crear hojas de personajes.
             </p>
 
-            <h3 className="text-xl mb-2">Mis Links:</h3>
+            <h6 className="text-xl mb-2">Mis Links:</h6>
             <ul className="flex flex-col gap-3 *:flex *:flex-row *:gap-2">
               <li>
                 <a
                   href="https://github.com/ramiro-fiscella"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex pt-1 gap-2 text-lg hover:border-0"
+                  className="flex items-center gap-2 text-lg mt-4"
                 >
                   <FaGithub /> GitHub
                 </a>
@@ -119,7 +130,7 @@ const About = () => {
                 <a
                   href="https://www.linkedin.com/in/ramiro-fiscella/"
                   target="_blank"
-                  className="flex pt-1 gap-2 text-lg hover:border-0"
+                  className="flex items-center gap-2 text-lg mt-2"
                 >
                   <FaLinkedin />
                   LinkedIn
@@ -130,7 +141,7 @@ const About = () => {
                   href="https://ramirof.vercel.app"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex pt-1 gap-2 text-lg hover:border-0"
+                  className="flex items-center gap-2 text-lg mt-2"
                 >
                   <SiDiaspora className="text-orange-500 animate-spin-slow" />
                   Portfolio

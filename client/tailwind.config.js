@@ -30,8 +30,6 @@ export default {
     },
     extend: {
       backgroundImage: {
-        parallax:
-          'url(https://cdnb.artstation.com/p/assets/images/images/048/799/125/4k/andreas-rocha-pinecastle01.jpg?1650974921)',
         about:
           'url(https://cdnb.artstation.com/p/assets/images/images/077/383/065/large/grafit-studio-nexus-environment-31-08-logo.jpg?1719321349)',
         about2:

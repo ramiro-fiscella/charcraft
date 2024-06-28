@@ -46,9 +46,9 @@ const Hero = ({ openForm }) => {
             Arte de{' '}
             <a
               className="hover:underline underline-offset-4"
-              href="https://www.andreasrocha.com/"
+              href="https://user-1494.artstation.com/"
             >
-              Andreas Rocha
+              Shen Jia
             </a>
           </p>
         </div>
