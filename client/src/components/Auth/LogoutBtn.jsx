@@ -6,12 +6,12 @@ const LogoutBtn = () => {
 
   return (
     isAuthenticated && (
-      <button
+      <a
         className="hidden lg:block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
         onMouseDown={() => logout()}
       >
         Cerrar Sesión
-      </button>
+      </a>
     )
   );
 };
