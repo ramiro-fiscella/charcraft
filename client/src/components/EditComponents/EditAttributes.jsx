@@ -95,7 +95,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.strength}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.strength && (
@@ -117,7 +117,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.dexterity}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.dexterity && (
@@ -139,7 +139,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.constitution}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.constitution && (
@@ -164,7 +164,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.intelligence}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.intelligence && (
@@ -186,7 +186,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.wisdom}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.wisdom && (
@@ -208,7 +208,7 @@ const EditAttributes = forwardRef((params, ref) => {
               value={attributes.charisma}
               onChange={handleChange}
               min="1"
-              max="20"
+              max="99"
               className="mb-0"
             />
             {errors.charisma && (

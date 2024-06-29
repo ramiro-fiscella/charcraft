@@ -66,7 +66,7 @@ const EditAttack = forwardRef((params, ref) => {
       <h6 className="mb-6 text-lg font-normal text-center">
         Estadísticas de ataque
       </h6>
-      <label>
+      <label className="font-condensed">
         Arma 1:
         <input
           list="weapons"
@@ -76,7 +76,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Bono de Ataque 1:
         <input
           type="number"
@@ -85,7 +85,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Daño 1:
         <input
           type="text"
@@ -94,7 +94,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Tipo de Daño 1:
         <input
           list="damage_type"
@@ -112,7 +112,7 @@ const EditAttack = forwardRef((params, ref) => {
         <option value="Eléctrico" />
         <option value="Ácido" />
       </datalist>
-      <label>
+      <label className="font-condensed">
         Rango de Ataque 1:
         <input
           list="atk_range"
@@ -126,7 +126,7 @@ const EditAttack = forwardRef((params, ref) => {
         <option value="A distancia" />
       </datalist>
       <hr className="my-4 border-neutral-800" />
-      <label>
+      <label className="font-condensed">
         Arma 2:
         <input
           list="weapons"
@@ -136,7 +136,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Bono de Ataque 2:
         <input
           type="number"
@@ -145,7 +145,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Daño 2:
         <input
           type="text"
@@ -154,7 +154,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Tipo de Daño 2:
         <input
           list="damage_type"
@@ -163,7 +163,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Rango de Ataque 2:
         <input
           list="atk_range"
@@ -173,7 +173,7 @@ const EditAttack = forwardRef((params, ref) => {
         />
       </label>
       <hr className="my-4 border-neutral-800" />
-      <label>
+      <label className="font-condensed">
         Arma 3:
         <input
           list="weapons"
@@ -183,7 +183,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Bono de Ataque 3:
         <input
           type="number"
@@ -192,7 +192,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Daño 3:
         <input
           type="text"
@@ -201,7 +201,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Tipo de Daño 3:
         <input
           list="damage_type"
@@ -210,7 +210,7 @@ const EditAttack = forwardRef((params, ref) => {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="font-condensed">
         Rango de Ataque 3:
         <input
           list="atk_range"
