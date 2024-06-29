@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FaTimes } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CharacterForm = ({ closeForm, addCharacter }) => {
@@ -49,7 +49,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
 
   if (!isAuthenticated) {
     return (
-      <div className="w-[100vw] h-[100vh] absolute top-[-1.1rem] left-[-1.1rem] flex items-center justify-center bg-neutral-950/80 z-50">
+      <div className="w-[100vw] h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950/80 z-50">
         <div className="rounded-lg w-96 border max-w-[400px] mx-auto p-14 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-emerald-900 to-emerald-950">
           <h6 className="text-lg mb-4 text-center text-white">
             Por favor, inicia sesión para crear un personaje.
@@ -74,7 +74,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
   }
 
   return (
-    <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950 z-50">
+    <div className="w-[100vw] h-[100vh] absolute top-0 right-0 lg:top-[-1.1rem] lg:left-[-1.1rem] flex items-center justify-center bg-neutral-950/80 z-50">
       <form
         className="rounded-lg w-[96%] max-w-[400px] mx-auto h-[640px] px-4 pt-14 flex flex-col items-center justify-center gap-2 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
@@ -136,10 +136,10 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           <button type="submit">Crear personaje</button>
         </div>
         <button
-          className="fixed top-4 left-4 rounded-full text-lg p-3 text-white"
           onMouseDown={closeForm}
+          className="fixed right-4 bottom-4 text-[16px] rounded-full p-4"
         >
-          <FaTimes />
+          <FaArrowLeft />
         </button>
       </form>
     </div>

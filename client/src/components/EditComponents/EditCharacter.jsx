@@ -31,12 +31,10 @@ const EditCharacter = forwardRef((params, ref) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    if (character) {
-      setCharacter((prevCharacter) => ({
-        ...prevCharacter,
-        [name]: value,
-      }));
-    }
+    setCharacter((prevCharacter) => ({
+      ...prevCharacter,
+      [name]: value,
+    }));
   };
 
   const handleImageUpload = (imageUrl) => {
@@ -48,10 +46,8 @@ const EditCharacter = forwardRef((params, ref) => {
 
   const handleSave = async () => {
     try {
-      if (character) {
-        await axios.put(`/characters/${id}`, character);
-        navigate('/characters');
-      }
+      await axios.put(`/characters/${id}`, character);
+      navigate('/characters');
     } catch (error) {
       console.error('Error saving character:', error);
     }
@@ -76,7 +72,7 @@ const EditCharacter = forwardRef((params, ref) => {
           src={character.avatar_url}
           alt="Character avatar"
         />
-        <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 hover:border hover:border-yellow-500 hover:rounded-lg  transition-opacity duration-200">
+        <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 hover:border hover:border-yellow-500 hover:rounded-lg transition-opacity duration-200">
           <span className="text-white text-lg font-semibold">
             Change Avatar
           </span>
@@ -91,6 +87,7 @@ const EditCharacter = forwardRef((params, ref) => {
         value={character.char_name}
         onChange={handleInputChange}
       />
+
       <label htmlFor="race">Raza:</label>
       <input
         list="race"
@@ -100,13 +97,12 @@ const EditCharacter = forwardRef((params, ref) => {
         onChange={handleInputChange}
       />
       <datalist id="race">
-        <option value="Humano"> </option>
-        <option value="Elfo"> </option>
-        <option value="Enano"> </option>
-        <option value="Gnomo"> </option>
-        <option value="Orco"> </option>
-        <option value="Tiefling"> </option>
-        <option value="Dragon"> </option>
+        <option value="Humano" />
+        <option value="Elfo" />
+        <option value="Enano" />
+        <option value="Gnomo" />
+        <option value="Orco" />
+        <option value="Tiefling" />
       </datalist>
 
       <label htmlFor="char_class">Clase:</label>
@@ -118,15 +114,15 @@ const EditCharacter = forwardRef((params, ref) => {
         onChange={handleInputChange}
       />
       <datalist id="char_class">
-        <option value="Cazador"> </option>
-        <option value="Guerrero"> </option>
-        <option value="Mago"> </option>
-        <option value="Paladin"> </option>
-        <option value="Druida"> </option>
-        <option value="Sacerdote"> </option>
-        <option value="Bardo"> </option>
-        <option value="Cazador"> </option>
+        <option value="Cazador" />
+        <option value="Guerrero" />
+        <option value="Mago" />
+        <option value="Paladín" />
+        <option value="Druida" />
+        <option value="Sacerdote" />
+        <option value="Bardo" />
       </datalist>
+
       <label htmlFor="level">Nivel:</label>
       <input
         type="number"

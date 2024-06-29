@@ -67,6 +67,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Arma 1:
         <input
+          list="weapons"
           type="text"
           name="weapon_1"
           value={attackStats.weapon_1}
@@ -76,7 +77,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Bono de Ataque 1:
         <input
-          type="text"
+          type="number"
           name="atk_bonus_1"
           value={attackStats.atk_bonus_1}
           onChange={handleChange}
@@ -94,25 +95,39 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Tipo de Daño 1:
         <input
-          type="text"
+          list="damage_type"
           name="damage_type_1"
           value={attackStats.damage_type_1}
           onChange={handleChange}
         />
       </label>
+      <datalist id="damage_type">
+        <option value="Cortante" />
+        <option value="Contundente" />
+        <option value="Perforante" />
+        <option value="Fuego" />
+        <option value="Hielo" />
+        <option value="Eléctrico" />
+        <option value="Ácido" />
+      </datalist>
       <label>
         Rango de Ataque 1:
         <input
-          type="text"
+          list="atk_range"
           name="atk_range_1"
           value={attackStats.atk_range_1}
           onChange={handleChange}
         />
       </label>
+      <datalist id="atk_range">
+        <option value="Cuerpo a cuerpo" />
+        <option value="A distancia" />
+      </datalist>
       <hr className="my-4 border-neutral-800" />
       <label>
         Arma 2:
         <input
+          list="weapons"
           type="text"
           name="weapon_2"
           value={attackStats.weapon_2}
@@ -122,7 +137,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Bono de Ataque 2:
         <input
-          type="text"
+          type="number"
           name="atk_bonus_2"
           value={attackStats.atk_bonus_2}
           onChange={handleChange}
@@ -140,7 +155,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Tipo de Daño 2:
         <input
-          type="text"
+          list="damage_type"
           name="damage_type_2"
           value={attackStats.damage_type_2}
           onChange={handleChange}
@@ -149,7 +164,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Rango de Ataque 2:
         <input
-          type="text"
+          list="atk_range"
           name="atk_range_2"
           value={attackStats.atk_range_2}
           onChange={handleChange}
@@ -159,6 +174,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Arma 3:
         <input
+          list="weapons"
           type="text"
           name="weapon_3"
           value={attackStats.weapon_3}
@@ -168,7 +184,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Bono de Ataque 3:
         <input
-          type="text"
+          type="number"
           name="atk_bonus_3"
           value={attackStats.atk_bonus_3}
           onChange={handleChange}
@@ -186,7 +202,7 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Tipo de Daño 3:
         <input
-          type="text"
+          list="damage_type"
           name="damage_type_3"
           value={attackStats.damage_type_3}
           onChange={handleChange}
@@ -195,12 +211,28 @@ const EditAttack = forwardRef((params, ref) => {
       <label>
         Rango de Ataque 3:
         <input
-          type="text"
+          list="atk_range"
           name="atk_range_3"
           value={attackStats.atk_range_3}
           onChange={handleChange}
         />
       </label>
+      <datalist id="weapons">
+        <option value="Espada corta" />
+        <option value="Espada larga" />
+        <option value="Hacha de batalla" />
+        <option value="Arco largo" />
+        <option value="Arco corto" />
+        <option value="Daga" />
+        <option value="Maza" />
+        <option value="Lanza" />
+        <option value="Martillo de guerra" />
+        <option value="Ballesta ligera" />
+        <option value="Ballesta pesada" />
+        <option value="Jabalina" />
+        <option value="Mandoble" />
+        <option value="Estoque" />
+      </datalist>
     </div>
   );
 });
