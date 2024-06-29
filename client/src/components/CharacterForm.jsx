@@ -49,25 +49,25 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
 
   if (!isAuthenticated) {
     return (
-      <div className="w-full h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950/95 z-50">
-        <div className="rounded-lg w-96 border max-w-[400px] mx-auto p-14 flex flex-col items-center justify-center gap-2 bg-emerald-950/70">
-          <h2 className="text-2xl text-center text-white">
+      <div className="w-[100vw] h-[100vh] absolute top-[-1.1rem] left-[-1.1rem] flex items-center justify-center bg-neutral-950/80 z-50">
+        <div className="rounded-lg w-96 border max-w-[400px] mx-auto p-14 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-emerald-900 to-emerald-950">
+          <h6 className="text-lg mb-4 text-center text-white">
             Por favor, inicia sesión para crear un personaje.
-          </h2>
+          </h6>
           <Link className="w-full" to="/login">
-            <button
-              className="w-full text-lg text-white"
-              onMouseDown={closeForm}
+            <a
+              className="text-center w-full block py-2 px-4 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600/70"
+              onClick={closeForm}
             >
               Iniciar Sesión
-            </button>
+            </a>
           </Link>
-          <button
-            className="w-full text-lg text-white  bg-neutral-950/60"
+          <a
+            className="text-center w-full block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
             onMouseDown={closeForm}
           >
             Volver
-          </button>
+          </a>
         </div>
       </div>
     );

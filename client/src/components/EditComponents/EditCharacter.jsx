@@ -93,18 +93,40 @@ const EditCharacter = forwardRef((params, ref) => {
       />
       <label htmlFor="race">Raza:</label>
       <input
+        list="race"
         type="text"
         name="race"
         value={character.race}
         onChange={handleInputChange}
       />
+      <datalist id="race">
+        <option value="Humano"> </option>
+        <option value="Elfo"> </option>
+        <option value="Enano"> </option>
+        <option value="Gnomo"> </option>
+        <option value="Orco"> </option>
+        <option value="Tiefling"> </option>
+        <option value="Dragon"> </option>
+      </datalist>
+
       <label htmlFor="char_class">Clase:</label>
       <input
+        list="char_class"
         type="text"
         name="char_class"
         value={character.char_class}
         onChange={handleInputChange}
       />
+      <datalist id="char_class">
+        <option value="Cazador"> </option>
+        <option value="Guerrero"> </option>
+        <option value="Mago"> </option>
+        <option value="Paladin"> </option>
+        <option value="Druida"> </option>
+        <option value="Sacerdote"> </option>
+        <option value="Bardo"> </option>
+        <option value="Cazador"> </option>
+      </datalist>
       <label htmlFor="level">Nivel:</label>
       <input
         type="number"

@@ -158,15 +158,15 @@ const NavBar = () => {
                 </li>
 
                 <div className="flex flex-col gap-4">
-                  <button
-                    className="pt-4 pb-3 rounded-lg text-md border-opacity-20"
+                  <a
+                    className="  pt-4 pb-4 px-4 text-center leading-3 bg-emerald-900/70 to-emerald-800/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-800/70"
                     onClick={() => {
                       handleShowForm();
                       closeMenu();
                     }}
                   >
                     Crear Personaje
-                  </button>
+                  </a>
 
                   {isAuthenticated && (
                     <div className="*:block *:w-full *:pt-4 *:rounded-lg ">
@@ -227,7 +227,7 @@ const NavBar = () => {
             </div>
           )}
           <a
-            className="hidden lg:block py-2 px-4 bg-emerald-700 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600"
+            className="hidden lg:block py-[.875rem] px-4 text-center leading-3 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-700/70"
             onClick={handleShowForm}
           >
             Crear personaje
@@ -243,12 +243,12 @@ const NavBar = () => {
               }}
               to="/login"
             >
-              <a className="hidden lg:block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
+              <a className="hidden lg:block pt-3 pb-4 px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
                 Ingresar
               </a>
             </Link>
           ) : (
-            <div className="flex gap-4 items-center *:lg:block">
+            <div className="flex gap-4 items-center  *:lg:block">
               <LogoutBtn closeMenu={closeMenu} />
               <Profile />
             </div>

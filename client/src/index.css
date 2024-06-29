@@ -86,6 +86,8 @@ label {
 input {
   width: 100%;
   border: 0.1rem solid var(--color-terciario);
+  background-color: var(--color-fondo);
+  color: var(--color-secundario);
   border-radius: 0.3rem;
   padding: 0.2rem;
   margin-bottom: 0.5rem;

@@ -7,7 +7,7 @@ const LogoutBtn = () => {
   return (
     isAuthenticated && (
       <a
-        className="hidden lg:block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
+        className="hidden lg:block  py-[.875rem]  px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
         onMouseDown={() => logout()}
       >
         Cerrar Sesión
