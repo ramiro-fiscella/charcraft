@@ -39,8 +39,8 @@ const EditAttributes = forwardRef((params, ref) => {
 
   const validateAttributes = (name, value) => {
     let error = '';
-    if (value < 1 || value > 20) {
-      error = 'El valor debe ser entre 1 y 20';
+    if (value < 1 || value > 99) {
+      error = 'El valor debe ser entre 1 y 99';
     }
     setErrors((prevErrors) => ({
       ...prevErrors,

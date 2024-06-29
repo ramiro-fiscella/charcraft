@@ -66,10 +66,52 @@ const EditSkills = forwardRef((props, ref) => {
     handleSave,
   }));
 
+  const skillNames = {
+    acrobatics: 'Acrobacias',
+    animal_handling: 'Manejo de Animales',
+    arcana: 'Arcano',
+    athletics: 'Atletismo',
+    deception: 'Engaño',
+    history: 'Historia',
+    insight: 'Perspicacia',
+    intimidation: 'Intimidación',
+    investigation: 'Investigación',
+    medicine: 'Medicina',
+    nature: 'Naturaleza',
+    perception: 'Percepción',
+    performance: 'Actuación',
+    persuasion: 'Persuasión',
+    religion: 'Religión',
+    sleight_of_hand: 'Juego de Manos',
+    stealth: 'Sigilo',
+    survival: 'Supervivencia',
+  };
+
+  const abilityModifiers = {
+    acrobatics: '(des)',
+    animal_handling: '(sab)',
+    arcana: '(int)',
+    athletics: '(fue)',
+    deception: '(car)',
+    history: '(int)',
+    insight: '(sab)',
+    intimidation: '(car)',
+    investigation: '(int)',
+    medicine: '(sab)',
+    nature: '(sab)',
+    perception: '(sab)',
+    performance: '(car)',
+    persuasion: '(car)',
+    religion: '(int)',
+    sleight_of_hand: '(des)',
+    stealth: '(des)',
+    survival: '(sab)',
+  };
+
   return (
     <div className="h-[630px] p-4 border border-neutral-800 rounded-xl">
-      <h2 className="text-xl mb-4 text-center">Habilidades</h2>
-      <form className="w-full m-auto flex flex-col  justify-center gap-2">
+      <h6 className="text-lg mb-6 font-normal text-center">Habilidades</h6>
+      <form className="w-full m-auto flex flex-col justify-center gap-2">
         {Object.keys(skills).map((skill) => (
           <div key={skill} className="flex items-center w-full">
             <input
@@ -80,8 +122,11 @@ const EditSkills = forwardRef((props, ref) => {
               onChange={handleChange}
               className="w-8 mb-0"
             />
-            <label htmlFor={skill} className="text-lg capitalize">
-              {skill.replace(/_/g, ' ')}
+            <label htmlFor={skill} className="text-lg">
+              {skillNames[skill]}
+              <span className="font-condensed text-xs text-gray-500 ml-1">
+                {abilityModifiers[skill]}
+              </span>
             </label>
           </div>
         ))}

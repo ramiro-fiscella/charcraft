@@ -63,7 +63,9 @@ const EditAttack = forwardRef((params, ref) => {
 
   return (
     <div className="p-4 border border-neutral-800 rounded-xl">
-      <h2 className="text-xl text-center mb-4">Estadísticas de ataque</h2>
+      <h6 className="mb-6 text-lg font-normal text-center">
+        Estadísticas de ataque
+      </h6>
       <label>
         Arma 1:
         <input
