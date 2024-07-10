@@ -3,9 +3,10 @@ import axios from 'axios';
 import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FaArrowLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CharacterForm = ({ closeForm, addCharacter }) => {
+  const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth0();
   const [character, setCharacter] = useState({
     char_name: '',
@@ -79,7 +80,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
         className="rounded-lg w-[96%] max-w-[400px] mx-auto h-[640px] px-4 pt-14 flex flex-col items-center justify-center gap-2 bg-neutral-950 bg-opacity-90"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl text-center">Crea tu Personaje</h2>
+        <h4 className="text-2xl text-center">Crea tu Personaje</h4>
         <label className="font-light text-white">
           Nombre:
           <input
@@ -121,8 +122,9 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           />
         </label>
 
-        <div className="*:block  w-full flex items-center justify-between gap-4">
+        <div className="*:block  w-full flex items-center justify-between gap-4 mt-2">
           <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
+
           {character.avatar_url && (
             <img
               className="rounded w-1/2 object-cover"
@@ -133,7 +135,9 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
         </div>
 
         <div className="flex flex-col gap-2 w-full h-full mt-4">
-          <button type="submit">Crear personaje</button>
+          <button type="submit" className="pt-4 pb-3">
+            Crear personaje
+          </button>
         </div>
         <button
           onMouseDown={closeForm}

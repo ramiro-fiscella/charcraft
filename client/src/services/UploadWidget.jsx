@@ -37,7 +37,7 @@ const UploadWidget = forwardRef(({ onImageUpload }, ref) => {
 
   return (
     <button
-      className="hidden"
+      className="hidden pt-4 pb-3"
       type="button"
       onMouseDown={() => widgetRef.current.open()}
     >

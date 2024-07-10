@@ -243,7 +243,7 @@ const NavBar = () => {
               }}
               to="/login"
             >
-              <a className="hidden lg:block pt-3 pb-4 px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
+              <a className="hidden lg:block py-[.875rem] px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
                 Ingresar
               </a>
             </Link>
