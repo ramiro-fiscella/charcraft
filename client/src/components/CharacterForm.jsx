@@ -123,8 +123,9 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           />
         </label>
 
-        <div className="*:block  w-full flex items-center justify-between gap-4">
-          {/*  <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />  */}
+        {/* 
+          <div className="*:block  w-full flex items-center justify-between gap-4">
+          <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />  
           {character.avatar_url && (
             <img
               className="rounded w-1/2 object-cover"
@@ -133,6 +134,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             />
           )}
         </div>
+        */}
 
         <div className="flex flex-col gap-2 w-full h-full mt-4">
           <button type="submit">Crear personaje</button>
