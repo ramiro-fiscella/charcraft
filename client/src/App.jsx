@@ -12,17 +12,26 @@ import { NavBar, Footer } from './components';
 
 import axios from 'axios';
 
-import { Provider, ErrorBoundary } from '@rollbar/react'; // Provider imports 'rollbar'
+import { Provider, ErrorBoundary } from '@rollbar/react'; // <-- Provider imports 'rollbar' for us
 
+// same configuration you would create for the Rollbar.js SDK
 const rollbarConfig = {
   accessToken: 'b94e023d12054addab8451d413e2c224',
-  environment: 'testenv',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+  environment: 'production',
+  server: {
+    root: 'https://cleric-api.vercel.app/',
+    branch: 'main',
+  },
+  code_version: '0.13.7',
+  payload: {
+    person: {
+      email: 'ramirofiscella@gmail.com',
+      username: 'ramirofiscella',
+    },
+  },
 };
-
-function TestError() {
-  const a = null;
-  return a.hello();
-}
 
 const api_url = import.meta.env.VITE_API_URL;
 
@@ -34,7 +43,6 @@ function App() {
   return (
     <Provider config={rollbarConfig}>
       <ErrorBoundary>
-        <TestError />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
