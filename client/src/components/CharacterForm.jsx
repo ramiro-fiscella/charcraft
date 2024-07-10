@@ -6,7 +6,6 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 
 const CharacterForm = ({ closeForm, addCharacter }) => {
-  const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth0();
   const [character, setCharacter] = useState({
     char_name: '',
@@ -15,6 +14,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     level: '',
     avatar_url: '',
   });
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,7 +40,8 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     try {
       const response = await axios.post('/characters', characterData);
       console.log('Character created:', response.data);
-      addCharacter = { addCharacter }; // Agrega el nuevo personaje a la lista de personajes
+      addCharacter(response.data); // Agrega el nuevo personaje a la lista de personajes
+      navigate(`/characters/edit/${response.data.id}`); // Redirige a la ruta de edición del personaje creado
     } catch (err) {
       console.error('Error creating character:', err);
     }
@@ -56,19 +57,19 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             Por favor, inicia sesión para crear un personaje.
           </h6>
           <Link className="w-full" to="/login">
-            <a
+            <div
               className="text-center w-full block py-2 px-4 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600/70"
               onClick={closeForm}
             >
               Iniciar Sesión
-            </a>
+            </div>
           </Link>
-          <a
+          <div
             className="text-center w-full block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
             onMouseDown={closeForm}
           >
             Volver
-          </a>
+          </div>
         </div>
       </div>
     );
@@ -122,9 +123,8 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           />
         </label>
 
-        <div className="*:block  w-full flex items-center justify-between gap-4 mt-2">
+        <div className="*:block  w-full flex items-center justify-between gap-4">
           <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
-
           {character.avatar_url && (
             <img
               className="rounded w-1/2 object-cover"
@@ -135,9 +135,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
         </div>
 
         <div className="flex flex-col gap-2 w-full h-full mt-4">
-          <button type="submit" className="pt-4 pb-3">
-            Crear personaje
-          </button>
+          <button type="submit">Crear personaje</button>
         </div>
         <button
           onMouseDown={closeForm}

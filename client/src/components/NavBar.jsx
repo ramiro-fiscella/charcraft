@@ -33,7 +33,7 @@ const NavBar = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [menuRef, menuButtonRef]);
 
   return (
     <nav className=" h-16 fixed top-0 left-0 right-0 lg:top-4 lg:left-4 lg:right-4 py-2 px-4 mx-auto bg-emerald-950 lg:bg-opacity-80 lg:rounded-xl lg:border border-yellow-500/80 z-20">
@@ -51,6 +51,7 @@ const NavBar = () => {
             <img
               className="w-10"
               src="https://img.icons8.com/?size=100&id=Cb8QNFPzIfTZ&format=png&color=FAB005"
+              alt="Logo"
             />
           </Link>
           <ul
@@ -102,13 +103,13 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="flex gap-4 justify-center items-center">
-          <a
+          <button
             ref={menuButtonRef}
             onClick={toggleMenu}
             className="lg:hidden text-4xl z-50 text-yellow-500"
           >
             {showMenu ? <IoCloseSharp /> : <IoMenuSharp />}
-          </a>
+          </button>
 
           {showMenu && (
             <div
@@ -158,7 +159,7 @@ const NavBar = () => {
                 </li>
 
                 <div className="flex flex-col gap-4">
-                  <a
+                  <button
                     className="  pt-4 pb-4 px-4 text-center leading-3 bg-emerald-900/70 to-emerald-800/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-800/70"
                     onClick={() => {
                       handleShowForm();
@@ -166,7 +167,7 @@ const NavBar = () => {
                     }}
                   >
                     Crear Personaje
-                  </a>
+                  </button>
 
                   {isAuthenticated && (
                     <div className="*:block *:w-full *:pt-4 *:rounded-lg ">
@@ -226,12 +227,12 @@ const NavBar = () => {
               </ul>
             </div>
           )}
-          <a
-            className="hidden lg:block py-[.875rem] px-4 text-center leading-3 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-700/70"
+          <button
+            className="hidden lg:block py-[14px] border-none px-4 text-center leading-3 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider text-[16px] font-sans rounded-md uppercase hover:bg-emerald-700/70"
             onClick={handleShowForm}
           >
             Crear personaje
-          </a>
+          </button>
           {showForm && <CharacterForm closeForm={() => setShowForm(false)} />}
 
           {!isAuthenticated ? (
@@ -243,9 +244,9 @@ const NavBar = () => {
               }}
               to="/login"
             >
-              <a className="hidden lg:block py-[.875rem] px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
+              <div className="hidden lg:block py-[.875rem] px-4 text-center leading-3 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70">
                 Ingresar
-              </a>
+              </div>
             </Link>
           ) : (
             <div className="flex gap-4 items-center  *:lg:block">
