@@ -12,6 +12,18 @@ import { NavBar, Footer } from './components';
 
 import axios from 'axios';
 
+import { Provider, ErrorBoundary } from '@rollbar/react'; // Provider imports 'rollbar'
+
+const rollbarConfig = {
+  accessToken: 'b94e023d12054addab8451d413e2c224',
+  environment: 'testenv',
+};
+
+function TestError() {
+  const a = null;
+  return a.hello();
+}
+
 const api_url = import.meta.env.VITE_API_URL;
 
 axios.defaults.baseURL = api_url;
@@ -20,23 +32,26 @@ import './App.css';
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginView />} />
-        <Route path="/profile" element={<ProfileView />} />
+    <Provider config={rollbarConfig}>
+      <ErrorBoundary>
+        <TestError />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginView />} />
+          <Route path="/profile" element={<ProfileView />} />
 
-        <Route path="/characters" element={<CharactersView />} />
+          <Route path="/characters" element={<CharactersView />} />
 
-        <Route path="/character/:id" element={<CharacterDetails />} />
-        <Route path="/character/:id/edit" element={<EditView />} />
+          <Route path="/character/:id" element={<CharacterDetails />} />
+          <Route path="/character/:id/edit" element={<EditView />} />
 
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <div className="w-full h-32 pointer-events-none bg-gradient-to-t from-zinc-950"></div>
-      <Footer />
-    </>
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <div className="w-full h-32 pointer-events-none bg-gradient-to-t from-zinc-950"></div>
+        <Footer />
+      </ErrorBoundary>
+    </Provider>
   );
 }
 

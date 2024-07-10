@@ -15,6 +15,7 @@
     "@cloudinary/react": "^1.13.0",
     "@cloudinary/url-gen": "^1.19.0",
     "@reduxjs/toolkit": "^2.2.3",
+    "@rollbar/react": "^0.12.0-beta",
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5",
@@ -24,6 +25,7 @@
     "react-icons": "^5.2.1",
     "react-redux": "^9.1.1",
     "react-router-dom": "^6.23.1",
+    "rollbar": "^2.26.4",
     "tailwindcss": "^3.4.3",
     "vite": "^2.0.0"
   },
