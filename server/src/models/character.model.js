@@ -1,29 +1,33 @@
 const { query } = require('../db');
 
 const getCharacters = async () => {
-  const result = await query(`
-    SELECT characters.*, personality.quote, users.username
-    FROM characters
-    LEFT JOIN personality ON characters.id = personality.character_id
-    LEFT JOIN users ON characters.user_id = users.uid;
-  `);
+  const result =
+    await query(`SELECT characters.*, personality.quote, users.username
+  FROM characters
+  LEFT JOIN personality ON characters.id = personality.character_id
+  LEFT JOIN users ON characters.user_id = users.uid;`);
+
   return result.rows;
 };
 
 const getCharacterById = async (id) => {
   const queryString = `
-    SELECT c.*, a.*, s.*, p.*, cs.*, at.*, u.username
-    FROM characters AS c
+    SELECT * FROM 
+      characters AS c
     LEFT JOIN attributes AS a ON c.id = a.character_id
     LEFT JOIN skills AS s ON c.id = s.character_id
     LEFT JOIN personality AS p ON c.id = p.character_id
     LEFT JOIN combat_stats AS cs ON c.id = cs.character_id
     LEFT JOIN attack_stats AS at ON c.id = at.character_id
     LEFT JOIN users AS u ON c.user_id = u.uid
-    WHERE c.id = $1;
+    WHERE 
+      c.id = $1;
   `;
+
   const result = await query(queryString, [id]);
-  return result.rows[0];
+  const character = result.rows[0];
+  // console.log(character);
+  return character;
 };
 
 const createCharacter = async ({
@@ -34,6 +38,7 @@ const createCharacter = async ({
   avatar_url,
   auth0_id,
 }) => {
+  // Buscar user_id utilizando auth0_id
   const userResult = await query('SELECT uid FROM users WHERE auth0_id = $1;', [
     auth0_id,
   ]);
@@ -67,7 +72,6 @@ const deleteCharacter = async (id) => {
   );
   return result.rows[0];
 };
-
 module.exports = {
   getCharacters,
   getCharacterById,
