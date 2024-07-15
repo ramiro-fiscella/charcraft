@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import UploadWidget from '../services/UploadWidget';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
@@ -12,33 +11,35 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     race: '',
     char_class: '',
     level: '',
-    avatar_url: '',
+    avatar: null,
   });
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, files } = event.target;
     setCharacter((prevState) => ({
       ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleImageUpload = (url) => {
-    setCharacter((prevState) => ({
-      ...prevState,
-      avatar_url: url,
+      [name]: files ? files[0] : value,
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const characterData = {
-      ...character,
-      auth0_id: user.sub,
-    };
+    const formData = new FormData();
+    formData.append('char_name', character.char_name);
+    formData.append('race', character.race);
+    formData.append('char_class', character.char_class);
+    formData.append('level', character.level);
+    if (character.avatar) {
+      formData.append('avatar', character.avatar);
+    }
+
     try {
-      const response = await axios.post('/characters', characterData);
+      const response = await axios.post('/characters', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       console.log('Character created:', response.data);
       addCharacter(response.data); // Agrega el nuevo personaje a la lista de personajes
       navigate(`/characters/edit/${response.data.id}`); // Redirige a la ruta de edición del personaje creado
@@ -122,20 +123,23 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             className="block w-full mt-1"
           />
         </label>
-
-        {/* 
-          <div className="*:block  w-full flex items-center justify-between gap-4">
-          <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />  
-          {character.avatar_url && (
-            <img
-              className="rounded w-1/2 object-cover"
-              src={character.avatar_url}
-              alt="Thumbnail"
-            />
-          )}
-        </div>
-        */}
-
+        <label className="font-light text-white">
+          Avatar:
+          <input
+            type="file"
+            name="avatar"
+            accept="image/*"
+            onChange={handleChange}
+            className="block w-full mt-1"
+          />
+        </label>
+        {character.avatar && (
+          <img
+            className="rounded w-full mt-2 object-cover"
+            src={URL.createObjectURL(character.avatar)}
+            alt="Avatar"
+          />
+        )}
         <div className="flex flex-col gap-2 w-full h-full mt-4">
           <button type="submit">Crear personaje</button>
         </div>
