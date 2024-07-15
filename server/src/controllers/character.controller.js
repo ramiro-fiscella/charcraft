@@ -26,7 +26,6 @@ const getCharacter = async (req, res) => {
 
 const createCharacter = async (req, res) => {
   const characterData = req.body;
-
   try {
     const newCharacter = await CharacterModel.createCharacter(characterData);
     res.status(201).json(newCharacter);
@@ -63,9 +62,9 @@ const deleteCharacter = async (req, res) => {
 };
 
 module.exports = {
-  createCharacter,
   getCharacters,
   getCharacter,
+  createCharacter,
   updateCharacter,
   deleteCharacter,
 };

@@ -10,13 +10,11 @@ const userRoutes = require('./user.routes');
 const router = Router();
 
 router.use('/characters', characterRoutes);
-
 router.use('/characters', attributesRoutes);
 router.use('/characters', skillsRoutes);
 router.use('/characters', personalityRoutes);
 router.use('/characters', combatRoutes);
 router.use('/characters', attackRoutes);
-
 router.use('/users', userRoutes);
 
 module.exports = router;
