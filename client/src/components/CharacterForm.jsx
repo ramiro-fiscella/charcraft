@@ -123,6 +123,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             className="block w-full mt-1"
           />
         </label>
+<<<<<<< HEAD
         <label className="font-light text-white">
           Avatar:
           <input
@@ -140,6 +141,20 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             alt="Avatar"
           />
         )}
+=======
+
+        <div className="*:block  w-full flex items-center justify-between gap-4">
+          {/*  <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />  */}
+          {character.avatar_url && (
+            <img
+              className="rounded w-1/2 object-cover"
+              src={character.avatar_url}
+              alt="Thumbnail"
+            />
+          )}
+        </div>
+
+>>>>>>> parent of 27b2ac3 (rework)
         <div className="flex flex-col gap-2 w-full h-full mt-4">
           <button type="submit">Crear personaje</button>
         </div>
