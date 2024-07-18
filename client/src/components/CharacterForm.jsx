@@ -144,7 +144,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
 =======
 
         <div className="*:block  w-full flex items-center justify-between gap-4">
-          {/*  <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />  */}
+          <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
           {character.avatar_url && (
             <img
               className="rounded w-1/2 object-cover"
