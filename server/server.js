@@ -3,8 +3,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const { Client } = require('pg');
-const multer = require('multer');
-const path = require('path');
 const router = require('./src/routes');
 
 const app = express();
