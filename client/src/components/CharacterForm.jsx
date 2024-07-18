@@ -123,25 +123,6 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
             className="block w-full mt-1"
           />
         </label>
-<<<<<<< HEAD
-        <label className="font-light text-white">
-          Avatar:
-          <input
-            type="file"
-            name="avatar"
-            accept="image/*"
-            onChange={handleChange}
-            className="block w-full mt-1"
-          />
-        </label>
-        {character.avatar && (
-          <img
-            className="rounded w-full mt-2 object-cover"
-            src={URL.createObjectURL(character.avatar)}
-            alt="Avatar"
-          />
-        )}
-=======
 
         <div className="*:block  w-full flex items-center justify-between gap-4">
           <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
@@ -154,7 +135,6 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           )}
         </div>
 
->>>>>>> parent of 27b2ac3 (rework)
         <div className="flex flex-col gap-2 w-full h-full mt-4">
           <button type="submit">Crear personaje</button>
         </div>
