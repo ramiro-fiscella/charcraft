@@ -9,21 +9,11 @@ const router = require('./src/routes');
 
 const app = express();
 
-// Configure Multer storage
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(
-      null,
-      file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({ storage: storage });
+// permitir solicitudes desde mi dominio
+const corsOptions = {
+  origin: 'https://hojascleric.vercel.app',
+  optionsSuccessStatus: 200,
+};
 
 // Middlewares
 app.use(cors());
