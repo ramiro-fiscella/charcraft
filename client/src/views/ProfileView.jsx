@@ -1,14 +1,15 @@
 import React from 'react';
-import { Profile } from '../components';
 
-const ProfileView = () => {
+const Profile = () => {
   return (
     <div>
-      <h1>Profile View</h1>
-
-      <Profile />
+      <h2>Perfil de Usuario</h2>
+      <p>
+        El perfil se mostrará una vez que implementemos el nuevo sistema de
+        autenticación.
+      </p>
     </div>
   );
 };
 
-export default ProfileView;
+export default Profile;

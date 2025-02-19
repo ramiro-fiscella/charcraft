@@ -39,7 +39,19 @@ const createCharacter = async (req, res) => {
 const updateCharacter = async (req, res) => {
   const { id } = req.params;
   const characterData = req.body;
+
   try {
+    const character = await CharacterModel.getCharacterById(id);
+
+    if (!character) {
+      return res.status(404).json({ message: 'Character not found' });
+    }
+
+    // Solo el usuario dueño del personaje puede editarlo
+    if (character.user_id !== req.user.uid) {
+      return res.status(403).json({ message: 'Unauthorized' });
+    }
+
     const updatedCharacter = await CharacterModel.updateCharacter(
       id,
       characterData

@@ -1,12 +1,12 @@
 const { query } = require('../db');
 
 const getCharacters = async () => {
-  const result =
-    await query(`SELECT characters.*, personality.quote, users.username
-  FROM characters
-  LEFT JOIN personality ON characters.id = personality.character_id
-  LEFT JOIN users ON characters.user_id = users.uid;`);
-
+  const result = await query(
+    `SELECT characters.*, personality.quote, users.username
+     FROM characters
+     LEFT JOIN personality ON characters.id = personality.character_id
+     LEFT JOIN users ON characters.user_id = users.uid;`
+  );
   return result.rows;
 };
 
@@ -23,10 +23,8 @@ const getCharacterById = async (id) => {
     WHERE 
       c.id = $1;
   `;
-
   const result = await query(queryString, [id]);
   const character = result.rows[0];
-  // console.log(character);
   return character;
 };
 
@@ -36,16 +34,15 @@ const createCharacter = async ({
   char_class,
   level,
   avatar_url,
-  auth0_id,
+  user_id, // Ahora se espera que se envíe el user_id directamente
 }) => {
-  // Buscar user_id utilizando auth0_id
-  const userResult = await query('SELECT uid FROM users WHERE auth0_id = $1;', [
-    auth0_id,
+  // Validar que el usuario exista utilizando user_id
+  const userResult = await query('SELECT uid FROM users WHERE uid = $1;', [
+    user_id,
   ]);
   if (userResult.rows.length === 0) {
     throw new Error('User not found');
   }
-  const user_id = userResult.rows[0].uid;
 
   const result = await query(
     'INSERT INTO characters (char_name, race, char_class, level, avatar_url, user_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
@@ -72,6 +69,7 @@ const deleteCharacter = async (id) => {
   );
   return result.rows[0];
 };
+
 module.exports = {
   getCharacters,
   getCharacterById,

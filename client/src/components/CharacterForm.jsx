@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useAuth0 } from '@auth0/auth0-react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Asegúrate de tener definido o importado el componente UploadWidget
+// y la función handleImageUpload (se define aquí como ejemplo)
+
 const CharacterForm = ({ closeForm, addCharacter }) => {
-  const { user, isAuthenticated } = useAuth0();
+  // Placeholder para el estado de autenticación.
+  // Reemplázalo con tu nueva lógica de autenticación.
+  const isLoggedIn = false;
+
   const [character, setCharacter] = useState({
     char_name: '',
     race: '',
     char_class: '',
     level: '',
     avatar: null,
+    // Puedes agregar avatar_url si lo necesitas.
   });
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -20,6 +27,14 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     setCharacter((prevState) => ({
       ...prevState,
       [name]: files ? files[0] : value,
+    }));
+  };
+
+  // Ejemplo de función para actualizar la URL de la imagen tras subirla.
+  const handleImageUpload = (uploadedImageUrl) => {
+    setCharacter((prevState) => ({
+      ...prevState,
+      avatar_url: uploadedImageUrl,
     }));
   };
 
@@ -41,8 +56,8 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
         },
       });
       console.log('Character created:', response.data);
-      addCharacter(response.data); // Agrega el nuevo personaje a la lista de personajes
-      navigate(`/characters/edit/${response.data.id}`); // Redirige a la ruta de edición del personaje creado
+      addCharacter(response.data); // Agrega el nuevo personaje a la lista
+      navigate(`/characters/edit/${response.data.id}`); // Redirige a la edición del personaje creado
     } catch (err) {
       console.error('Error creating character:', err);
     }
@@ -50,7 +65,8 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     window.location.reload();
   };
 
-  if (!isAuthenticated) {
+  // Si el usuario NO está autenticado, muestra el mensaje de login.
+  if (!isLoggedIn) {
     return (
       <div className="w-[100vw] h-[100vh] absolute top-0 left-0 flex items-center justify-center bg-neutral-950/80 z-50">
         <div className="rounded-lg w-96 border max-w-[400px] mx-auto p-14 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-emerald-900 to-emerald-950">
@@ -59,14 +75,14 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           </h6>
           <Link className="w-full" to="/login">
             <div
-              className="text-center w-full block py-2 px-4 bg-emerald-800/70 to-emerald-700/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600/70"
+              className="text-center w-full block py-2 px-4 bg-emerald-800/70 text-white tracking-wider rounded-md uppercase hover:bg-emerald-600/70"
               onClick={closeForm}
             >
               Iniciar Sesión
             </div>
           </Link>
           <div
-            className="text-center w-full block py-2 px-4 bg-zinc-900/70 to-zinc-800/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
+            className="text-center w-full block py-2 px-4 bg-zinc-900/70 text-white tracking-wider rounded-md uppercase hover:bg-zinc-800/70"
             onMouseDown={closeForm}
           >
             Volver
@@ -76,6 +92,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
     );
   }
 
+  // Si el usuario está autenticado, muestra el formulario.
   return (
     <div className="w-[100vw] h-[100vh] absolute top-0 right-0 lg:top-[-1.1rem] lg:left-[-1.1rem] flex items-center justify-center bg-neutral-950/80 z-50">
       <form
@@ -124,7 +141,7 @@ const CharacterForm = ({ closeForm, addCharacter }) => {
           />
         </label>
 
-        <div className="*:block  w-full flex items-center justify-between gap-4">
+        <div className="flex w-full items-center justify-between gap-4">
           <UploadWidget className="w-1/2" onImageUpload={handleImageUpload} />
           {character.avatar_url && (
             <img
